@@ -6,61 +6,17 @@
         "version": "v1.1"
     },
     "paths": {
-        "/companies": {
-            "get": {
-                "tags": [
-                    "Companies"
-                ],
-                "summary": "Fetch a list of all companies with accounting links to your Bank on the Z2O platform",
-                "parameters": [{
-                        "name": "page",
-                        "in": "query",
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        }
-                    },
-                    {
-                        "name": "pageSize",
-                        "in": "query",
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32",
-                            "default": 100
-                        }
-                    },
-                    {
-                        "name": "search",
-                        "in": "query",
-                        "schema": {
-                            "type": "string",
-                            "nullable": true
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Public.Api.Models.Company.CompanyPagedResponse"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
+        "/bank/register": {
             "post": {
                 "tags": [
-                    "Companies"
+                    "Bank - Auth"
                 ],
-                "summary": "Initiate the process of onboarding a new company to your Bank on the Z2O platform",
+                "summary": "Register a new bank",
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Z2O.Public.Api.Models.Company.AddCompanyModel"
+                                "$ref": "#/components/schemas/Z2O.HelloWorld"
                             }
                         }
                     }
@@ -71,7 +27,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Public.Api.Models.Company.Company"
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
                                 }
                             }
                         }
@@ -79,12 +35,88 @@
                 }
             }
         },
-        "/companies/{companyId}": {
+        "/bank/auth": {
+            "post": {
+                "tags": [
+                    "Bank - Auth"
+                ],
+                "summary": "Get API Key for your bank",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Z2O.HelloWorld"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/bank/companies": {
+            "get": {
+                "tags": [
+                    "Bank - Companies"
+                ],
+                "summary": "Get list of companies connected to bank",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Bank - Companies"
+                ],
+                "summary": "Add a new company",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Z2O.HelloWorld"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/bank/companies/{companyId}": {
             "put": {
                 "tags": [
-                    "Companies"
+                    "Bank - Companies"
                 ],
-                "summary": "Update a company with a new name",
+                "summary": "Update info of a particular company",
                 "parameters": [{
                     "name": "companyId",
                     "in": "path",
@@ -98,7 +130,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Z2O.Clients.Api.Contract.Company"
+                                "$ref": "#/components/schemas/Z2O.HelloWorld"
                             }
                         }
                     }
@@ -109,7 +141,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Public.Api.Models.Company.Company"
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
                                 }
                             }
                         }
@@ -118,9 +150,9 @@
             },
             "delete": {
                 "tags": [
-                    "Companies"
+                    "Bank - Companies"
                 ],
-                "summary": "Deletes a company, this is not reversible.",
+                "summary": "Delete a particular company, this is not reversible",
                 "parameters": [{
                     "name": "companyId",
                     "in": "path",
@@ -138,9 +170,9 @@
             },
             "get": {
                 "tags": [
-                    "Companies"
+                    "Bank - Companies"
                 ],
-                "summary": "Fetch metadata on a single company.",
+                "summary": "Get info of a particular company",
                 "parameters": [{
                     "name": "companyId",
                     "in": "path",
@@ -156,7 +188,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Public.Api.Models.Company.Company"
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
                                 }
                             }
                         }
@@ -164,12 +196,12 @@
                 }
             }
         },
-        "/companies/{companyId}/settings": {
+        "/bank/companies/{companyId}/settings": {
             "get": {
                 "tags": [
-                    "Companies"
+                    "Bank - Companies"
                 ],
-                "summary": "Fetch settings on a single company.",
+                "summary": "Get the settings for a particular company",
                 "parameters": [{
                     "name": "companyId",
                     "in": "path",
@@ -185,7 +217,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Public.Api.Models.Company.CompanySettings"
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
                                 }
                             }
                         }
@@ -194,9 +226,9 @@
             },
             "put": {
                 "tags": [
-                    "Companies"
+                    "Bank - Companies"
                 ],
-                "summary": "Update settings on a single company.",
+                "summary": "Update settings for a particular company",
                 "parameters": [{
                     "name": "companyId",
                     "in": "path",
@@ -210,7 +242,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Z2O.Clients.Api.Contract.CompanySettings"
+                                "$ref": "#/components/schemas/Z2O.HelloWorld"
                             }
                         }
                     }
@@ -221,7 +253,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Public.Api.Models.Company.CompanySettings"
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
                                 }
                             }
                         }
@@ -229,11 +261,12 @@
                 }
             }
         },
-        "/companies/{companyId}/connections": {
+        "/bank/companies/{companyId}/connection": {
             "get": {
                 "tags": [
-                    "Connection"
+                    "Bank - Company Connection"
                 ],
+                "summary": "Get connection details for a particular company",
                 "parameters": [{
                     "name": "companyId",
                     "in": "path",
@@ -249,10 +282,171 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/Z2O.Public.Api.Models.Company.DataConnection"
-                                    }
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/bank/companies/{companyId}/data/reports": {
+            "get": {
+                "tags": [
+                    "Bank - Data"
+                ],
+                "summary": "Get connection details for a particular company",
+                "parameters": [{
+                    "name": "companyId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/bank/companies/{companyId}/data/reports/{reportName}": {
+            "get": {
+                "tags": [
+                    "Bank - Data"
+                ],
+                "summary": "Get connection details for a particular company",
+                "parameters": [{
+                    "name": "companyId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string",
+                        "format": "uuid"
+                    }
+                },
+                {
+                    "name": "reportName",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/company/auth": {
+            "post": {
+                "tags": [
+                    "Company - Auth"
+                ],
+                "summary": "Get API Key for your company",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Z2O.HelloWorld"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/company/connection": {
+            "post": {
+                "tags": [
+                    "Company - Connection"
+                ],
+                "summary": "Add a new ERP connection for the company",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Z2O.HelloWorld"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/company/data/reports/all": {
+            "get": {
+                "tags": [
+                    "Company - Data"
+                ],
+                "summary": "Get list of all reports a company can provide for its ERP connection",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/company/data/reports": {
+            "get": {
+                "tags": [
+                    "Company - Data"
+                ],
+                "summary": "Get list of reports company is providing",
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
                                 }
                             }
                         }
@@ -261,23 +455,14 @@
             },
             "post": {
                 "tags": [
-                    "Connection"
+                    "Company - Data"
                 ],
-                "parameters": [{
-                    "name": "companyId",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                }],
+                "summary": "Add a new report to provide",
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
-                                "type": "string",
-                                "nullable": true
+                                "$ref": "#/components/schemas/Z2O.HelloWorld"
                             }
                         }
                     }
@@ -288,7 +473,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Public.Api.Models.Company.DataConnection"
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
                                 }
                             }
                         }
@@ -296,37 +481,62 @@
                 }
             }
         },
-        "/companies/{companyId}/connections/{connectionId}": {
+        "/company/data/reports/{reportName}": {
             "get": {
                 "tags": [
-                    "Connection"
+                    "Company - Data"
                 ],
+                "summary": "Get latest data of a particular report that will be pushed",
                 "parameters": [{
-                        "name": "companyId",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    },
-                    {
-                        "name": "connectionId",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
+                    "name": "reportName",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
                     }
-                ],
+                }],
                 "responses": {
                     "200": {
                         "description": "Success",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Public.Api.Models.Company.DataConnection"
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Company - Data"
+                ],
+                "summary": "Annotate the data of a particular report and then push it to bank",
+                "parameters": [{
+                    "name": "reportName",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Z2O.HelloWorld"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
                                 }
                             }
                         }
@@ -335,98 +545,20 @@
             },
             "delete": {
                 "tags": [
-                    "Connection"
+                    "Company - Data"
                 ],
+                "summary": "Stop providing a particular report",
                 "parameters": [{
-                        "name": "companyId",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    },
-                    {
-                        "name": "connectionId",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "boolean"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/companies/{companyId}/data/reports": {
-            "get": {
-                "tags": [
-                    "Data Reports"
-                ],
-                "summary": "Get a list of available reports for a company",
-                "parameters": [{
-                    "name": "companyId",
+                    "name": "reportName",
                     "in": "path",
                     "required": true,
                     "schema": {
-                        "type": "string",
-                        "format": "uuid"
+                        "type": "string"
                     }
                 }],
                 "responses": {
                     "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/Z2O.Clients.Api.Contract.Reports"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/companies/{companyId}/data/reports/stockStatement": {
-            "get": {
-                "tags": [
-                    "Data Reports"
-                ],
-                "summary": "Get latest stock statement for a company",
-                "parameters": [{
-                    "name": "companyId",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Clients.Api.Contract.Report.StockStatement"
-                                }
-                            }
-                        }
+                        "description": "Success"
                     }
                 }
             }
@@ -434,440 +566,10 @@
     },
     "components": {
         "schemas": {
-            "Z2O.Public.Api.Models.Company.DataConnection": {
-                "required": [
-                    "id",
-                    "integrationId",
-                    "linkUrl",
-                    "platformName",
-                    "sourceId"
-                ],
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "integrationId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "sourceId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "platformName": {
-                        "type": "string"
-                    },
-                    "linkUrl": {
-                        "type": "string"
-                    },
-                    "status": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "lastSync": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "created": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "Z2O.Public.Api.Models.Company.Company": {
-                "required": [
-                    "dataConnections",
-                    "id",
-                    "name",
-                    "platform",
-                    "redirect",
-                    "status"
-                ],
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "platform": {
-                        "type": "string"
-                    },
-                    "redirect": {
-                        "type": "string"
-                    },
-                    "status": {
-                        "type": "string"
-                    },
-                    "lastSync": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "dataConnections": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Z2O.Public.Api.Models.Company.DataConnection"
-                        }
-                    },
-                    "created": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "owningUserName": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "Z2O.DataContracts.Responses.HalLink": {
-                "type": "object",
-                "properties": {
-                    "href": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "Z2O.Public.Api.Models.Company.CompanyPagedResponse": {
-                "required": [
-                    "pageNumber",
-                    "pageSize",
-                    "totalResults"
-                ],
-                "type": "object",
-                "properties": {
-                    "results": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Z2O.Public.Api.Models.Company.Company"
-                        },
-                        "nullable": true
-                    },
-                    "pageNumber": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    "pageSize": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    "totalResults": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    "_links": {
-                        "type": "object",
-                        "additionalProperties": {
-                            "$ref": "#/components/schemas/Z2O.DataContracts.Responses.HalLink"
-                        },
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "Z2O.Public.Api.Models.Company.AddCompanyModel": {
-                "required": [
-                    "name"
-                ],
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string"
-                    },
-                    "platformType": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "owningUserId": {
-                        "type": "string",
-                        "format": "uuid",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "Z2O.Clients.Api.Contract.DataConnectionStatus": {
-                "enum": [
-                    "PendingAuth",
-                    "Linked",
-                    "Unlinked",
-                    "Deauthorized"
-                ],
-                "type": "string"
-            },
-            "Z2O.Clients.Api.Contract.CompanySettings": {
-                "type": "object",
-                "properties": {
-                    "companyId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "offlineConnectorInstall": {
-                        "type": "boolean",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "Z2O.Clients.Api.Contract.Company": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "clientId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "clientName": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "name": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "status": {
-                        "$ref": "#/components/schemas/Z2O.Clients.Api.Contract.CustomerStatus"
-                    },
-                    "lastSync": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "dataConnections": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Z2O.Clients.Api.Contract.DataConnection"
-                        },
-                        "nullable": true
-                    },
-                    "shardId": {
-                        "type": "integer",
-                        "format": "int32",
-                        "nullable": true
-                    },
-                    "createdOnUtc": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "deleteRequested": {
-                        "type": "boolean"
-                    },
-                    "deleted": {
-                        "type": "boolean"
-                    },
-                    "owningUserId": {
-                        "type": "string",
-                        "format": "uuid",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "Z2O.Public.Api.Models.Company.CompanySettings": {
-                "required": [
-                    "companyId",
-                    "offlineConnectorInstall"
-                ],
-                "type": "object",
-                "properties": {
-                    "companyId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "offlineConnectorInstall": {
-                        "type": "boolean"
-                    }
-                },
-                "additionalProperties": false
-            },
-            "Z2O.Clients.Api.Contract.DataConnection": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "companyId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "clientId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "status": {
-                        "$ref": "#/components/schemas/Z2O.Clients.Api.Contract.DataConnectionStatus"
-                    },
-                    "supportedDataPath": {
-                        "$ref": "#/components/schemas/Z2O.Clients.Api.Contract.SupportedDataPath"
-                    },
-                    "redirectUrl": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "createdOnUtc": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "lastSync": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "deleteRequested": {
-                        "type": "boolean"
-                    },
-                    "deleted": {
-                        "type": "boolean"
-                    }
-                },
-                "additionalProperties": false
-            },
-            "Z2O.Clients.Api.Contract.CustomerStatus": {
-                "enum": [
-                    "PendingAuth",
-                    "Authorized",
-                    "Linked",
-                    "Syncing",
-                    "Error",
-                    "Unlinked",
-                    "Deauthorized"
-                ],
-                "type": "string"
-            },
-            "Z2O.Clients.Api.Contract.SupportedDataPath": {
-                "type": "object",
-                "properties": {
-                    "supportedDataPathId": {
-                        "type": "integer",
-                        "format": "int32"
-                    },
-                    "supportedDataPathName": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "sourceGuid": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "sourceName": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "sourceType": {
-                        "$ref": "#/components/schemas/Z2O.Clients.Api.Contract.SourceType"
-                    },
-                    "sourceDisplayName": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "integrationGuid": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "integrationName": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "isOfflineConnector": {
-                        "type": "boolean"
-                    },
-                    "serviceRef": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "requiresCredentials": {
-                        "type": "boolean"
-                    },
-                    "integrationDisplayName": {
-                        "type": "string",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "Z2O.Clients.Api.Contract.SourceType": {
-                "enum": [
-                    "Unknown",
-                    "Accounting",
-                    "Banking",
-                    "BankFeed",
-                    "Commerce",
-                    "Expense",
-                    "Other"
-                ],
-                "type": "string"
-            },
-            "Z2O.Clients.Api.Contract.Reports": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "companyId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "reportName": {
-                        "type": "string"
-                    },
-                    "lastSync": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
-            },
-            "Z2O.Clients.Api.Contract.Report.StockStatement": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "companyId": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "rawMaterialsValue": {
-                        "type": "number",
-                        "format": "double"
-                    },
-                    "sales": {
-                        "type": "number",
-                        "format": "double"
-                    },
-                    "purchases": {
-                        "type": "number",
-                        "format": "double"
-                    },
-                    "lastSync": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    }
-                },
-                "additionalProperties": false
+            "Z2O.HelloWorld": {
+                "type": "string",
+                "example": "Hello World!"
             }
         }
     }
-
 }

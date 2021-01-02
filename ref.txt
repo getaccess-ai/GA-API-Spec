@@ -1,0 +1,55 @@
+Z2O API Routes
+
+Bank - Auth
+POST /bank/register/		Register a new bank
+POST /bank/auth/		Get API Key for your bank
+
+Bank - Companies
+GET Authenticated 		 /bank/companies/
+Get list of companies connected to bank
+POST Authenticated		 /bank/companies/	
+			Add a new company
+GET Authenticated		 /bank/companies/{companyID}/		
+			Get info of a particular company
+PUT Authenticated		 /bank/companies/{companyID}/		
+			Edit info of a particular company
+DELETE Authenticated 	 /bank/companies/{companyID}/
+			Delete a particular company
+GET Authenticated		 /bank/companies/{companyID}/settings/
+			Get the settings for a particular company
+PUT Authenticated 		/bank/companies/{companyID}/settings/
+			Change settings for a particular company
+
+Bank - Company Connection
+GET Authenticated		/bank/companies/{companyID}/connection/
+			Get connection details for a particular company
+
+Bank - Data
+GET Authenticated		/bank/companies/{companyID}/data/reports/
+			Get available reports for a particular company
+GET Authenticated		/bank/companies/{companyID}/data/reports/{reportName}/
+			Get latest data of a particular report of a particular company
+
+
+Company - Auth
+POST /company/auth/	Get API Key for your company
+
+Company - Connection
+POST Authenticated 		/company/connection/
+			Add a new ERP connection for the company
+
+Company - Data
+GET Authenticated 		/company/data/reports/all/
+			Get list of all reports a company can provide for its ERP connection
+GET Authenticated 		/company/data/reports/
+			Get list of reports company is providing
+POST Authenticated 		/company/data/reports/
+			Add a new report to provide
+
+GET Authenticated		/company/data/reports/{reportName}/
+			Get latest data of a particular report that will be pushed
+POST Authenticated		/company/data/reports/{reportName}/
+			Annotate the data of a particular report and then push it to bank
+DELETE Authenticated 	/company/data/reports/{reportName}/
+			Stop providing a particular report
+
