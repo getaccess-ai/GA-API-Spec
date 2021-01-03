@@ -16,7 +16,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                "$ref": "#/components/schemas/Z2O.Models.Bank.Bank"
                             }
                         }
                     }
@@ -27,7 +27,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Bank.BankDisplay"
                                 }
                             }
                         }
@@ -45,7 +45,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                "$ref": "#/components/schemas/Z2O.Models.Bank.BankLogin"
                             }
                         }
                     }
@@ -56,7 +56,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Bank.BankAuth"
                                 }
                             }
                         }
@@ -76,7 +76,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": '#/components/schemas/Z2O.Models.Company.CompanyResponse'
                                 }
                             }
                         }
@@ -92,7 +92,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                "$ref": "#/components/schemas/Z2O.Models.Company.AddCompany"
                             }
                         }
                     }
@@ -103,7 +103,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": '#/components/schemas/Z2O.Models.Company.CompanyDisplay'
                                 }
                             }
                         }
@@ -130,7 +130,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
                             }
                         }
                     }
@@ -568,7 +568,315 @@
         "schemas": {
             "Z2O.HelloWorld": {
                 "type": "string",
-                "example": "Hello World!"
+                "example": "Hello World"
+            },
+            "Z2O.Models.Bank.Bank":{
+              "required": [
+                "userId",
+                "password",
+                "email",
+                "name",
+              ],
+              "type": "object",
+              "properties": {
+                "userId":{
+                  "type": "string"
+                },
+                "password":{
+                  "type": "string"
+                },
+                "email":{
+                  "type":"string",
+                  "format": "email"
+                },
+                "name":{
+                  "type": "string"
+                },
+                "primaryColor":{
+                  "$ref" : "#/components/schemas/Z2O.Models.Color.RGBColor"
+                },
+                "secondaryColor":{
+                  "$ref" : "#/components/schemas/Z2O.Models.Color.RGBColor"
+                },
+                "coverImg":{
+                  "type": "string",
+                  "format": "byte"
+                }
+              }
+            },
+            "Z2O.Models.Bank.BankDisplay": {
+              "required": [
+                "id",
+                "userId",
+                "email",
+                "name"
+              ],
+              "type": "object",
+              "properties": {
+                "id":{
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "userId":{
+                  "type": "string"
+                },
+                "email":{
+                  "type":"string",
+                  "format": "email"
+                },
+                "name":{
+                  "type": "string"
+                },
+                "primaryColor":{
+                  "$ref" : "#/components/schemas/Z2O.Models.Color.RGBColor"
+                },
+                "secondaryColor":{
+                  "$ref" : "#/components/schemas/Z2O.Models.Color.RGBColor"
+                },
+                "coverImg":{
+                  "type": "string",
+                  "format": "byte"
+                }
+              }
+            },
+            "Z2O.Models.Bank.BankAuth":{
+              "type": "object",
+              "properties":{
+                "authKey": {
+                  "type": "string",
+                  "format": "key"
+                },
+                "data":{
+                  "$ref":"#/components/schemas/Z2O.Models.Bank.BankDisplay"
+                }
+              }
+            },
+            "Z2O.Models.Company.CompanyResponse": {
+                "required": [
+                    "totalResults"
+                ],
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
+                        },
+                        "nullable": true
+                    },
+                    "totalResults": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "additionalProperties": false
+            },
+            "Z2O.Models.Company.Company": {
+                "required": [
+                    "id",
+                    "cid",
+                    "password",
+                    "name",
+                    "status",
+                    "region",
+                    "companyType"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "cid":{
+                        "type": "string"
+                    },
+                    "password":{
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "platform": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "region": {
+                        "type": "string"
+                    },
+                    "companyType": {
+                        "type": "string"
+                    },
+                    "businessLine":{
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "SIF": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "reports": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Z2O.Models.Company.Report"
+                        },
+                        "nullable": true
+                    },
+                    "dataConnection": {
+                        "$ref": "#/components/schemas/Z2O.Models.Company.DataConnection",
+                        "nullable": true
+                    },
+                    "created": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                }
+            },
+            "Z2O.Models.Company.CompanyDisplay": {
+                "required": [
+                    "id",
+                    "cid",
+                    "name",
+                    "status",
+                    "region",
+                    "companyType"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "cid":{
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "platform": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "region": {
+                        "type": "string"
+                    },
+                    "companyType": {
+                        "type": "string"
+                    },
+                    "businessLine":{
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "SIF": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "reports": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Z2O.Models.Company.Report"
+                        },
+                        "nullable": true
+                    },
+                    "dataConnection": {
+                        "$ref": "#/components/schemas/Z2O.Models.Company.DataConnection",
+                        "nullable": true
+                    },
+                    "created": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                    }
+                }
+            },
+            "Z2O.Models.Company.Report":{
+              "required":[
+                "id",
+                "name"
+              ],
+              "type": "object",
+              "properties" : {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object",
+                  "enum": [
+                    "hello" :{
+                      "type": "object",
+                      "properties":{
+                        "name": "string"
+                      }
+                    }
+                  ]
+                },
+                "lastPushDate": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            },
+            "Z2O.Models.Company.AddCompany": {
+              "required":[
+                "cid",
+                "name",
+                "platform",
+                "region",
+                "companyType",
+                "businessLine",
+                "SIF"
+              ],
+              "type": "object",
+              "properties": {
+                "cid":{
+                  "type":"string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "platform": {
+                    "type": "string",
+                },
+                "region": {
+                    "type": "string"
+                },
+                "companyType": {
+                    "type": "string"
+                },
+                "businessLine":{
+                    "type": "string",
+                },
+                "SIF": {
+                    "type": "string",
+                }
+              }
+            },
+            "Z2O.Models.Color.RGBColor":{
+              "type": "object",
+              "properties": {
+                "r" :{
+                  "type": "integer",
+                  "format": "int32",
+                },
+                "g" :{
+                  "type": "integer",
+                  "format": "int32",
+                },
+                "b" :{
+                  "type": "integer",
+                  "format": "int32",
+                }
+              }
             }
         }
     }
