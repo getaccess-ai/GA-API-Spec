@@ -377,7 +377,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
+                                    "$ref": "#/components/schemas/Z2O.Models.Company.CompanyAuth"
                                 }
                             }
                         }
@@ -575,7 +575,7 @@
                 "userId",
                 "password",
                 "email",
-                "name",
+                "name"
               ],
               "type": "object",
               "properties": {
@@ -862,6 +862,18 @@
                         "nullable": true
                     }
                 }
+            },
+            "Z2O.Models.Company.CompanyAuth":{
+              "type": "object",
+              "properties":{
+                "authKey": {
+                  "type": "string",
+                  "format": "key"
+                },
+                "data":{
+                  "$ref":"#/components/schemas/Z2O.Models.Company.CompanyDisplay"
+                }
+              }
             },
             "Z2O.Models.Company.CompanyAdd": {
               "required":[
