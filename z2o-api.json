@@ -76,7 +76,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": '#/components/schemas/Z2O.Models.Company.CompanyList'
+                                    "$ref": "#/components/schemas/Z2O.Models.Company.CompanyList"
                                 }
                             }
                         }
@@ -103,7 +103,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": '#/components/schemas/Z2O.Models.Company.CompanyDisplay'
+                                    "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
                                 }
                             }
                         }
@@ -295,7 +295,7 @@
                 "tags": [
                     "Bank - Data"
                 ],
-                "summary": "Get all the reports provided for a particular company",
+                "summary": "Get all the reports provided by a particular company",
                 "parameters": [{
                     "name": "companyId",
                     "in": "path",
@@ -324,7 +324,7 @@
                 "tags": [
                     "Bank - Data"
                 ],
-                "summary": "Get connection details for a particular company",
+                "summary": "Get latest annotated data for a particular report provided by a particular company",
                 "parameters": [{
                     "name": "companyId",
                     "in": "path",
@@ -688,9 +688,9 @@
                 "data": {
                   "type": "object",
                   "enum": [
-                    "hello" :{
+                    "hello": {
                       "type": "object",
-                      "properties":{
+                      "properties": {
                         "name": "string"
                       }
                     }
