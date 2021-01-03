@@ -3,7 +3,7 @@
     "info": {
         "title": "Z2O API",
         "description": "Z2O API to be used by Banks for integration.",
-        "version": "v1.1"
+        "version": "v0.1"
     },
     "paths": {
         "/bank/register": {
@@ -76,7 +76,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": '#/components/schemas/Z2O.Models.Company.CompanyResponse'
+                                    "$ref": '#/components/schemas/Z2O.Models.Company.CompanyList'
                                 }
                             }
                         }
@@ -92,7 +92,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Z2O.Models.Company.AddCompany"
+                                "$ref": "#/components/schemas/Z2O.Models.Company.CompanyAdd"
                             }
                         }
                     }
@@ -130,7 +130,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
+                                "$ref": "#/components/schemas/Z2O.Models.Company.CompanyUpdate"
                             }
                         }
                     }
@@ -141,7 +141,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
                                 }
                             }
                         }
@@ -188,7 +188,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
                                 }
                             }
                         }
@@ -217,7 +217,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Company.SettingsDisplay"
                                 }
                             }
                         }
@@ -242,7 +242,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                "$ref": "#/components/schemas/Z2O.Models.Company.SettingsUpdate"
                             }
                         }
                     }
@@ -253,7 +253,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Company.SettingsDisplay"
                                 }
                             }
                         }
@@ -282,7 +282,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Company.DataConnection"
                                 }
                             }
                         }
@@ -295,7 +295,7 @@
                 "tags": [
                     "Bank - Data"
                 ],
-                "summary": "Get connection details for a particular company",
+                "summary": "Get all the reports provided for a particular company",
                 "parameters": [{
                     "name": "companyId",
                     "in": "path",
@@ -311,7 +311,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Bank.ReportList"
                                 }
                             }
                         }
@@ -348,7 +348,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Bank.Report"
                                 }
                             }
                         }
@@ -366,7 +366,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                "$ref": "#/components/schemas/Z2O.Models.Company.CompanyLogin"
                             }
                         }
                     }
@@ -377,7 +377,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
                                 }
                             }
                         }
@@ -395,7 +395,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                "$ref": "#/components/schemas/Z2O.Models.Company.DataConnectionAdd"
                             }
                         }
                     }
@@ -406,7 +406,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Company.DataConnection"
                                 }
                             }
                         }
@@ -426,7 +426,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Company.ReportNameList"
                                 }
                             }
                         }
@@ -446,7 +446,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Company.ReportList"
                                 }
                             }
                         }
@@ -462,7 +462,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                "$ref": "#/components/schemas/Z2O.Models.Company.ReportAdd"
                             }
                         }
                     }
@@ -473,7 +473,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Company.Report"
                                 }
                             }
                         }
@@ -501,7 +501,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Company.Report"
                                 }
                             }
                         }
@@ -525,7 +525,7 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                "$ref": "#/components/schemas/Z2O.Models.Company.ReportAnnotated"
                             }
                         }
                     }
@@ -536,7 +536,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/Z2O.HelloWorld"
+                                    "$ref": "#/components/schemas/Z2O.Models.Bank.Report"
                                 }
                             }
                         }
@@ -636,6 +636,10 @@
                 "coverImg":{
                   "type": "string",
                   "format": "byte"
+                },
+                "createdAt":{
+                  "type":"string",
+                  "format":"date-time"
                 }
               }
             },
@@ -651,32 +655,81 @@
                 }
               }
             },
-            "Z2O.Models.Company.CompanyResponse": {
-                "required": [
-                    "totalResults"
-                ],
-                "type": "object",
-                "properties": {
-                    "results": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
-                        },
-                        "nullable": true
-                    },
-                    "totalResults": {
-                        "type": "integer",
-                        "format": "int32"
-                    }
+            "Z2O.Models.Bank.BankLogin":{
+              "type": "object",
+              "properties":{
+                "userId": {
+                  "type":"string"
                 },
-                "additionalProperties": false
+                "password": {
+                  "type": "string",
+                  "format": "password"
+                }
+              }
+            },
+            "Z2O.Models.Bank.Report":{
+              "required":[
+                "id",
+                "cid",
+                "name"
+              ],
+              "type": "object",
+              "properties" : {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "cid": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object",
+                  "enum": [
+                    "hello" :{
+                      "type": "object",
+                      "properties":{
+                        "name": "string"
+                      }
+                    }
+                  ]
+                },
+                "lastPushDate": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "lastUpdateMadeBy": {
+                  "type": "string"
+                }
+              }
+            },
+            "Z2O.Models.Bank.ReportList":{
+              "required": [
+                "totalResults"
+              ],
+              "type": "object",
+              "properties": {
+                "totalResults": {
+                  "type" : "integer"
+                },
+                "reports":{
+                  "type": "array",
+                  "items": {
+                    "$ref" : "#/components/schemas/Z2O.Models.Bank.Report"
+                  }
+                }
+              }
             },
             "Z2O.Models.Company.Company": {
                 "required": [
                     "id",
                     "cid",
+                    "bankId",
                     "password",
                     "name",
+                    "email",
                     "status",
                     "region",
                     "companyType"
@@ -690,11 +743,18 @@
                     "cid":{
                         "type": "string"
                     },
+                    "bankId":{
+                        "type": "string"
+                    },
                     "password":{
                         "type": "string"
                     },
                     "name": {
                         "type": "string"
+                    },
+                    "email": {
+                      "type":"string",
+                      "format": "email"
                     },
                     "platform": {
                         "type": "string",
@@ -739,7 +799,9 @@
                 "required": [
                     "id",
                     "cid",
+                    "bankId",
                     "name",
+                    "email",
                     "status",
                     "region",
                     "companyType"
@@ -753,8 +815,15 @@
                     "cid":{
                         "type": "string"
                     },
+                    "bankId":{
+                        "type": "string"
+                    },
                     "name": {
                         "type": "string"
+                    },
+                    "email": {
+                      "type": "string",
+                      "format": "email"
                     },
                     "platform": {
                         "type": "string",
@@ -785,8 +854,7 @@
                         "nullable": true
                     },
                     "dataConnection": {
-                        "$ref": "#/components/schemas/Z2O.Models.Company.DataConnection",
-                        "nullable": true
+                        "$ref": "#/components/schemas/Z2O.Models.Company.DataConnection"
                     },
                     "created": {
                         "type": "string",
@@ -795,9 +863,112 @@
                     }
                 }
             },
+            "Z2O.Models.Company.CompanyAdd": {
+              "required":[
+                "cid",
+                "name",
+                "email",
+                "platform",
+                "region",
+                "companyType",
+                "businessLine",
+                "SIF"
+              ],
+              "type": "object",
+              "properties": {
+                "cid":{
+                  "type":"string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                  "type":"string",
+                  "format": "email"
+                },
+                "platform": {
+                    "type": "string",
+                },
+                "region": {
+                    "type": "string"
+                },
+                "companyType": {
+                    "type": "string"
+                },
+                "businessLine":{
+                    "type": "string",
+                },
+                "SIF": {
+                    "type": "string",
+                }
+              }
+            },
+            "Z2O.Models.Company.CompanyUpdate": {
+              "type": "object",
+              "properties": {
+                "cid":{
+                  "type":"string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "email": {
+                  "type":"string",
+                  "format": "email"
+                },
+                "platform": {
+                    "type": "string",
+                },
+                "region": {
+                    "type": "string"
+                },
+                "companyType": {
+                    "type": "string"
+                },
+                "businessLine":{
+                    "type": "string",
+                },
+                "SIF": {
+                    "type": "string",
+                }
+              }
+            },
+            "Z2O.Models.Company.CompanyLogin":{
+              "type": "object",
+              "properties":{
+                "cid": {
+                  "type":"string"
+                },
+                "password": {
+                  "type": "string",
+                  "format": "password"
+                }
+              }
+            },
+            "Z2O.Models.Company.CompanyList": {
+                "required": [
+                    "totalResults"
+                ],
+                "type": "object",
+                "properties": {
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
+                        },
+                        "nullable": true
+                    },
+                    "totalResults": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "additionalProperties": false
+            },
             "Z2O.Models.Company.Report":{
               "required":[
                 "id",
+                "cid",
                 "name"
               ],
               "type": "object",
@@ -805,6 +976,9 @@
                 "id": {
                   "type": "string",
                   "format": "uuid"
+                },
+                "cid": {
+                  "type": "string"
                 },
                 "name": {
                   "type": "string"
@@ -823,41 +997,179 @@
                 "lastPushDate": {
                   "type": "string",
                   "format": "date-time"
+                },
+                "lastUpdateMadeBy": {
+                  "type": "string"
                 }
               }
             },
-            "Z2O.Models.Company.AddCompany": {
+            "Z2O.Models.Company.ReportAdd": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "Z2O.Models.Company.ReportType":{
               "required":[
-                "cid",
                 "name",
-                "platform",
-                "region",
-                "companyType",
-                "businessLine",
-                "SIF"
+                "connectionName"
+              ],
+              "type": "object",
+              "properties" : {
+                "connectionType": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            },
+            "Z2O.Models.Company.ReportAnnotated": {
+              "type": "object",
+              "properties": {
+                "report":{
+                  "$ref": "#/components/schemas/Z2O.Models.Company.Report"
+                },
+                "annotations":{
+                  "type": "array",
+                  "items":{
+                    "$ref": "#/components/schemas/Z2O.Models.Company.Annotations"
+                  }
+                }
+              }
+            },
+            "Z2O.Models.Company.ReportList":{
+              "required": [
+                "totalResults"
               ],
               "type": "object",
               "properties": {
-                "cid":{
-                  "type":"string"
+                "totalResults": {
+                  "type" : "integer"
                 },
-                "name": {
-                    "type": "string"
+                "reports":{
+                  "type": "array",
+                  "items": {
+                    "$ref" : "#/components/schemas/Z2O.Models.Company.Report"
+                  }
+                }
+              }
+            },
+            "Z2O.Models.Company.ReportNameList":{
+              "required": [
+                "totalResults"
+              ],
+              "type": "object",
+              "properties": {
+                "totalResults": {
+                  "type" : "integer"
                 },
-                "platform": {
-                    "type": "string",
+                "connectionName": {
+                  "type" : "string",
+                  "enum": ["sage", "tally", "zoho"]
                 },
-                "region": {
-                    "type": "string"
+                "reports":{
+                  "type": "array",
+                  "items": {
+                    "$ref" : "#/components/schemas/Z2O.Models.Company.ReportType"
+                  }
+                }
+              }
+            },
+            "Z2O.Models.Company.Annotations": {
+              "type": "object",
+              "properties": {
+                "rowId": {
+                  "type": "string",
+                  "format": "uuid"
                 },
-                "companyType": {
-                    "type": "string"
+                "adjustment": {
+                  "type": "number"
                 },
-                "businessLine":{
-                    "type": "string",
+                "comment":{
+                  "type": "string"
                 },
-                "SIF": {
-                    "type": "string",
+              }
+            },
+            "Z2O.Models.Company.DataConnection":{
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "cid": {
+                  "type": "string"
+                },
+                "name":{
+                  "type": "string",
+                  "enum": ["sage", "tally", "zoho"]
+                },
+                "endpoint":{
+                  "type": "string",
+                  "format": "uri"
+                },
+                "status":{
+                  "type": "string"
+                }
+              }
+            },
+            "Z2O.Models.Company.DataConnectionAdd":{
+              "type": "object",
+              "properties": {
+                "name":{
+                  "type": "string",
+                  "enum": ["sage", "tally", "zoho"]
+                },
+                "endpoint":{
+                  "type": "string",
+                  "format": "uri"
+                },
+                "accessKey":{
+                  "type": "string",
+                  "format": "key"
+                }
+              }
+            },
+            "Z2O.Models.Company.SettingsDisplay": {
+              "required":[
+                "id",
+                "companyId",
+                "updatePeriod",
+                "allowedToChangeConnection",
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "companyId": {
+                  "type" : "string"
+                },
+                "updatePeriod": {
+                  "type": "string",
+                  "enum": ["monthly", "quarterly", "semi-anually", "anually"]
+                },
+                "allowedToChangeConnection": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "Z2O.Models.Company.SettingsUpdate":{
+              "type": "object",
+              "properties": {
+                "companyId": {
+                  "type" : "string"
+                },
+                "updatePeriod": {
+                  "type": "string",
+                  "enum": ["monthly", "quarterly", "semi-anually", "anually"]
+                },
+                "allowedToChangeConnection": {
+                  "type": "boolean"
                 }
               }
             },
