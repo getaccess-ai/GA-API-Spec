@@ -1,2256 +1,1272 @@
 {
-    "openapi": "3.0.2",
-    "info": {
-        "title": "Z2O API",
-        "description": "Z2O API to be used by Banks for integration.",
-        "version": "v0.1"
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Z2O API",
+    "description": "Implements a web application to connect company ERPs to Banks enabling them to track required accounts and transfer data for financial purposes. The api provides endpoints to utilise the functionalities of the product. The api service is exhaustive and provides a base for building of 3rd party web applications.",
+    "version": "v0.1"
+  },
+  "tags":[
+    {
+      "name": "Bank - Auth",
+      "description": "Manages authentication for banks. Includes registration and login."
     },
-    "paths": {
-        "/bank/register": {
-            "post": {
-                "tags": [
-                    "Bank - Auth"
-                ],
-                "summary": "Register a new bank",
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Z2O.Models.Bank.Bank"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Bank.BankDisplay"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/bank/auth": {
-            "post": {
-                "tags": [
-                    "Bank - Auth"
-                ],
-                "summary": "Get API Key for your bank",
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Z2O.Models.Bank.BankLogin"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Bank.BankAuth"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/bank/companies": {
-            "get": {
-                "tags": [
-                    "Bank - Companies"
-                ],
-                "summary": "Get list of companies connected to bank",
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Company.CompanyList"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "Bank - Companies"
-                ],
-                "summary": "Add a new company",
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Z2O.Models.Company.CompanyAdd"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/bank/companies/{companyId}": {
-            "put": {
-                "tags": [
-                    "Bank - Companies"
-                ],
-                "summary": "Update info of a particular company",
-                "parameters": [{
-                    "name": "companyId",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                }],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Z2O.Models.Company.CompanyUpdate"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "Bank - Companies"
-                ],
-                "summary": "Delete a particular company, this is not reversible",
-                "parameters": [{
-                    "name": "companyId",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Success"
-                    }
-                }
-            },
-            "get": {
-                "tags": [
-                    "Bank - Companies"
-                ],
-                "summary": "Get info of a particular company",
-                "parameters": [{
-                    "name": "companyId",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/bank/companies/{companyId}/settings": {
-            "get": {
-                "tags": [
-                    "Bank - Companies"
-                ],
-                "summary": "Get the settings for a particular company",
-                "parameters": [{
-                    "name": "companyId",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Company.SettingsDisplay"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "put": {
-                "tags": [
-                    "Bank - Companies"
-                ],
-                "summary": "Update settings for a particular company",
-                "parameters": [{
-                    "name": "companyId",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                }],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Z2O.Models.Company.SettingsUpdate"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Company.SettingsDisplay"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/bank/companies/{companyId}/connection": {
-            "get": {
-                "tags": [
-                    "Bank - Company Connection"
-                ],
-                "summary": "Get connection details for a particular company",
-                "parameters": [{
-                    "name": "companyId",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Company.DataConnection"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/bank/companies/{companyId}/data/reports": {
-            "get": {
-                "tags": [
-                    "Bank - Data"
-                ],
-                "summary": "Get all the reports provided by a particular company",
-                "parameters": [{
-                    "name": "companyId",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Bank.ReportList"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/bank/companies/{companyId}/data/reports/{reportName}": {
-            "get": {
-                "tags": [
-                    "Bank - Data"
-                ],
-                "summary": "Get latest annotated data for a particular report provided by a particular company",
-                "parameters": [{
-                    "name": "companyId",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                },
-                {
-                    "name": "reportName",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string"
-                    }
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Bank.Report"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/company/auth": {
-            "post": {
-                "tags": [
-                    "Company - Auth"
-                ],
-                "summary": "Get API Key for your company",
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Z2O.Models.Company.CompanyLogin"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Company.CompanyAuth"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/company/connection": {
-            "post": {
-                "tags": [
-                    "Company - Connection"
-                ],
-                "summary": "Add a new ERP connection for the company",
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Z2O.Models.Company.DataConnectionAdd"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Company.DataConnection"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/company/data/reports/all": {
-            "get": {
-                "tags": [
-                    "Company - Data"
-                ],
-                "summary": "Get list of all reports a company can provide for its ERP connection",
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Company.ReportNameList"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/company/data/reports": {
-            "get": {
-                "tags": [
-                    "Company - Data"
-                ],
-                "summary": "Get list of reports company is providing",
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Company.ReportList"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "Company - Data"
-                ],
-                "summary": "Add a new report to provide",
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Z2O.Models.Company.ReportAdd"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Company.Report"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/company/data/reports/{reportName}": {
-            "get": {
-                "tags": [
-                    "Company - Data"
-                ],
-                "summary": "Get latest data of a particular report that will be pushed",
-                "parameters": [{
-                    "name": "reportName",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string"
-                    }
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Company.Report"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "Company - Data"
-                ],
-                "summary": "Annotate the data of a particular report and then push it to bank",
-                "parameters": [{
-                    "name": "reportName",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string"
-                    }
-                }],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Z2O.Models.Company.ReportAnnotated"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Z2O.Models.Bank.Report"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "Company - Data"
-                ],
-                "summary": "Stop providing a particular report",
-                "parameters": [{
-                    "name": "reportName",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string"
-                    }
-                }],
-                "responses": {
-                    "200": {
-                        "description": "Success"
-                    }
-                }
-            }
-        }
-    },
-    "components": {
-        "schemas": {
-            "Z2O.HelloWorld": {
-                "type": "string",
-                "example": "Hello World"
-            },
-            "Z2O.Models.Bank.Bank":{
-              "required": [
-                "userId",
-                "password",
-                "email",
-                "name"
-              ],
-              "type": "object",
-              "properties": {
-                "userId":{
-                  "type": "string"
-                },
-                "password":{
-                  "type": "string"
-                },
-                "email":{
-                  "type":"string",
-                  "format": "email"
-                },
-                "name":{
-                  "type": "string"
-                },
-                "primaryColor":{
-                  "$ref" : "#/components/schemas/Z2O.Models.Color.RGBColor"
-                },
-                "secondaryColor":{
-                  "$ref" : "#/components/schemas/Z2O.Models.Color.RGBColor"
-                },
-                "coverImg":{
-                  "type": "string",
-                  "format": "byte"
-                }
-              }
-            },
-            "Z2O.Models.Bank.BankDisplay": {
-              "required": [
-                "id",
-                "userId",
-                "email",
-                "name"
-              ],
-              "type": "object",
-              "properties": {
-                "id":{
-                  "type": "string",
-                  "format": "uuid"
-                },
-                "userId":{
-                  "type": "string"
-                },
-                "email":{
-                  "type":"string",
-                  "format": "email"
-                },
-                "name":{
-                  "type": "string"
-                },
-                "primaryColor":{
-                  "$ref" : "#/components/schemas/Z2O.Models.Color.RGBColor"
-                },
-                "secondaryColor":{
-                  "$ref" : "#/components/schemas/Z2O.Models.Color.RGBColor"
-                },
-                "coverImg":{
-                  "type": "string",
-                  "format": "byte"
-                },
-                "createdAt":{
-                  "type":"string",
-                  "format":"date-time"
-                }
-              }
-            },
-            "Z2O.Models.Bank.BankAuth":{
-              "type": "object",
-              "properties":{
-                "authKey": {
-                  "type": "string",
-                  "format": "key"
-                },
-                "data":{
-                  "$ref":"#/components/schemas/Z2O.Models.Bank.BankDisplay"
-                }
-              }
-            },
-            "Z2O.Models.Bank.BankLogin":{
-              "type": "object",
-              "properties":{
-                "userId": {
-                  "type":"string"
-                },
-                "password": {
-                  "type": "string",
-                  "format": "password"
-                }
-              }
-            },
-            "Z2O.Models.Bank.Report":{
-              "required":[
-                "id",
-                "companyId",
-                "name"
-              ],
-              "type": "object",
-              "properties" : {
-                "id": {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                "companyId": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "data": {
-                  "type": "object",
-                  "enum": [
-                    "hello": {
-                      "type": "object",
-                      "properties": {
-                        "name": "string"
-                      }
-                    }
-                  ]
-                },
-                "lastPushDate": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "lastUpdateMadeBy": {
-                  "type": "string"
-                }
-              }
-            },
-            "Z2O.Models.Bank.ReportList":{
-              "required": [
-                "totalResults"
-              ],
-              "type": "object",
-              "properties": {
-                "totalResults": {
-                  "type" : "integer"
-                },
-                "reports":{
-                  "type": "array",
-                  "items": {
-                    "$ref" : "#/components/schemas/Z2O.Models.Bank.Report"
-                  }
-                }
-              }
-            },
-            "Z2O.Models.Company.Company": {
-                "required": [
-                    "id",
-                    "companyId",
-                    "bankId",
-                    "password",
-                    "name",
-                    "email",
-                    "status",
-                    "region",
-                    "companyType"
-                ],
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "companyId":{
-                        "type": "string"
-                    },
-                    "bankId":{
-                        "type": "string"
-                    },
-                    "password":{
-                        "type": "string"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "email": {
-                      "type":"string",
-                      "format": "email"
-                    },
-                    "platform": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "status": {
-                        "type": "string"
-                    },
-                    "region": {
-                        "type": "string"
-                    },
-                    "companyType": {
-                        "type": "string"
-                    },
-                    "businessLine":{
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "SIF": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "reports": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Z2O.Models.Company.Report"
-                        },
-                        "nullable": true
-                    },
-                    "dataConnection": {
-                        "$ref": "#/components/schemas/Z2O.Models.Company.DataConnection",
-                        "nullable": true
-                    },
-                    "created": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    }
-                }
-            },
-            "Z2O.Models.Company.CompanyDisplay": {
-                "required": [
-                    "id",
-                    "companyId",
-                    "bankId",
-                    "name",
-                    "email",
-                    "status",
-                    "region",
-                    "companyType"
-                ],
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "companyId":{
-                        "type": "string"
-                    },
-                    "bankId":{
-                        "type": "string"
-                    },
-                    "name": {
-                        "type": "string"
-                    },
-                    "email": {
-                      "type": "string",
-                      "format": "email"
-                    },
-                    "platform": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "status": {
-                        "type": "string"
-                    },
-                    "region": {
-                        "type": "string"
-                    },
-                    "companyType": {
-                        "type": "string"
-                    },
-                    "businessLine":{
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "SIF": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "reports": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Z2O.Models.Company.Report"
-                        },
-                        "nullable": true
-                    },
-                    "dataConnection": {
-                        "$ref": "#/components/schemas/Z2O.Models.Company.DataConnection"
-                    },
-                    "created": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    }
-                }
-            },
-            "Z2O.Models.Company.CompanyAuth":{
-              "type": "object",
-              "properties":{
-                "authKey": {
-                  "type": "string",
-                  "format": "key"
-                },
-                "data":{
-                  "$ref":"#/components/schemas/Z2O.Models.Company.CompanyDisplay"
-                }
-              }
-            },
-            "Z2O.Models.Company.CompanyAdd": {
-              "required":[
-                "companyId",
-                "name",
-                "email",
-                "platform",
-                "region",
-                "companyType",
-                "businessLine",
-                "SIF"
-              ],
-              "type": "object",
-              "properties": {
-                "companyId":{
-                  "type":"string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "email": {
-                  "type":"string",
-                  "format": "email"
-                },
-                "platform": {
-                    "type": "string",
-                },
-                "region": {
-                    "type": "string"
-                },
-                "companyType": {
-                    "type": "string"
-                },
-                "businessLine":{
-                    "type": "string",
-                },
-                "SIF": {
-                    "type": "string",
-                }
-              }
-            },
-            "Z2O.Models.Company.CompanyUpdate": {
-              "type": "object",
-              "properties": {
-                "companyId":{
-                  "type":"string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "email": {
-                  "type":"string",
-                  "format": "email"
-                },
-                "platform": {
-                    "type": "string",
-                },
-                "region": {
-                    "type": "string"
-                },
-                "companyType": {
-                    "type": "string"
-                },
-                "businessLine":{
-                    "type": "string",
-                },
-                "SIF": {
-                    "type": "string",
-                }
-              }
-            },
-            "Z2O.Models.Company.CompanyLogin":{
-              "type": "object",
-              "properties":{
-                "companyId": {
-                  "type":"string"
-                },
-                "password": {
-                  "type": "string",
-                  "format": "password"
-                }
-              }
-            },
-            "Z2O.Models.Company.CompanyList": {
-                "required": [
-                    "totalResults"
-                ],
-                "type": "object",
-                "properties": {
-                    "results": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
-                        },
-                        "nullable": true
-                    },
-                    "totalResults": {
-                        "type": "integer",
-                        "format": "int32"
-                    }
-                },
-                "additionalProperties": false
-            },
-            "Z2O.Models.Company.Report":{
-              "required":[
-                "id",
-                "companyId",
-                "name"
-              ],
-              "type": "object",
-              "properties" : {
-                "id": {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                "companyId": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "data": {
-                  "type": "object",
-                  "enum": [
-                    "hello" :{
-                      "type": "object",
-                      "properties":{
-                        "name": "string"
-                      }
-                    }
-                  ]
-                },
-                "lastPushDate": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "lastUpdateMadeBy": {
-                  "type": "string"
-                }
-              }
-            },
-            "Z2O.Models.Company.ReportAdd": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                }
-              }
-            },
-            "Z2O.Models.Company.ReportType":{
-              "required":[
-                "name",
-                "connectionName"
-              ],
-              "type": "object",
-              "properties" : {
-                "connectionType": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                }
-              }
-            },
-            "Z2O.Models.Company.ReportAnnotated": {
-              "type": "object",
-              "properties": {
-                "report":{
-                  "$ref": "#/components/schemas/Z2O.Models.Company.Report"
-                },
-                "annotations":{
-                  "type": "array",
-                  "items":{
-                    "$ref": "#/components/schemas/Z2O.Models.Company.Annotations"
-                  }
-                }
-              }
-            },
-            "Z2O.Models.Company.ReportList":{
-              "required": [
-                "totalResults"
-              ],
-              "type": "object",
-              "properties": {
-                "totalResults": {
-                  "type" : "integer"
-                },
-                "reports":{
-                  "type": "array",
-                  "items": {
-                    "$ref" : "#/components/schemas/Z2O.Models.Company.Report"
-                  }
-                }
-              }
-            },
-            "Z2O.Models.Company.ReportNameList":{
-              "required": [
-                "totalResults"
-              ],
-              "type": "object",
-              "properties": {
-                "totalResults": {
-                  "type" : "integer"
-                },
-                "connectionName": {
-                  "type" : "string",
-                  "enum": ["sage", "tally", "zoho"]
-                },
-                "reports":{
-                  "type": "array",
-                  "items": {
-                    "$ref" : "#/components/schemas/Z2O.Models.Company.ReportType"
-                  }
-                }
-              }
-            },
-            "Z2O.Models.Company.Annotations": {
-              "type": "object",
-              "properties": {
-                "rowId": {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                "adjustment": {
-                  "type": "number"
-                },
-                "comment":{
-                  "type": "string"
-                },
-              }
-            },
-            "Z2O.Models.Company.DataConnection":{
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                "companyId": {
-                  "type": "string"
-                },
-                "name":{
-                  "type": "string",
-                  "enum": ["sage", "tally", "zoho"]
-                },
-                "endpoint":{
-                  "type": "string",
-                  "format": "uri"
-                },
-                "status":{
-                  "type": "string"
-                }
-              }
-            },
-            "Z2O.Models.Company.DataConnectionAdd":{
-              "type": "object",
-              "properties": {
-                "name":{
-                  "type": "string",
-                  "enum": ["sage", "tally", "zoho"]
-                },
-                "endpoint":{
-                  "type": "string",
-                  "format": "uri"
-                },
-                "accessKey":{
-                  "type": "string",
-                  "format": "key"
-                }
-              }
-            },
-            "Z2O.Models.Company.SettingsDisplay": {
-              "required":[
-                "id",
-                "companyId",
-                "updatePeriod",
-                "allowedToChangeConnection"
-              ],
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "format": "uuid"
-                },
-                "companyId": {
-                  "type" : "string"
-                },
-                "updatePeriod": {
-                  "type": "string",
-                  "enum": ["monthly", "quarterly", "semi-anually", "anually"]
-                },
-                "allowedToChangeConnection": {
-                  "type": "boolean"
-                }
-              }
-            },
-            "Z2O.Models.Company.SettingsUpdate":{
-              "type": "object",
-              "properties": {
-                "companyId": {
-                  "type" : "string"
-                },
-                "updatePeriod": {
-                  "type": "string",
-                  "enum": ["monthly", "quarterly", "semi-anually", "anually"]
-                },
-                "allowedToChangeConnection": {
-                  "type": "boolean"
-                }
-              }
-            },
-            "Z2O.Models.Color.RGBColor":{
-              "type": "object",
-              "properties": {
-                "r" :{
-                  "type": "integer",
-                  "format": "int32"
-                },
-                "g" :{
-                  "type": "integer",
-                  "format": "int32"
-                },
-                "b" :{
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.Contact": {
-              "type": "object",
-              "properties": {
-                "contact_id": {
-                  "type": "integer"
-                },
-                "contact_name": {
-                  "type": "string"
-                },
-                "company_name": {
-                  "type": "string"
-                },
-                "contact_type": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "string"
-                },
-                "payment_terms": {
-                  "type": "number"
-                },
-                "payment_terms_label": {
-                  "type": "string"
-                },
-                "currency_id": {
-                  "type": "integer"
-                },
-                "currency_code": {
-                  "type": "string"
-                },
-                "outstanding_receivable_amount": {
-                  "type": "number"
-                },
-                "unused_credits_receivable_amount": {
-                  "type": "number"
-                },
-                "first_name": {
-                  "type": "string"
-                },
-                "last_name": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string",
-                  "format": "email"
-                },
-                "phone": {
-                  "type": "string"
-                },
-                "mobile": {
-                  "type": "string"
-                },
-                "created_time": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "last_modified_time": {
-                  "type": "string",
-                  "format": "date-time"
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.ContactsData": {
-              "type": "array",
-                "items": {
-                  "$ref" : "#/components/schemas/Z2O.Models.Reports.Zoho.Contact"
-                }
-            },
-            "Z2O.Models.Reports.Zoho.ContactPerson": {
-              "type": "object",
-              "properties": {
-                "contact_person_id": {
-                  "type": "integer"
-                },
-                "salutation": {
-                  "type": "string"
-                },
-                "first_name": {
-                  "type": "string"
-                },
-                "last_name": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string",
-                  "format": "email"
-                },
-                "phone": {
-                  "type": "string"
-                },
-                "mobile": {
-                  "type": "string"
-                },
-                "is_primary_contact": {
-                  "type": "boolean"
-                },
-                "skype": {
-                  "type": "string"
-                },
-                "designation": {
-                  "type": "string"
-                },
-                "department": {
-                  "type": "string"
-                },
-                "is_added_in_portal": {
-                  "type": "boolean"
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.ContactPersonsList": {
-              "type": "object",
-              "properties": {
-                "contact_id": {
-                  "type": "integer"
-                },
-                "contact_persons": {
-                  "type": "array",
-                  "items": {
-                    "$ref" : "#/components/schemas/Z2O.Models.Reports.Zoho.ContactPerson"
-                  }
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.ContactPersonsData": {
-              "type": "array",
-                "items": {
-                  "$ref" : "#/components/schemas/Z2O.Models.Reports.Zoho.ContactPersonsList"
-                }
-            },
-            "Z2O.Models.Reports.Zoho.Estimate": {
-              "type": "object",
-              "properties": {
-                "estimate_id": {
-                  "type": "integer"
-                },
-                "customer_name": {
-                  "type": "string"
-                },
-                "customer_id": {
-                  "type": "integer"
-                },
-                "status": {
-                  "type": "string"
-                },
-                "estimate_number": {
-                  "type": "string"
-                },
-                "reference_number": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "currency_id": {
-                  "type": "integer"
-                },
-                "currency_code": {
-                  "type": "string"
-                },
-                "total": {
-                  "type": "number"
-                },
-                "created_time": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "last_modified_time": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "accepted_date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "declined_date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "expiry_date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "has_attachment": {
-                  "type": "boolean"
-                },
-                "is_viewed_by_client": {
-                  "type": "boolean"
-                },
-                "client_viewed_time": {
-                  "type": "string",
-                  "format": "date-time"
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.EstimatesData": {
-              "type": "array",
-                "items": {
-                  "$ref" : "#/components/schemas/Z2O.Models.Reports.Zoho.Estimate"
-                }
-            },
-            "Z2O.Models.Reports.Zoho.SalesOrder": {
-              "type": "object",
-              "properties": {
-                "salesorder_id": {
-                  "type": "string"
-                },
-                "zcrm_potential_id": {
-                  "type": "string"
-                },
-                "customer_name": {
-                  "type": "string"
-                },
-                "customer_id": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "string"
-                },
-                "salesorder_number": {
-                  "type": "string"
-                },
-                "reference_number": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "shipment_days": {
-                  "type": "integer"
-                },
-                "currency_id": {
-                  "type": "string"
-                },
-                "currency_code": {
-                  "type": "string"
-                },
-                "total": {
-                  "type": "number"
-                },
-                "sub_total": {
-                  "type": "number"
-                },
-                "bcy_total": {
-                  "type": "number"
-                },
-                "created_time": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "last_modified_time": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "is_emailed": {
-                  "type": "boolean"
-                },
-                "has_attachment": {
-                  "type": "boolean"
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.SalesOrdersData": {
-              "type": "array",
-                "items": {
-                  "$ref" : "#/components/schemas/Z2O.Models.Reports.Zoho.SalesOrder"
-                }
-            },
-            "Z2O.Models.Reports.Zoho.Invoice": {
-              "type": "object",
-              "properties": {
-                "invoice_id": {
-                  "type": "integer"
-                },
-                "ach_payment_initiated": {
-                  "type": "boolean"
-                },
-                "customer_name": {
-                  "type": "string"
-                },
-                "customer_id": {
-                  "type": "integer"
-                },
-                "status": {
-                  "type": "string"
-                },
-                "invoice_number": {
-                  "type": "string"
-                },
-                "reference_number": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "due_date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "due_days": {
-                  "type": "string"
-                },
-                "currency_id": {
-                  "type": "integer"
-                },
-                "schedule_time": {
-                  "type": "string"
-                },
-                "currency_code": {
-                  "type": "string"
-                },
-                "is_viewed_by_client": {
-                  "type": "boolean"
-                },
-                "has_attachment": {
-                  "type": "boolean"
-                },
-                "client_viewed_time": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "total": {
-                  "type": "number"
-                },
-                "balance": {
-                  "type": "number"
-                },
-                "created_time": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "last_modified_time": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "is_emailed": {
-                  "type": "boolean"
-                },
-                "reminders_sent": {
-                  "type": "integer"
-                },
-                "last_reminder_sent_date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "payment_expected_date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "last_payment_date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "documents": {
-                  "type": "string"
-                },
-                "salesperson_id": {
-                  "type": "string"
-                },
-                "salesperson_name": {
-                  "type": "string"
-                },
-                "shipping_charge": {
-                  "type": "number"
-                },
-                "adjustment": {
-                  "type": "number"
-                },
-                "write_off_amount": {
-                  "type": "number"
-                },
-                "exchange_rate": {
-                  "type": "number"
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.InvoicesData": {
-              "type": "array",
-                "items": {
-                  "$ref" : "#/components/schemas/Z2O.Models.Reports.Zoho.Invoice"
-                }
-            },
-            "Z2O.Models.Reports.Zoho.InvoicePayment": {
-              "type": "object",
-              "properties": {
-                "payment_id": {
-                  "type": "string"
-                },
-                "payment_number": {
-                  "type": "integer"
-                },
-                "invoice_id": {
-                  "type": "integer"
-                },
-                "invoice_payment_id": {
-                  "type": "integer"
-                },
-                "payment_mode": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "reference_number": {
-                  "type": "integer"
-                },
-                "exchange_rate": {
-                  "type": "integer"
-                },
-                "amount": {
-                  "type": "number"
-                },
-                "tax_amount_withheld": {
-                  "type": "number"
-                },
-                "online_transaction_id": {
-                  "type": "string"
-                },
-                "is_single_invoice_payment": {
-                  "type": "boolean"
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.InvoicePaymentsList": {
-              "type": "object",
-              "properties": {
-                "invoice_id": {
-                  "type": "integer"
-                },
-                "invoice_payments": {
-                  "type": "array",
-                  "items": {
-                    "$ref" : "#/components/schemas/Z2O.Models.Reports.Zoho.InvoicePayment"
-                  }
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.InvoicePaymentsData": {
-              "type": "array",
-                "items": {
-                  "$ref" : "#/components/schemas/Z2O.Models.Reports.Zoho.InvoicePaymentsList"
-                }
-            },
-            "Z2O.Models.Reports.Zoho.CreditsApplied": {
-              "type": "object",
-              "properties": {
-                "creditnote_id": {
-                  "type": "integer"
-                },
-                "creditnotes_invoice_id": {
-                  "type": "string"
-                },
-                "creditnotes_number": {
-                  "type": "string"
-                },
-                "credited_date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "amount_applied": {
-                  "type": "number"
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.CreditsAppliedList": {
-              "type": "object",
-              "properties": {
-                "invoice_id": {
-                  "type": "integer"
-                },
-                "credits_applied": {
-                  "type": "array",
-                  "items": {
-                    "$ref" : "#/components/schemas/Z2O.Models.Reports.Zoho.CreditsApplied"
-                  }
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.CreditsAppliedData": {
-              "type": "array",
-                "items": {
-                  "$ref" : "#/components/schemas/Z2O.Models.Reports.Zoho.CreditsAppliedList"
-                }
-            },
-            "Z2O.Models.Reports.Zoho.Address": {
-              "type": "object",
-              "properties": {
-                  "address": {
-                    "type": "string"
-                  },
-                  "street2": {
-                    "type": "string"
-                  },
-                  "city": {
-                    "type": "string"
-                  },
-                  "state": {
-                    "type": "string"
-                  },
-                  "zip": {
-                    "type": "string"
-                  },
-                  "country": {
-                    "type": "string"
-                  },
-                  "fax": {
-                    "type": "string"
-                  }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.RecurringInvoice": {
-              "type": "object",
-              "properties": {
-                    "recurring_invoice_id": {
-                      "type": "string"
-                    },
-                    "recurrence_name": {
-                      "type": "string"
-                    },
-                    "customer_name": {
-                      "type": "string"
-                    },
-                    "customer_id": {
-                      "type": "string"
-                    },
-                    "currency_id": {
-                      "type": "string"
-                    },
-                    "currency_code": {
-                      "type": "string"
-                    },
-                    "start_date": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "end_date": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "last_sent_date": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "next_invoice_date": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "billing_address": {
-                        "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.Address"
-                    },
-                    "shipping_address": {
-                      "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.Address"
-                    }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.RecurringInvoicesData": {
-              "type": "array",
-                "items": {
-                  "$ref" : "#/components/schemas/Z2O.Models.Reports.Zoho.RecurringInvoice"
-                }
-            },
-            "Z2O.Models.Reports.Zoho.RecurringInvoiceComment": {
-              "type": "object",
-              "properties": {
-                    "comment_id": {
-                      "type": "string"
-                    },
-                    "recurring_invoice_id": {
-                      "type": "string"
-                    },
-                    "comment_description": {
-                      "type": "string"
-                    },
-                    "commented_by_id": {
-                      "type": "string"
-                    },
-                    "commented_by": {
-                      "type": "string"
-                    },
-                    "comment_type": {
-                      "type": "string"
-                    },
-                    "operation_type": {
-                      "type": "string"
-                    },
-                    "date": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "date_description": {
-                      "type": "string"
-                    },
-                    "time": {
-                      "type": "string",
-                      "format": "time"
-                    },
-                    "transaction_id": {
-                      "type": "string"
-                    },
-                    "transaction_type": {
-                      "type": "string"
-                    }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.RecurringInvoiceHistory": {
-              "type": "object",
-              "properties": {
-                "recurring_invoice_id": {
-                  "type": "string"
-                },
-                "recurring_invoice_comments": {
-                  "type": "array",
-                  "items": {
-                    "$ref" : "#/components/schemas/Z2O.Models.Reports.Zoho.RecurringInvoiceHistory"
-                  }
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.RecurringInvoiceHistoryData": {
-              "type": "array",
-                "items": {
-                  "$ref" : "#/components/schemas/Z2O.Models.Reports.Zoho.RecurringInvoiceHistory"
-                }
-            },
-            "Z2O.Models.Reports.Zoho.CreditNote": {
-              "type": "object",
-              "properties": {
-                "creditnote_id": {
-                  "type": "string"
-                },
-                "creditnote_number": {
-                  "type": "string"
-                },
-                "status": {
-                  "type": "string"
-                },
-                "reference_number": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "total": {
-                  "type": "number"
-                },
-                "balance": {
-                  "type": "number"
-                },
-                "customer_id": {
-                  "type": "string"
-                },
-                "customer_name": {
-                  "type": "string"
-                },
-                "currency_id": {
-                  "type": "string"
-                },
-                "currency_code": {
-                  "type": "string"
-                },
-                "created_time": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "last_modified_time": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "is_emailed": {
-                  "type": "boolean"
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.CreditNotesData": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.CreditNote"
-              }
-            },
-            "Z2O.Models.Reports.Zoho.InvoiceCredited": {
-              "type": "object",
-              "properties": {
-                "creditnote_id": {
-                  "type": "string"
-                },
-                "invoice_id": {
-                  "type": "string"
-                },
-                "creditnote_invoice_id": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "invoice_number": {
-                  "type": "string"
-                },
-                "creditnote_number": {
-                  "type": "string"
-                },
-                "credited_amount": {
-                  "type": "number"
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.InvoicesCreditedList": {
-              "type": "object",
-              "properties": {
-                "invoice_id": {
-                  "type": "string"
-                },
-                "invoices_credited": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.InvoiceCredited"
-                  }
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.InvoicesCreditedData": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.InvoicesCreditedList"
-              }
-            },
-            "Z2O.Models.Reports.Zoho.CreditNoteRefund": {
-              "type": "object",
-              "properties": {
-                "creditnote_refund_id": {
-                  "type": "string"
-                },
-                "creditnote_id": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "refund_mode": {
-                  "type": "string"
-                },
-                "reference_number": {
-                  "type": "string"
-                },
-                "creditnote_number": {
-                  "type": "string"
-                },
-                "customer_name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "amount_bcy": {
-                  "type": "number"
-                },
-                "amount_fcy": {
-                  "type": "number"
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.CreditNoteRefundsData": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.CreditNoteRefund"
-              }
-            },
-            "Z2O.Models.Reports.Zoho.CustomerPayment": {
-              "type": "object",
-              "properties": {
-                "payment_id":{
-                  "type": "string"
-                },
-                "payment_number": {
-                  "type": "string"
-                },
-                "invoice_number": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "payment_mode": {
-                  "type": "string"
-                },
-                "amount": {
-                  "type": "number"
-                },
-                "bcy_amount": {
-                  "type": "number"
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.CustomerPaymentsData": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.CustomerPayment"
-              }
-            },
-            "Z2O.Models.Reports.Zoho.Expense": {
-              "type": "object",
-              "properties": {
-                    "expense_id": {
-                      "type": "integer"
-                    },
-                    "date": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "account_name": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "currency_id": {
-                      "type": "integer"
-                    },
-                    "currency_code": {
-                      "type": "string"
-                    },
-                    "bcy_total": {
-                      "type": "number"
-                    },
-                    "bcy_total_without_tax": {
-                      "type": "number"
-                    },
-                    "total": {
-                      "type": "number"
-                    },
-                    "total_without_tax": {
-                      "type": "number"
-                    },
-                    "is_billable": {
-                      "type": "boolean"
-                    },
-                    "reference_number": {
-                      "type": "boolean"
-                    },
-                    "customer_id": {
-                      "type": "integer"
-                    },
-                    "customer_name": {
-                      "type": "string"
-                    },
-                    "status": {
-                      "type": "string"
-                    },
-                    "created_time": {
-                      "type": "string",
-                      "format": "date-time"
-                    },
-                    "last_modified_time": {
-                      "type": "string",
-                      "format": "date-time"
-                    },
-                    "expense_receipt_name": {
-                      "type": "string"
-                    },
-                    "mileage_rate": {
-                      "type": "string"
-                    },
-                    "mileage_unit": {
-                      "type": "string"
-                    },
-                    "expense_type": {
-                      "type": "string"
-                    },
-                    "start_reading": {
-                      "type": "string"
-                    },
-                    "end_reading": {
-                      "type": "string"
-                    }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.ExpensesData": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.Expense"
-              }
-            },
-            "Z2O.Models.Reports.Zoho.Employee": {
-              "type": "object",
-              "properties": {
-                "employee_id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string",
-                  "format": "email"
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.EmployeesData": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.Employee"
-              }
-            },
-            "Z2O.Models.Reports.Zoho.RecurringExpense": {
-              "type": "object",
-              "properties": {
-                    "recurring_expense_id": {
-                      "type": "integer"
-                    },
-                    "recurrence_name": {
-                      "type": "string"
-                    },
-                    "recurrence_frequency": {
-                      "type": "string"
-                    },
-                    "repeat_every": {
-                      "type": "integer"
-                    },
-                    "last_created_date": {
-                      "type": "string",
-                      "format": "date-time"
-                    },
-                    "next_expense_date": {
-                      "type": "string",
-                      "format": "date-time"
-                    },
-                    "account_name": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "currency_id": {
-                      "type": "integer"
-                    },
-                    "currency_code": {
-                      "type": "string"
-                    },
-                    "total": {
-                      "type": "number"
-                    },
-                    "is_billable": {
-                      "type": "boolean"
-                    },
-                    "customer_name": {
-                      "type": "string"
-                    },
-                    "status": {
-                      "type": "string"
-                    },
-                    "created_time": {
-                      "type": "string",
-                      "format": "date-time"
-                    },
-                    "last_modified_time": {
-                      "type": "string",
-                      "format": "date-time"
-                    }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.RecurringExpensesData": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.RecurringExpense"
-              }
-            },
-            "Z2O.Models.Reports.Zoho.RetainerInvoice": {
-              "type": "object",
-              "properties": {
-                "retainerinvoice_id": {
-                  "type": "integer"
-                },
-                "customer_name": {
-                  "type": "string"
-                },
-                "retainerinvoice_number": {
-                  "type": "string"
-                },
-                "customer_id": {
-                  "type": "integer"
-                },
-                "status": {
-                  "type": "string"
-                },
-                "reference_number": {
-                  "type": "string"
-                },
-                "project_or_estimate_name": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "currency_id": {
-                  "type": "integer"
-                },
-                "currency_code": {
-                  "type": "string"
-                },
-                "is_viewed_by_client": {
-                  "type": "boolean"
-                },
-                "client_viewed_time": {
-                  "type": "boolean"
-                },
-                "total": {
-                  "type": "number"
-                },
-                "balance": {
-                  "type": "number"
-                },
-                "created_time": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "last_modified_time": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "is_emailed": {
-                  "type": "boolean"
-                },
-                "last_payment_date": {
-                  "type": "string",
-                  "format": "date"
-                },
-                "has_attachment": {
-                  "type": "boolean"
-                }
-              }
-            },
-            "Z2O.Models.Reports.Zoho.RetainerInvoicesData": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.RetainerInvoice"
-              }
-            }
-
-        }
+    {
+      "name": "Bank - Companies",
+      "description": "These routes control the operations on companies associated with a bank."
     }
+  ],
+  "paths": {
+    "/bank/register": {
+      "post": {
+        "tags": [
+          "Bank - Auth"
+        ],
+        "summary": "Register a new bank",
+        "description": "A bank is allowed to register on our platform to avail our services. An account will be created for the bank and it can now perform the other use cases mentioned below.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Z2O.Models.Bank.Bank"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Bank.BankDisplay"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bank/auth": {
+      "post": {
+        "tags": [
+          "Bank - Auth"
+        ],
+        "summary": "Get API Key for your bank",
+        "description": "After registration the bank can now login into its account to manage its work.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Z2O.Models.Bank.BankLogin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Bank.BankAuth"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bank/companies": {
+      "get": {
+        "tags": [
+          "Bank - Companies"
+        ],
+        "summary": "Get list of companies connected to bank",
+        "description": "This use case provides a Bank to view the Companies associated with it. A company is said to be associated with a bank when the bank is the one which adds the company. A bank is said to be associated with a company, if the company was added by the bank.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Company.CompanyList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Bank - Companies"
+        ],
+        "summary": "Add a new company",
+        "description": "After logging in, a bank can now ‘Add Company’ whose data it needs to monitor. This creates a Company with the given details. The id, password will be sent to the company through mail enabling the company to login into the product.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Z2O.Models.Company.CompanyAdd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bank/companies/{companyId}": {
+      "put": {
+        "tags": [
+          "Bank - Companies"
+        ],
+        "summary": "Update info of a particular company",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Z2O.Models.Company.CompanyUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Bank - Companies"
+        ],
+        "summary": "Delete a particular company, this is not reversible",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Bank - Companies"
+        ],
+        "summary": "Get info of a particular company",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bank/companies/{companyId}/settings": {
+      "get": {
+        "tags": [
+          "Bank - Companies"
+        ],
+        "summary": "Get the settings for a particular company",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Company.SettingsDisplay"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Bank - Companies"
+        ],
+        "summary": "Update settings for a particular company",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Z2O.Models.Company.SettingsUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Company.SettingsDisplay"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bank/companies/{companyId}/connection": {
+      "get": {
+        "tags": [
+          "Bank - Company Connection"
+        ],
+        "summary": "Get connection details for a particular company",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Company.DataConnection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bank/companies/{companyId}/data/reports": {
+      "get": {
+        "tags": [
+          "Bank - Data"
+        ],
+        "summary": "Get all the reports provided by a particular company",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Bank.ReportList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bank/companies/{companyId}/data/reports/{reportName}": {
+      "get": {
+        "tags": [
+          "Bank - Data"
+        ],
+        "summary": "Get latest annotated data for a particular report provided by a particular company",
+        "parameters": [
+          {
+            "name": "companyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "reportName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Bank.Report"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/company/auth": {
+      "post": {
+        "tags": [
+          "Company - Auth"
+        ],
+        "summary": "Get API Key for your company",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Z2O.Models.Company.CompanyLogin"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Company.CompanyAuth"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/company/connection": {
+      "post": {
+        "tags": [
+          "Company - Connection"
+        ],
+        "summary": "Add a new ERP connection for the company",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Z2O.Models.Company.DataConnectionAdd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Company.DataConnection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/company/data/reports/all": {
+      "get": {
+        "tags": [
+          "Company - Data"
+        ],
+        "summary": "Get list of all reports a company can provide for its ERP connection",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Company.ReportNameList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/company/data/reports": {
+      "get": {
+        "tags": [
+          "Company - Data"
+        ],
+        "summary": "Get list of reports company is providing",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Company.ReportList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Company - Data"
+        ],
+        "summary": "Add a new report to provide",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Z2O.Models.Company.ReportAdd"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Company.Report"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/company/data/reports/{reportName}": {
+      "get": {
+        "tags": [
+          "Company - Data"
+        ],
+        "summary": "Get latest data of a particular report that will be pushed",
+        "parameters": [
+          {
+            "name": "reportName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Company.Report"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Company - Data"
+        ],
+        "summary": "Annotate the data of a particular report and then push it to bank",
+        "parameters": [
+          {
+            "name": "reportName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Z2O.Models.Company.ReportAnnotated"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Z2O.Models.Bank.Report"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Company - Data"
+        ],
+        "summary": "Stop providing a particular report",
+        "parameters": [
+          {
+            "name": "reportName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Z2O.HelloWorld": {
+        "type": "string",
+        "example": "Hello World"
+      },
+      "Z2O.Models.Bank.Bank": {
+        "required": [
+          "userId",
+          "password",
+          "email",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "name": {
+            "type": "string"
+          },
+          "primaryColor": {
+            "$ref": "#/components/schemas/Z2O.Models.Color.RGBColor"
+          },
+          "secondaryColor": {
+            "$ref": "#/components/schemas/Z2O.Models.Color.RGBColor"
+          },
+          "coverImg": {
+            "type": "string",
+            "format": "byte"
+          }
+        }
+      },
+      "Z2O.Models.Bank.BankDisplay": {
+        "required": [
+          "id",
+          "userId",
+          "email",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "name": {
+            "type": "string"
+          },
+          "primaryColor": {
+            "$ref": "#/components/schemas/Z2O.Models.Color.RGBColor"
+          },
+          "secondaryColor": {
+            "$ref": "#/components/schemas/Z2O.Models.Color.RGBColor"
+          },
+          "coverImg": {
+            "type": "string",
+            "format": "byte"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "Z2O.Models.Bank.BankAuth": {
+        "type": "object",
+        "properties": {
+          "authKey": {
+            "type": "string",
+            "format": "key"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Z2O.Models.Bank.BankDisplay"
+          }
+        }
+      },
+      "Z2O.Models.Bank.BankLogin": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string",
+            "format": "password"
+          }
+        }
+      },
+      "Z2O.Models.Bank.Report": {
+        "required": [
+          "id",
+          "companyId",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "companyId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object",
+            "enum": [
+              {
+                "hello": {
+                  "type": "object",
+                  "properties": {
+                    "name": "string"
+                  }
+                }
+              }
+            ]
+          },
+          "lastPushDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdateMadeBy": {
+            "type": "string"
+          }
+        }
+      },
+      "Z2O.Models.Bank.ReportList": {
+        "required": [
+          "totalResults"
+        ],
+        "type": "object",
+        "properties": {
+          "totalResults": {
+            "type": "integer"
+          },
+          "reports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Z2O.Models.Bank.Report"
+            }
+          }
+        }
+      },
+      "Z2O.Models.Company.Company": {
+        "required": [
+          "id",
+          "companyId",
+          "bankId",
+          "password",
+          "name",
+          "email",
+          "status",
+          "region",
+          "companyType"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "companyId": {
+            "type": "string"
+          },
+          "bankId": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "platform": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "companyType": {
+            "type": "string"
+          },
+          "businessLine": {
+            "type": "string",
+            "nullable": true
+          },
+          "SIF": {
+            "type": "string",
+            "nullable": true
+          },
+          "reports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Z2O.Models.Company.Report"
+            },
+            "nullable": true
+          },
+          "dataConnection": {
+            "$ref": "#/components/schemas/Z2O.Models.Company.DataConnection",
+            "nullable": true
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        }
+      },
+      "Z2O.Models.Company.CompanyDisplay": {
+        "required": [
+          "id",
+          "companyId",
+          "bankId",
+          "name",
+          "email",
+          "status",
+          "region",
+          "companyType"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "companyId": {
+            "type": "string"
+          },
+          "bankId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "platform": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "companyType": {
+            "type": "string"
+          },
+          "businessLine": {
+            "type": "string",
+            "nullable": true
+          },
+          "SIF": {
+            "type": "string",
+            "nullable": true
+          },
+          "reports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Z2O.Models.Company.Report"
+            },
+            "nullable": true
+          },
+          "dataConnection": {
+            "$ref": "#/components/schemas/Z2O.Models.Company.DataConnection"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        }
+      },
+      "Z2O.Models.Company.CompanyAuth": {
+        "type": "object",
+        "properties": {
+          "authKey": {
+            "type": "string",
+            "format": "key"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
+          }
+        }
+      },
+      "Z2O.Models.Company.CompanyAdd": {
+        "required": [
+          "companyId",
+          "name",
+          "email",
+          "platform",
+          "region",
+          "companyType",
+          "businessLine",
+          "SIF"
+        ],
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "companyType": {
+            "type": "string"
+          },
+          "businessLine": {
+            "type": "string"
+          },
+          "SIF": {
+            "type": "string"
+          }
+        }
+      },
+      "Z2O.Models.Company.CompanyUpdate": {
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "companyType": {
+            "type": "string"
+          },
+          "businessLine": {
+            "type": "string"
+          },
+          "SIF": {
+            "type": "string"
+          }
+        }
+      },
+      "Z2O.Models.Company.CompanyLogin": {
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string",
+            "format": "password"
+          }
+        }
+      },
+      "Z2O.Models.Company.CompanyList": {
+        "required": [
+          "totalResults"
+        ],
+        "type": "object",
+        "properties": {
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Z2O.Models.Company.CompanyDisplay"
+            },
+            "nullable": true
+          },
+          "totalResults": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Z2O.Models.Company.Report": {
+        "required": [
+          "id",
+          "companyId",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "companyId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object",
+            "enum": [
+              {
+                "hello": {
+                  "type": "object",
+                  "properties": {
+                    "name": "string"
+                  }
+                }
+              }
+            ]
+          },
+          "lastPushDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastUpdateMadeBy": {
+            "type": "string"
+          }
+        }
+      },
+      "Z2O.Models.Company.ReportAdd": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Z2O.Models.Company.ReportType": {
+        "required": [
+          "name",
+          "connectionName"
+        ],
+        "type": "object",
+        "properties": {
+          "connectionType": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Z2O.Models.Company.ReportAnnotated": {
+        "type": "object",
+        "properties": {
+          "report": {
+            "$ref": "#/components/schemas/Z2O.Models.Company.Report"
+          },
+          "annotations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Z2O.Models.Company.Annotations"
+            }
+          }
+        }
+      },
+      "Z2O.Models.Company.ReportList": {
+        "required": [
+          "totalResults"
+        ],
+        "type": "object",
+        "properties": {
+          "totalResults": {
+            "type": "integer"
+          },
+          "reports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Z2O.Models.Company.Report"
+            }
+          }
+        }
+      },
+      "Z2O.Models.Company.ReportNameList": {
+        "required": [
+          "totalResults"
+        ],
+        "type": "object",
+        "properties": {
+          "totalResults": {
+            "type": "integer"
+          },
+          "connectionName": {
+            "type": "string",
+            "enum": [
+              "sage",
+              "tally",
+              "zoho"
+            ]
+          },
+          "reports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Z2O.Models.Company.ReportType"
+            }
+          }
+        }
+      },
+      "Z2O.Models.Company.Annotations": {
+        "type": "object",
+        "properties": {
+          "rowId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "adjustment": {
+            "type": "number"
+          },
+          "comment": {
+            "type": "string"
+          }
+        }
+      },
+      "Z2O.Models.Company.DataConnection": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "companyId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "enum": [
+              "sage",
+              "tally",
+              "zoho"
+            ]
+          },
+          "endpoint": {
+            "type": "string",
+            "format": "uri"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      },
+      "Z2O.Models.Company.DataConnectionAdd": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "sage",
+              "tally",
+              "zoho"
+            ]
+          },
+          "endpoint": {
+            "type": "string",
+            "format": "uri"
+          },
+          "accessKey": {
+            "type": "string",
+            "format": "key"
+          }
+        }
+      },
+      "Z2O.Models.Company.SettingsDisplay": {
+        "required": [
+          "id",
+          "companyId",
+          "updatePeriod",
+          "allowedToChangeConnection"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "companyId": {
+            "type": "string"
+          },
+          "updatePeriod": {
+            "type": "string",
+            "enum": [
+              "monthly",
+              "quarterly",
+              "semi-anually",
+              "anually"
+            ]
+          },
+          "allowedToChangeConnection": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Z2O.Models.Company.SettingsUpdate": {
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "type": "string"
+          },
+          "updatePeriod": {
+            "type": "string",
+            "enum": [
+              "monthly",
+              "quarterly",
+              "semi-anually",
+              "anually"
+            ]
+          },
+          "allowedToChangeConnection": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Z2O.Models.Color.RGBColor": {
+        "type": "object",
+        "properties": {
+          "r": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "g": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "b": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      }
+    },
+    "reports":{
+      "$ref": "./reports/zoho.json"
+    }
+  }
 }

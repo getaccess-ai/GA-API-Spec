@@ -1,0 +1,1050 @@
+{
+  "Z2O.Models.Reports.Zoho.Contact": {
+    "type": "object",
+    "properties": {
+      "contact_id": {
+        "type": "integer"
+      },
+      "contact_name": {
+        "type": "string"
+      },
+      "company_name": {
+        "type": "string"
+      },
+      "contact_type": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "payment_terms": {
+        "type": "number"
+      },
+      "payment_terms_label": {
+        "type": "string"
+      },
+      "currency_id": {
+        "type": "integer"
+      },
+      "currency_code": {
+        "type": "string"
+      },
+      "outstanding_receivable_amount": {
+        "type": "number"
+      },
+      "unused_credits_receivable_amount": {
+        "type": "number"
+      },
+      "first_name": {
+        "type": "string"
+      },
+      "last_name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string",
+        "format": "email"
+      },
+      "phone": {
+        "type": "string"
+      },
+      "mobile": {
+        "type": "string"
+      },
+      "created_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "last_modified_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.ContactsData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.Contact"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.ContactPerson": {
+    "type": "object",
+    "properties": {
+      "contact_person_id": {
+        "type": "integer"
+      },
+      "salutation": {
+        "type": "string"
+      },
+      "first_name": {
+        "type": "string"
+      },
+      "last_name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string",
+        "format": "email"
+      },
+      "phone": {
+        "type": "string"
+      },
+      "mobile": {
+        "type": "string"
+      },
+      "is_primary_contact": {
+        "type": "boolean"
+      },
+      "skype": {
+        "type": "string"
+      },
+      "designation": {
+        "type": "string"
+      },
+      "department": {
+        "type": "string"
+      },
+      "is_added_in_portal": {
+        "type": "boolean"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.ContactPersonsList": {
+    "type": "object",
+    "properties": {
+      "contact_id": {
+        "type": "integer"
+      },
+      "contact_persons": {
+        "type": "array",
+        "items": {
+          "$ref": "#/Z2O.Models.Reports.Zoho.ContactPerson"
+        }
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.ContactPersonsData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.ContactPersonsList"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.Estimate": {
+    "type": "object",
+    "properties": {
+      "estimate_id": {
+        "type": "integer"
+      },
+      "customer_name": {
+        "type": "string"
+      },
+      "customer_id": {
+        "type": "integer"
+      },
+      "status": {
+        "type": "string"
+      },
+      "estimate_number": {
+        "type": "string"
+      },
+      "reference_number": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "currency_id": {
+        "type": "integer"
+      },
+      "currency_code": {
+        "type": "string"
+      },
+      "total": {
+        "type": "number"
+      },
+      "created_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "last_modified_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "accepted_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "declined_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "expiry_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "has_attachment": {
+        "type": "boolean"
+      },
+      "is_viewed_by_client": {
+        "type": "boolean"
+      },
+      "client_viewed_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.EstimatesData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.Estimate"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.SalesOrder": {
+    "type": "object",
+    "properties": {
+      "salesorder_id": {
+        "type": "string"
+      },
+      "zcrm_potential_id": {
+        "type": "string"
+      },
+      "customer_name": {
+        "type": "string"
+      },
+      "customer_id": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "salesorder_number": {
+        "type": "string"
+      },
+      "reference_number": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "shipment_days": {
+        "type": "integer"
+      },
+      "currency_id": {
+        "type": "string"
+      },
+      "currency_code": {
+        "type": "string"
+      },
+      "total": {
+        "type": "number"
+      },
+      "sub_total": {
+        "type": "number"
+      },
+      "bcy_total": {
+        "type": "number"
+      },
+      "created_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "last_modified_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "is_emailed": {
+        "type": "boolean"
+      },
+      "has_attachment": {
+        "type": "boolean"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.SalesOrdersData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.SalesOrder"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.Invoice": {
+    "type": "object",
+    "properties": {
+      "invoice_id": {
+        "type": "integer"
+      },
+      "ach_payment_initiated": {
+        "type": "boolean"
+      },
+      "customer_name": {
+        "type": "string"
+      },
+      "customer_id": {
+        "type": "integer"
+      },
+      "status": {
+        "type": "string"
+      },
+      "invoice_number": {
+        "type": "string"
+      },
+      "reference_number": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "due_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "due_days": {
+        "type": "string"
+      },
+      "currency_id": {
+        "type": "integer"
+      },
+      "schedule_time": {
+        "type": "string"
+      },
+      "currency_code": {
+        "type": "string"
+      },
+      "is_viewed_by_client": {
+        "type": "boolean"
+      },
+      "has_attachment": {
+        "type": "boolean"
+      },
+      "client_viewed_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "total": {
+        "type": "number"
+      },
+      "balance": {
+        "type": "number"
+      },
+      "created_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "last_modified_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "is_emailed": {
+        "type": "boolean"
+      },
+      "reminders_sent": {
+        "type": "integer"
+      },
+      "last_reminder_sent_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "payment_expected_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "last_payment_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "documents": {
+        "type": "string"
+      },
+      "salesperson_id": {
+        "type": "string"
+      },
+      "salesperson_name": {
+        "type": "string"
+      },
+      "shipping_charge": {
+        "type": "number"
+      },
+      "adjustment": {
+        "type": "number"
+      },
+      "write_off_amount": {
+        "type": "number"
+      },
+      "exchange_rate": {
+        "type": "number"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.InvoicesData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.Invoice"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.InvoicePayment": {
+    "type": "object",
+    "properties": {
+      "payment_id": {
+        "type": "string"
+      },
+      "payment_number": {
+        "type": "integer"
+      },
+      "invoice_id": {
+        "type": "integer"
+      },
+      "invoice_payment_id": {
+        "type": "integer"
+      },
+      "payment_mode": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "reference_number": {
+        "type": "integer"
+      },
+      "exchange_rate": {
+        "type": "integer"
+      },
+      "amount": {
+        "type": "number"
+      },
+      "tax_amount_withheld": {
+        "type": "number"
+      },
+      "online_transaction_id": {
+        "type": "string"
+      },
+      "is_single_invoice_payment": {
+        "type": "boolean"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.InvoicePaymentsList": {
+    "type": "object",
+    "properties": {
+      "invoice_id": {
+        "type": "integer"
+      },
+      "invoice_payments": {
+        "type": "array",
+        "items": {
+          "$ref": "#/Z2O.Models.Reports.Zoho.InvoicePayment"
+        }
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.InvoicePaymentsData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.InvoicePaymentsList"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.CreditsApplied": {
+    "type": "object",
+    "properties": {
+      "creditnote_id": {
+        "type": "integer"
+      },
+      "creditnotes_invoice_id": {
+        "type": "string"
+      },
+      "creditnotes_number": {
+        "type": "string"
+      },
+      "credited_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "amount_applied": {
+        "type": "number"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.CreditsAppliedList": {
+    "type": "object",
+    "properties": {
+      "invoice_id": {
+        "type": "integer"
+      },
+      "credits_applied": {
+        "type": "array",
+        "items": {
+          "$ref": "#/Z2O.Models.Reports.Zoho.CreditsApplied"
+        }
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.CreditsAppliedData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.CreditsAppliedList"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.Address": {
+    "type": "object",
+    "properties": {
+      "address": {
+        "type": "string"
+      },
+      "street2": {
+        "type": "string"
+      },
+      "city": {
+        "type": "string"
+      },
+      "state": {
+        "type": "string"
+      },
+      "zip": {
+        "type": "string"
+      },
+      "country": {
+        "type": "string"
+      },
+      "fax": {
+        "type": "string"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.RecurringInvoice": {
+    "type": "object",
+    "properties": {
+      "recurring_invoice_id": {
+        "type": "string"
+      },
+      "recurrence_name": {
+        "type": "string"
+      },
+      "customer_name": {
+        "type": "string"
+      },
+      "customer_id": {
+        "type": "string"
+      },
+      "currency_id": {
+        "type": "string"
+      },
+      "currency_code": {
+        "type": "string"
+      },
+      "start_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "end_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "last_sent_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "next_invoice_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "billing_address": {
+        "$ref": "#/Z2O.Models.Reports.Zoho.Address"
+      },
+      "shipping_address": {
+        "$ref": "#/Z2O.Models.Reports.Zoho.Address"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.RecurringInvoicesData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.RecurringInvoice"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.RecurringInvoiceComment": {
+    "type": "object",
+    "properties": {
+      "comment_id": {
+        "type": "string"
+      },
+      "recurring_invoice_id": {
+        "type": "string"
+      },
+      "comment_description": {
+        "type": "string"
+      },
+      "commented_by_id": {
+        "type": "string"
+      },
+      "commented_by": {
+        "type": "string"
+      },
+      "comment_type": {
+        "type": "string"
+      },
+      "operation_type": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "date_description": {
+        "type": "string"
+      },
+      "time": {
+        "type": "string",
+        "format": "time"
+      },
+      "transaction_id": {
+        "type": "string"
+      },
+      "transaction_type": {
+        "type": "string"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.RecurringInvoiceHistory": {
+    "type": "object",
+    "properties": {
+      "recurring_invoice_id": {
+        "type": "string"
+      },
+      "recurring_invoice_comments": {
+        "type": "array",
+        "items": {
+          "$ref": "#/Z2O.Models.Reports.Zoho.RecurringInvoiceHistory"
+        }
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.RecurringInvoiceHistoryData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.RecurringInvoiceHistory"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.CreditNote": {
+    "type": "object",
+    "properties": {
+      "creditnote_id": {
+        "type": "string"
+      },
+      "creditnote_number": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "reference_number": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "total": {
+        "type": "number"
+      },
+      "balance": {
+        "type": "number"
+      },
+      "customer_id": {
+        "type": "string"
+      },
+      "customer_name": {
+        "type": "string"
+      },
+      "currency_id": {
+        "type": "string"
+      },
+      "currency_code": {
+        "type": "string"
+      },
+      "created_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "last_modified_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "is_emailed": {
+        "type": "boolean"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.CreditNotesData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.CreditNote"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.InvoiceCredited": {
+    "type": "object",
+    "properties": {
+      "creditnote_id": {
+        "type": "string"
+      },
+      "invoice_id": {
+        "type": "string"
+      },
+      "creditnote_invoice_id": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "invoice_number": {
+        "type": "string"
+      },
+      "creditnote_number": {
+        "type": "string"
+      },
+      "credited_amount": {
+        "type": "number"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.InvoicesCreditedList": {
+    "type": "object",
+    "properties": {
+      "invoice_id": {
+        "type": "string"
+      },
+      "invoices_credited": {
+        "type": "array",
+        "items": {
+          "$ref": "#/Z2O.Models.Reports.Zoho.InvoiceCredited"
+        }
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.InvoicesCreditedData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.InvoicesCreditedList"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.CreditNoteRefund": {
+    "type": "object",
+    "properties": {
+      "creditnote_refund_id": {
+        "type": "string"
+      },
+      "creditnote_id": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "refund_mode": {
+        "type": "string"
+      },
+      "reference_number": {
+        "type": "string"
+      },
+      "creditnote_number": {
+        "type": "string"
+      },
+      "customer_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "amount_bcy": {
+        "type": "number"
+      },
+      "amount_fcy": {
+        "type": "number"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.CreditNoteRefundsData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.CreditNoteRefund"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.CustomerPayment": {
+    "type": "object",
+    "properties": {
+      "payment_id": {
+        "type": "string"
+      },
+      "payment_number": {
+        "type": "string"
+      },
+      "invoice_number": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "payment_mode": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "number"
+      },
+      "bcy_amount": {
+        "type": "number"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.CustomerPaymentsData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.CustomerPayment"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.Expense": {
+    "type": "object",
+    "properties": {
+      "expense_id": {
+        "type": "integer"
+      },
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "account_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "currency_id": {
+        "type": "integer"
+      },
+      "currency_code": {
+        "type": "string"
+      },
+      "bcy_total": {
+        "type": "number"
+      },
+      "bcy_total_without_tax": {
+        "type": "number"
+      },
+      "total": {
+        "type": "number"
+      },
+      "total_without_tax": {
+        "type": "number"
+      },
+      "is_billable": {
+        "type": "boolean"
+      },
+      "reference_number": {
+        "type": "boolean"
+      },
+      "customer_id": {
+        "type": "integer"
+      },
+      "customer_name": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "created_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "last_modified_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "expense_receipt_name": {
+        "type": "string"
+      },
+      "mileage_rate": {
+        "type": "string"
+      },
+      "mileage_unit": {
+        "type": "string"
+      },
+      "expense_type": {
+        "type": "string"
+      },
+      "start_reading": {
+        "type": "string"
+      },
+      "end_reading": {
+        "type": "string"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.ExpensesData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.Expense"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.Employee": {
+    "type": "object",
+    "properties": {
+      "employee_id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string",
+        "format": "email"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.EmployeesData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.Employee"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.RecurringExpense": {
+    "type": "object",
+    "properties": {
+      "recurring_expense_id": {
+        "type": "integer"
+      },
+      "recurrence_name": {
+        "type": "string"
+      },
+      "recurrence_frequency": {
+        "type": "string"
+      },
+      "repeat_every": {
+        "type": "integer"
+      },
+      "last_created_date": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "next_expense_date": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "account_name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "currency_id": {
+        "type": "integer"
+      },
+      "currency_code": {
+        "type": "string"
+      },
+      "total": {
+        "type": "number"
+      },
+      "is_billable": {
+        "type": "boolean"
+      },
+      "customer_name": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "created_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "last_modified_time": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.RecurringExpensesData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.RecurringExpense"
+    }
+  },
+  "Z2O.Models.Reports.Zoho.RetainerInvoice": {
+    "type": "object",
+    "properties": {
+      "retainerinvoice_id": {
+        "type": "integer"
+      },
+      "customer_name": {
+        "type": "string"
+      },
+      "retainerinvoice_number": {
+        "type": "string"
+      },
+      "customer_id": {
+        "type": "integer"
+      },
+      "status": {
+        "type": "string"
+      },
+      "reference_number": {
+        "type": "string"
+      },
+      "project_or_estimate_name": {
+        "type": "string"
+      },
+      "date": {
+        "type": "string",
+        "format": "date"
+      },
+      "currency_id": {
+        "type": "integer"
+      },
+      "currency_code": {
+        "type": "string"
+      },
+      "is_viewed_by_client": {
+        "type": "boolean"
+      },
+      "client_viewed_time": {
+        "type": "boolean"
+      },
+      "total": {
+        "type": "number"
+      },
+      "balance": {
+        "type": "number"
+      },
+      "created_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "last_modified_time": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "is_emailed": {
+        "type": "boolean"
+      },
+      "last_payment_date": {
+        "type": "string",
+        "format": "date"
+      },
+      "has_attachment": {
+        "type": "boolean"
+      }
+    }
+  },
+  "Z2O.Models.Reports.Zoho.RetainerInvoicesData": {
+    "type": "array",
+    "items": {
+      "$ref": "#/Z2O.Models.Reports.Zoho.RetainerInvoice"
+    }
+  }
+}
