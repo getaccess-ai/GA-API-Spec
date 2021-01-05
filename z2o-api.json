@@ -1977,8 +1977,279 @@
               "items": {
                 "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.CreditNoteRefund"
               }
+            },
+            "Z2O.Models.Reports.Zoho.CustomerPayment": {
+              "type": "object",
+              "properties": {
+                "payment_id":{
+                  "type": "string"
+                },
+                "payment_number": {
+                  "type": "string"
+                },
+                "invoice_number": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "payment_mode": {
+                  "type": "string"
+                },
+                "amount": {
+                  "type": "number"
+                },
+                "bcy_amount": {
+                  "type": "number"
+                }
+              }
+            },
+            "Z2O.Models.Reports.Zoho.CustomerPaymentsData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.CustomerPayment"
+              }
+            },
+            "Z2O.Models.Reports.Zoho.Expense": {
+              "type": "object",
+              "properties": {
+                    "expense_id": {
+                      "type": "integer"
+                    },
+                    "date": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "account_name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "currency_id": {
+                      "type": "integer"
+                    },
+                    "currency_code": {
+                      "type": "string"
+                    },
+                    "bcy_total": {
+                      "type": "number"
+                    },
+                    "bcy_total_without_tax": {
+                      "type": "number"
+                    },
+                    "total": {
+                      "type": "number"
+                    },
+                    "total_without_tax": {
+                      "type": "number"
+                    },
+                    "is_billable": {
+                      "type": "boolean"
+                    },
+                    "reference_number": {
+                      "type": "boolean"
+                    },
+                    "customer_id": {
+                      "type": "integer"
+                    },
+                    "customer_name": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "created_time": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "last_modified_time": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "expense_receipt_name": {
+                      "type": "string"
+                    },
+                    "mileage_rate": {
+                      "type": "string"
+                    },
+                    "mileage_unit": {
+                      "type": "string"
+                    },
+                    "expense_type": {
+                      "type": "string"
+                    },
+                    "start_reading": {
+                      "type": "string"
+                    },
+                    "end_reading": {
+                      "type": "string"
+                    }
+              }
+            },
+            "Z2O.Models.Reports.Zoho.ExpensesData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.Expense"
+              }
+            },
+            "Z2O.Models.Reports.Zoho.Employee": {
+              "type": "object",
+              "properties": {
+                "employee_id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string",
+                  "format": "email"
+                }
+              }
+            },
+            "Z2O.Models.Reports.Zoho.EmployeesData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.Employee"
+              }
+            },
+            "Z2O.Models.Reports.Zoho.RecurringExpense": {
+              "type": "object",
+              "properties": {
+                    "recurring_expense_id": {
+                      "type": "integer"
+                    },
+                    "recurrence_name": {
+                      "type": "string"
+                    },
+                    "recurrence_frequency": {
+                      "type": "string"
+                    },
+                    "repeat_every": {
+                      "type": "integer"
+                    },
+                    "last_created_date": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "next_expense_date": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "account_name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "currency_id": {
+                      "type": "integer"
+                    },
+                    "currency_code": {
+                      "type": "string"
+                    },
+                    "total": {
+                      "type": "number"
+                    },
+                    "is_billable": {
+                      "type": "boolean"
+                    },
+                    "customer_name": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "created_time": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "last_modified_time": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+              }
+            },
+            "Z2O.Models.Reports.Zoho.RecurringExpensesData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.RecurringExpense"
+              }
+            },
+            "Z2O.Models.Reports.Zoho.RetainerInvoice": {
+              "type": "object",
+              "properties": {
+                "retainerinvoice_id": {
+                  "type": "integer"
+                },
+                "customer_name": {
+                  "type": "string"
+                },
+                "retainerinvoice_number": {
+                  "type": "string"
+                },
+                "customer_id": {
+                  "type": "integer"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "reference_number": {
+                  "type": "string"
+                },
+                "project_or_estimate_name": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "currency_id": {
+                  "type": "integer"
+                },
+                "currency_code": {
+                  "type": "string"
+                },
+                "is_viewed_by_client": {
+                  "type": "boolean"
+                },
+                "client_viewed_time": {
+                  "type": "boolean"
+                },
+                "total": {
+                  "type": "number"
+                },
+                "balance": {
+                  "type": "number"
+                },
+                "created_time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "last_modified_time": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "is_emailed": {
+                  "type": "boolean"
+                },
+                "last_payment_date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "has_attachment": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "Z2O.Models.Reports.Zoho.RetainerInvoicesData": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Z2O.Models.Reports.Zoho.RetainerInvoice"
+              }
             }
-
 
         }
     }
