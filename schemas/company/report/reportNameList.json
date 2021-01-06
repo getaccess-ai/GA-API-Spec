@@ -1,0 +1,19 @@
+{
+  "required": ["totalResults"],
+  "type": "object",
+  "properties": {
+    "totalResults": {
+      "type": "integer"
+    },
+    "connectionName": {
+      "type": "string",
+      "enum": ["sage", "tally", "zoho"]
+    },
+    "reports": {
+      "type": "array",
+      "items": {
+        "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.ReportType"
+      }
+    }
+  }
+}

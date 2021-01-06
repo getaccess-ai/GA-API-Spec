@@ -1,0 +1,73 @@
+{
+  "required": [
+    "id",
+    "companyId",
+    "bankId",
+    "password",
+    "name",
+    "email",
+    "status",
+    "region",
+    "companyType"
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "companyId": {
+      "type": "string"
+    },
+    "bankId": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "platform": {
+      "type": "string",
+      "nullable": true
+    },
+    "status": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "companyType": {
+      "type": "string"
+    },
+    "businessLine": {
+      "type": "string",
+      "nullable": true
+    },
+    "SIF": {
+      "type": "string",
+      "nullable": true
+    },
+    "reports": {
+      "type": "array",
+      "items": {
+        "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.Report"
+      },
+      "nullable": true
+    },
+    "dataConnection": {
+      "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.DataConnection",
+      "nullable": true
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time",
+      "nullable": true
+    }
+  }
+}

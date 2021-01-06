@@ -1,0 +1,36 @@
+{
+  "required": ["id", "companyId", "name"],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "companyId": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "enum": [
+        {
+          "hello": {
+            "type": "object",
+            "properties": {
+              "name": "string"
+            }
+          }
+        }
+      ]
+    },
+    "lastPushDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastUpdateMadeBy": {
+      "type": "string"
+    }
+  }
+}

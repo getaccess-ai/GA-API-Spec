@@ -1,0 +1,77 @@
+{
+  "Z2O.Bank.Bank": {
+    "$ref": "./bank/bank/bank.json"
+  },
+  "Z2O.Bank.BankDisplay": {
+    "$ref": "./bank/bank/bankDisplay.json"
+  },
+  "Z2O.Bank.BankAuth": {
+    "$ref": "./bank/bank/bankAuth.json"
+  },
+  "Z2O.Bank.BankLogin": {
+    "$ref": "./bank/bank/bankLogin.json"
+  },
+  "Z2O.Bank.Report": {
+    "$ref": "./bank/report/report.json"
+  },
+  "Z2O.Bank.ReportList": {
+    "$ref": "./bank/report/reportList.json"
+  },
+  "Z2O.Company.Company": {
+    "$ref": "./company/company/company.json"
+  },
+  "Z2O.Company.CompanyDisplay": {
+    "$ref": "./company/company/companyDisplay.json"
+  },
+  "Z2O.Company.CompanyAuth": {
+    "$ref": "./company/company/companyAuth.json"
+  },
+  "Z2O.Company.CompanyAdd": {
+    "$ref": "./company/company/companyAdd.json"
+  },
+  "Z2O.Company.CompanyUpdate": {
+    "$ref": "./company/company/companyUpdate.json"
+  },
+  "Z2O.Company.CompanyLogin": {
+    "$ref": "./company/company/companyLogin.json"
+  },
+  "Z2O.Company.CompanyList": {
+    "$ref": "./company/company/companyList.json"
+  },
+  "Z2O.Company.Annotations": {
+    "$ref": "./company/company/annotations.json"
+  },
+  "Z2O.Company.Report": {
+    "$ref": "./company/report/report.json"
+  },
+  "Z2O.Company.ReportAdd": {
+    "$ref": "./company/report/reportAdd.json"
+  },
+  "Z2O.Company.ReportType": {
+    "$ref": "./company/report/reportType.json"
+  },
+  "Z2O.Company.ReportAnnotated": {
+    "$ref": "./company/report/reportAnnotated.json"
+  },
+  "Z2O.Company.ReportList": {
+    "$ref": "./company/report/reportList.json"
+  },
+  "Z2O.Company.ReportNameList": {
+    "$ref": "./company/report/reportNameList.json"
+  },
+  "Z2O.Company.DataConnection": {
+    "$ref": "./company/dataConnection/dataConnection.json"
+  },
+  "Z2O.Company.DataConnectionAdd": {
+    "$ref": "./company/dataConnection/dataConnectionAdd.json"
+  },
+  "Z2O.Company.SettingsDisplay": {
+    "$ref": "./company/settings/settingsDisplay.json"
+  },
+  "Z2O.Company.SettingsUpdate": {
+    "$ref": "./company/settings/settingsUpdate.json"
+  },
+  "Z2O.Color.RGBColor": {
+    "$ref": "./color/rgbColor.json"
+  }
+}

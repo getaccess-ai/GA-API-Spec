@@ -1,0 +1,23 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "companyId": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "enum": ["sage", "tally", "zoho"]
+    },
+    "endpoint": {
+      "type": "string",
+      "format": "uri"
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}

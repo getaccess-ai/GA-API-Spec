@@ -1,0 +1,12 @@
+{
+  "required": ["name", "connectionName"],
+  "type": "object",
+  "properties": {
+    "connectionType": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

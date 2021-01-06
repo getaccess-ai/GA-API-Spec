@@ -1,0 +1,65 @@
+{
+  "get": {
+    "tags": ["Bank - Companies"],
+    "summary": "Get the settings for a particular company",
+    "parameters": [
+      {
+        "name": "companyId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.SettingsDisplay"
+            }
+          }
+        }
+      }
+    }
+  },
+  "put": {
+    "tags": ["Bank - Companies"],
+    "summary": "Update settings for a particular company",
+    "parameters": [
+      {
+        "name": "companyId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid"
+        }
+      }
+    ],
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.SettingsUpdate"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.SettingsDisplay"
+            }
+          }
+        }
+      }
+    }
+  }
+}

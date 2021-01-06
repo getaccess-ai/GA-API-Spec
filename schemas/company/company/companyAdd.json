@@ -1,0 +1,40 @@
+{
+  "required": [
+    "companyId",
+    "name",
+    "email",
+    "platform",
+    "region",
+    "companyType",
+    "businessLine",
+    "SIF"
+  ],
+  "type": "object",
+  "properties": {
+    "companyId": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "platform": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "companyType": {
+      "type": "string"
+    },
+    "businessLine": {
+      "type": "string"
+    },
+    "SIF": {
+      "type": "string"
+    }
+  }
+}

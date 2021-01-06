@@ -1,0 +1,41 @@
+{
+  "/bank/register": {
+    "$ref": "./bank/register.json"
+  },
+  "/bank/auth": {
+    "$ref": "./bank/auth.json"
+  },
+  "/bank/companies": {
+    "$ref": "./bank/companies.json"
+  },
+  "/bank/companies/{companyId}": {
+    "$ref": "./bank/company.json"
+  },
+  "/bank/companies/{companyId}/settings": {
+    "$ref": "./bank/companySettings.json"
+  },
+  "/bank/companies/{companyId}/connection": {
+    "$ref": "./bank/companyConnection.json"
+  },
+  "/bank/companies/{companyId}/data/reports": {
+    "$ref": "./bank/companyReports.json"
+  },
+  "/bank/companies/{companyId}/data/reports/{reportName}": {
+    "$ref": "./bank/companyReport.json"
+  },
+  "/company/auth": {
+    "$ref": "./company/auth.json"
+  },
+  "/company/connection": {
+    "$ref": "./company/connection.json"
+  },
+  "/company/data/reports/all": {
+    "$ref": "./company/reportsAll.json"
+  },
+  "/company/data/reports": {
+    "$ref": "./company/reportsAll.json"
+  },
+  "/company/data/reports/{reportName}": {
+    "$ref": "./company/report.json"
+  }
+}

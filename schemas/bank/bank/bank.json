@@ -1,0 +1,29 @@
+{
+  "required": ["userId", "password", "email", "name"],
+  "type": "object",
+  "properties": {
+    "userId": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string",
+      "format": "email"
+    },
+    "name": {
+      "type": "string"
+    },
+    "primaryColor": {
+      "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Color.RGBColor"
+    },
+    "secondaryColor": {
+      "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Color.RGBColor"
+    },
+    "coverImg": {
+      "type": "string",
+      "format": "byte"
+    }
+  }
+}

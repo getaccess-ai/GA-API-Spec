@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "rowId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "adjustment": {
+      "type": "number"
+    },
+    "comment": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "authKey": {
+      "type": "string",
+      "format": "key"
+    },
+    "data": {
+      "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.CompanyDisplay"
+    }
+  }
+}

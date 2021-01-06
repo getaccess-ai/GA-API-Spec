@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "enum": ["sage", "tally", "zoho"]
+    },
+    "endpoint": {
+      "type": "string",
+      "format": "uri"
+    },
+    "accessKey": {
+      "type": "string",
+      "format": "key"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "post": {
+    "tags": ["Bank - Auth"],
+    "summary": "Register a new bank",
+    "description": "A bank is allowed to register on our platform to avail our services. An account will be created for the bank and it can now perform the other use cases mentioned below.",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Bank.Bank"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Bank.BankDisplay"
+            }
+          }
+        }
+      }
+    }
+  }
+}

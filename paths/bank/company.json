@@ -1,0 +1,85 @@
+{
+  "put": {
+    "tags": ["Bank - Companies"],
+    "summary": "Update info of a particular company",
+    "parameters": [
+      {
+        "name": "companyId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid"
+        }
+      }
+    ],
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.CompanyUpdate"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.CompanyDisplay"
+            }
+          }
+        }
+      }
+    }
+  },
+  "delete": {
+    "tags": ["Bank - Companies"],
+    "summary": "Delete a particular company, this is not reversible",
+    "parameters": [
+      {
+        "name": "companyId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      }
+    }
+  },
+  "get": {
+    "tags": ["Bank - Companies"],
+    "summary": "Get info of a particular company",
+    "parameters": [
+      {
+        "name": "companyId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.CompanyDisplay"
+            }
+          }
+        }
+      }
+    }
+  }
+}

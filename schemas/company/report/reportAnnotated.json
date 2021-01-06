@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "report": {
+      "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.Report"
+    },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.Annotations"
+      }
+    }
+  }
+}

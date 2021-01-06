@@ -1,0 +1,82 @@
+{
+  "get": {
+    "tags": ["Company - Data"],
+    "summary": "Get latest data of a particular report that will be pushed",
+    "parameters": [
+      {
+        "name": "reportName",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.Report"
+            }
+          }
+        }
+      }
+    }
+  },
+  "post": {
+    "tags": ["Company - Data"],
+    "summary": "Annotate the data of a particular report and then push it to bank",
+    "parameters": [
+      {
+        "name": "reportName",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      }
+    ],
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.ReportAnnotated"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Bank.Report"
+            }
+          }
+        }
+      }
+    }
+  },
+  "delete": {
+    "tags": ["Company - Data"],
+    "summary": "Stop providing a particular report",
+    "parameters": [
+      {
+        "name": "reportName",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success"
+      }
+    }
+  }
+}

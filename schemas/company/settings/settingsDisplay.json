@@ -1,0 +1,20 @@
+{
+  "required": ["id", "companyId", "updatePeriod", "allowedToChangeConnection"],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "companyId": {
+      "type": "string"
+    },
+    "updatePeriod": {
+      "type": "string",
+      "enum": ["monthly", "quarterly", "semi-anually", "anually"]
+    },
+    "allowedToChangeConnection": {
+      "type": "boolean"
+    }
+  }
+}

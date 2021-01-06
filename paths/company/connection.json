@@ -1,0 +1,27 @@
+{
+  "post": {
+    "tags": ["Company - Connection"],
+    "summary": "Add a new ERP connection for the company",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.DataConnectionAdd"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.DataConnection"
+            }
+          }
+        }
+      }
+    }
+  }
+}

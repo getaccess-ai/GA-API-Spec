@@ -1,0 +1,43 @@
+{
+  "get": {
+    "tags": ["Company - Data"],
+    "summary": "Get list of reports company is providing",
+    "responses": {
+      "200": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.ReportList"
+            }
+          }
+        }
+      }
+    }
+  },
+  "post": {
+    "tags": ["Company - Data"],
+    "summary": "Add a new report to provide",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.ReportAdd"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.Report"
+            }
+          }
+        }
+      }
+    }
+  }
+}

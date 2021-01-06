@@ -1,0 +1,18 @@
+{
+  "required": ["totalResults"],
+  "type": "object",
+  "properties": {
+    "results": {
+      "type": "array",
+      "items": {
+        "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.CompanyDisplay"
+      },
+      "nullable": true
+    },
+    "totalResults": {
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "additionalProperties": false
+}
