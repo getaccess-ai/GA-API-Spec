@@ -2,11 +2,15 @@
   "type": "object",
   "properties": {
     "userId": {
-      "type": "string"
+      "type": "string",
+      "example": "sbin0005999",
+      "description": "The userID the bank created while registering."
     },
     "password": {
       "type": "string",
-      "format": "password"
+      "format": "password",
+      "example": "password",
+      "description": "The password the bank created while registering."
     }
   }
 }

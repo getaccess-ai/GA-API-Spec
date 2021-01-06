@@ -3,13 +3,16 @@
   "type": "object",
   "properties": {
     "totalResults": {
-      "type": "integer"
+      "type": "integer",
+      "example": 1,
+      "description": "The total number of reports fetched."
     },
     "reports": {
       "type": "array",
       "items": {
         "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Bank.Report"
-      }
+      },
+      "description": "The list of reports provided by the company."
     }
   }
 }

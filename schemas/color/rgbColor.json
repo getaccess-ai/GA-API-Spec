@@ -13,5 +13,6 @@
       "type": "integer",
       "format": "int32"
     }
-  }
+  },
+  "description": "The colors to be used in the theme for a bank."
 }

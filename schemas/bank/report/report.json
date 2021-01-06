@@ -4,13 +4,18 @@
   "properties": {
     "id": {
       "type": "string",
-      "format": "uuid"
+      "format": "uuid",
+      "description": "The unique id associated with a report at the backend."
     },
     "companyId": {
-      "type": "string"
+      "type": "string",
+      "example": "z2o444",
+      "description": "The companyId used while registering the company."
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "example": "Z2O",
+      "description": "The name of the company, as used during registration."
     },
     "data": {
       "type": "object",
@@ -23,14 +28,18 @@
             }
           }
         }
-      ]
+      ],
+      "description": "The data last pushed by company along with annotations."
     },
     "lastPushDate": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "The date when the report data was last pushed by the company."
     },
     "lastUpdateMadeBy": {
-      "type": "string"
+      "type": "string",
+      "example": "Abhishek Singh",
+      "description": "The name of the person who last pushed the data. Maintained for identification purposes."
     }
   }
 }

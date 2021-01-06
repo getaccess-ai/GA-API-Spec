@@ -4,17 +4,24 @@
   "properties": {
     "id": {
       "type": "string",
-      "format": "uuid"
+      "format": "uuid",
+      "description": "The unique id associated with bank at the backend."
     },
     "userId": {
-      "type": "string"
+      "type": "string",
+      "example": "sbin0005999",
+      "description": "The userID the bank wishes to use while logging in."
     },
     "email": {
       "type": "string",
-      "format": "email"
+      "format": "email",
+      "example": "sbin0005999@sbi.com",
+      "description": "The email associated with the bank."
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "example": "State Bank of India",
+      "description": "The name with which the bank should be represented in the product."
     },
     "primaryColor": {
       "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Color.RGBColor"
@@ -24,11 +31,14 @@
     },
     "coverImg": {
       "type": "string",
-      "format": "byte"
+      "format": "byte",
+      "description": "The image associated with the bank. Can be used on frontends to provide customizability,",
+      "example": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
     },
     "createdAt": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "The date time at which the account was created."
     }
   }
 }

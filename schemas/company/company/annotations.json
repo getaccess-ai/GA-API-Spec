@@ -3,13 +3,18 @@
   "properties": {
     "rowId": {
       "type": "string",
-      "format": "uuid"
+      "format": "uuid",
+      "description": "The id associated with a row/document of the report data."
     },
     "adjustment": {
-      "type": "number"
+      "type": "number",
+      "example": -0.2,
+      "description": "The adjustment to be made in the numerical value of the row data."
     },
     "comment": {
-      "type": "string"
+      "type": "string",
+      "example": "The data precision was too low on the erp software.",
+      "description": "If the data pusher wants to comment on the adjustment."
     }
   }
 }

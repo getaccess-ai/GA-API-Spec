@@ -3,7 +3,8 @@
   "properties": {
     "authKey": {
       "type": "string",
-      "format": "key"
+      "format": "key",
+      "description": "This will be used in subsequent requests to authenticate and authorize them."
     },
     "data": {
       "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Bank.BankDisplay"

@@ -14,23 +14,32 @@
   "properties": {
     "id": {
       "type": "string",
-      "format": "uuid"
+      "format": "uuid",
+      "description": "The unique Id associated with the company in the backend."
     },
     "companyId": {
-      "type": "string"
+      "type": "string",
+      "example": "z2o444",
+      "description": "The companyId used while registering the company."
     },
     "bankId": {
-      "type": "string"
+      "type": "string",
+      "example": "sbin0005999",
+      "description": "The id of the bank associated with the company."
     },
     "password": {
-      "type": "string"
+      "type": "string",
+      "format": "password",
+      "description": "The password for the company login."
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "description": "The name of the comapny"
     },
     "email": {
       "type": "string",
-      "format": "email"
+      "format": "email",
+      "description": "The email associate with the company."
     },
     "platform": {
       "type": "string",
@@ -64,7 +73,7 @@
       "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.DataConnection",
       "nullable": true
     },
-    "created": {
+    "createdAt": {
       "type": "string",
       "format": "date-time",
       "nullable": true

@@ -59,7 +59,7 @@
     "dataConnection": {
       "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.DataConnection"
     },
-    "created": {
+    "createdAt": {
       "type": "string",
       "format": "date-time",
       "nullable": true
