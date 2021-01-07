@@ -1,0 +1,2246 @@
+openapi: 3.0.2
+info:
+  description: Z2O API to be used by Banks for integration.
+  title: Z2O API
+  version: v0.1
+servers:
+- url: /
+paths:
+  /bank/register:
+    post:
+      operationId: bankRegisterPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Z2O.Bank.Bank'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Bank.BankDisplay'
+          description: Success
+      summary: Register a new bank
+      tags:
+      - Bank - Auth
+      x-eov-operation-handler: controllers/BankAuthController
+  /bank/auth:
+    post:
+      operationId: bankAuthPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Z2O.Bank.BankLogin'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Bank.BankAuth'
+          description: Success
+      summary: Get API Key for your bank
+      tags:
+      - Bank - Auth
+      x-eov-operation-handler: controllers/BankAuthController
+  /bank/companies:
+    get:
+      operationId: bankCompaniesGET
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Company.CompanyList'
+          description: Success
+      summary: Get list of companies connected to bank
+      tags:
+      - Bank - Companies
+      x-eov-operation-handler: controllers/BankCompaniesController
+    post:
+      operationId: bankCompaniesPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Z2O.Company.CompanyAdd'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Company.CompanyDisplay'
+          description: Success
+      summary: Add a new company
+      tags:
+      - Bank - Companies
+      x-eov-operation-handler: controllers/BankCompaniesController
+  /bank/companies/{companyId}:
+    delete:
+      operationId: bankCompaniesCompanyIdDELETE
+      parameters:
+      - explode: false
+        in: path
+        name: companyId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Success
+      summary: Delete a particular company, this is not reversible
+      tags:
+      - Bank - Companies
+      x-eov-operation-handler: controllers/BankCompaniesController
+    get:
+      operationId: bankCompaniesCompanyIdGET
+      parameters:
+      - explode: false
+        in: path
+        name: companyId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Company.CompanyDisplay'
+          description: Success
+      summary: Get info of a particular company
+      tags:
+      - Bank - Companies
+      x-eov-operation-handler: controllers/BankCompaniesController
+    put:
+      operationId: bankCompaniesCompanyIdPUT
+      parameters:
+      - explode: false
+        in: path
+        name: companyId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Z2O.Company.CompanyUpdate'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Company.CompanyDisplay'
+          description: Success
+      summary: Update info of a particular company
+      tags:
+      - Bank - Companies
+      x-eov-operation-handler: controllers/BankCompaniesController
+  /bank/companies/{companyId}/settings:
+    get:
+      operationId: bankCompaniesCompanyIdSettingsGET
+      parameters:
+      - explode: false
+        in: path
+        name: companyId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Company.SettingsDisplay'
+          description: Success
+      summary: Get the settings for a particular company
+      tags:
+      - Bank - Companies
+      x-eov-operation-handler: controllers/BankCompaniesController
+    put:
+      operationId: bankCompaniesCompanyIdSettingsPUT
+      parameters:
+      - explode: false
+        in: path
+        name: companyId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Z2O.Company.SettingsUpdate'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Company.SettingsDisplay'
+          description: Success
+      summary: Update settings for a particular company
+      tags:
+      - Bank - Companies
+      x-eov-operation-handler: controllers/BankCompaniesController
+  /bank/companies/{companyId}/connection:
+    get:
+      operationId: bankCompaniesCompanyIdConnectionGET
+      parameters:
+      - explode: false
+        in: path
+        name: companyId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Company.DataConnection'
+          description: Success
+      summary: Get connection details for a particular company
+      tags:
+      - Bank - Company Connection
+      x-eov-operation-handler: controllers/BankCompanyConnectionController
+  /bank/companies/{companyId}/data/reports:
+    get:
+      operationId: bankCompaniesCompanyIdDataReportsGET
+      parameters:
+      - explode: false
+        in: path
+        name: companyId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Bank.ReportList'
+          description: Success
+      summary: Get all the reports provided by a particular company
+      tags:
+      - Bank - Data
+      x-eov-operation-handler: controllers/BankDataController
+  /bank/companies/{companyId}/data/reports/{reportName}:
+    get:
+      operationId: bankCompaniesCompanyIdDataReportsReportNameGET
+      parameters:
+      - explode: false
+        in: path
+        name: companyId
+        required: true
+        schema:
+          format: uuid
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: reportName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Bank.Report'
+          description: Success
+      summary: Get latest annotated data for a particular report provided by a particular
+        company
+      tags:
+      - Bank - Data
+      x-eov-operation-handler: controllers/BankDataController
+  /company/auth:
+    post:
+      operationId: companyAuthPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Z2O.Company.CompanyLogin'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Company.CompanyAuth'
+          description: Success
+      summary: Get API Key for your company
+      tags:
+      - Company - Auth
+      x-eov-operation-handler: controllers/CompanyAuthController
+  /company/connection:
+    post:
+      operationId: companyConnectionPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Z2O.Company.DataConnectionAdd'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Company.DataConnection'
+          description: Success
+      summary: Add a new ERP connection for the company
+      tags:
+      - Company - Connection
+      x-eov-operation-handler: controllers/CompanyConnectionController
+  /company/data/reports/all:
+    get:
+      operationId: companyDataReportsAllGET
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Company.ReportNameList'
+          description: Success
+      summary: Get list of all reports a company can provide for its ERP connection
+      tags:
+      - Company - Data
+      x-eov-operation-handler: controllers/CompanyDataController
+  /company/data/reports:
+    get:
+      operationId: companyDataReportsGET
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Company.ReportList'
+          description: Success
+      summary: Get list of reports company is providing
+      tags:
+      - Company - Data
+      x-eov-operation-handler: controllers/CompanyDataController
+    post:
+      operationId: companyDataReportsPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Z2O.Company.ReportAdd'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Company.Report'
+          description: Success
+      summary: Add a new report to provide
+      tags:
+      - Company - Data
+      x-eov-operation-handler: controllers/CompanyDataController
+  /company/data/reports/{reportName}:
+    delete:
+      operationId: companyDataReportsReportNameDELETE
+      parameters:
+      - explode: false
+        in: path
+        name: reportName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: Success
+      summary: Stop providing a particular report
+      tags:
+      - Company - Data
+      x-eov-operation-handler: controllers/CompanyDataController
+    get:
+      operationId: companyDataReportsReportNameGET
+      parameters:
+      - explode: false
+        in: path
+        name: reportName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Company.Report'
+          description: Success
+      summary: Get latest data of a particular report that will be pushed
+      tags:
+      - Company - Data
+      x-eov-operation-handler: controllers/CompanyDataController
+    post:
+      operationId: companyDataReportsReportNamePOST
+      parameters:
+      - explode: false
+        in: path
+        name: reportName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Z2O.Company.ReportAnnotated'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Z2O.Bank.Report'
+          description: Success
+      summary: Annotate the data of a particular report and then push it to bank
+      tags:
+      - Company - Data
+      x-eov-operation-handler: controllers/CompanyDataController
+components:
+  schemas:
+    Z2O.HelloWorld:
+      example: Hello World
+      type: string
+    Z2O.Bank.Bank:
+      properties:
+        userId:
+          type: string
+        password:
+          type: string
+        email:
+          format: email
+          type: string
+        name:
+          type: string
+        primaryColor:
+          $ref: '#/components/schemas/Z2O.Color.RGBColor'
+        secondaryColor:
+          $ref: '#/components/schemas/Z2O.Color.RGBColor'
+        coverImg:
+          format: byte
+          type: string
+      required:
+      - email
+      - name
+      - password
+      - userId
+      type: object
+    Z2O.Bank.BankDisplay:
+      example:
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        coverImg: coverImg
+        name: name
+        primaryColor:
+          r: 0
+          b: 1
+          g: 6
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        userId: userId
+        email: email
+        secondaryColor:
+          r: 0
+          b: 1
+          g: 6
+      properties:
+        id:
+          format: uuid
+          type: string
+        userId:
+          type: string
+        email:
+          format: email
+          type: string
+        name:
+          type: string
+        primaryColor:
+          $ref: '#/components/schemas/Z2O.Color.RGBColor'
+        secondaryColor:
+          $ref: '#/components/schemas/Z2O.Color.RGBColor'
+        coverImg:
+          format: byte
+          type: string
+        createdAt:
+          format: date-time
+          type: string
+      required:
+      - email
+      - id
+      - name
+      - userId
+      type: object
+    Z2O.Bank.BankAuth:
+      example:
+        authKey: authKey
+        data:
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          coverImg: coverImg
+          name: name
+          primaryColor:
+            r: 0
+            b: 1
+            g: 6
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          userId: userId
+          email: email
+          secondaryColor:
+            r: 0
+            b: 1
+            g: 6
+      properties:
+        authKey:
+          format: key
+          type: string
+        data:
+          $ref: '#/components/schemas/Z2O.Bank.BankDisplay'
+      type: object
+    Z2O.Bank.BankLogin:
+      properties:
+        userId:
+          type: string
+        password:
+          format: password
+          type: string
+      type: object
+    Z2O.Bank.Report:
+      example:
+        companyId: companyId
+        data: data
+        lastUpdateMadeBy: lastUpdateMadeBy
+        name: name
+        lastPushDate: 2000-01-23T04:56:07.000+00:00
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        id:
+          format: uuid
+          type: string
+        companyId:
+          type: string
+        name:
+          type: string
+        data:
+          type: string
+        lastPushDate:
+          format: date-time
+          type: string
+        lastUpdateMadeBy:
+          type: string
+      required:
+      - companyId
+      - id
+      - name
+      type: object
+    Z2O.Bank.ReportList:
+      example:
+        reports:
+        - companyId: companyId
+          data: data
+          lastUpdateMadeBy: lastUpdateMadeBy
+          name: name
+          lastPushDate: 2000-01-23T04:56:07.000+00:00
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        - companyId: companyId
+          data: data
+          lastUpdateMadeBy: lastUpdateMadeBy
+          name: name
+          lastPushDate: 2000-01-23T04:56:07.000+00:00
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        totalResults: 0
+      properties:
+        totalResults:
+          type: integer
+        reports:
+          items:
+            $ref: '#/components/schemas/Z2O.Bank.Report'
+          type: array
+      required:
+      - totalResults
+      type: object
+    Z2O.Company.Company:
+      properties:
+        id:
+          format: uuid
+          type: string
+        companyId:
+          type: string
+        bankId:
+          type: string
+        password:
+          type: string
+        name:
+          type: string
+        email:
+          format: email
+          type: string
+        platform:
+          nullable: true
+          type: string
+        status:
+          type: string
+        region:
+          type: string
+        companyType:
+          type: string
+        businessLine:
+          nullable: true
+          type: string
+        SIF:
+          nullable: true
+          type: string
+        reports:
+          items:
+            $ref: '#/components/schemas/Z2O.Company.Report'
+          nullable: true
+          type: array
+        dataConnection:
+          $ref: '#/components/schemas/Z2O.Company.DataConnection'
+        created:
+          format: date-time
+          nullable: true
+          type: string
+      required:
+      - bankId
+      - companyId
+      - companyType
+      - email
+      - id
+      - name
+      - password
+      - region
+      - status
+      type: object
+    Z2O.Company.CompanyDisplay:
+      example:
+        reports:
+        - companyId: companyId
+          data: data
+          lastUpdateMadeBy: lastUpdateMadeBy
+          name: name
+          lastPushDate: 2000-01-23T04:56:07.000+00:00
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        - companyId: companyId
+          data: data
+          lastUpdateMadeBy: lastUpdateMadeBy
+          name: name
+          lastPushDate: 2000-01-23T04:56:07.000+00:00
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        companyType: companyType
+        created: 2000-01-23T04:56:07.000+00:00
+        dataConnection:
+          companyId: companyId
+          endpoint: https://openapi-generator.tech
+          name: sage
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          status: status
+        platform: platform
+        SIF: SIF
+        companyId: companyId
+        bankId: bankId
+        businessLine: businessLine
+        name: name
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        region: region
+        email: email
+        status: status
+      properties:
+        id:
+          format: uuid
+          type: string
+        companyId:
+          type: string
+        bankId:
+          type: string
+        name:
+          type: string
+        email:
+          format: email
+          type: string
+        platform:
+          nullable: true
+          type: string
+        status:
+          type: string
+        region:
+          type: string
+        companyType:
+          type: string
+        businessLine:
+          nullable: true
+          type: string
+        SIF:
+          nullable: true
+          type: string
+        reports:
+          items:
+            $ref: '#/components/schemas/Z2O.Company.Report'
+          nullable: true
+          type: array
+        dataConnection:
+          $ref: '#/components/schemas/Z2O.Company.DataConnection'
+        created:
+          format: date-time
+          nullable: true
+          type: string
+      required:
+      - bankId
+      - companyId
+      - companyType
+      - email
+      - id
+      - name
+      - region
+      - status
+      type: object
+    Z2O.Company.CompanyAuth:
+      example:
+        authKey: authKey
+        data:
+          reports:
+          - companyId: companyId
+            data: data
+            lastUpdateMadeBy: lastUpdateMadeBy
+            name: name
+            lastPushDate: 2000-01-23T04:56:07.000+00:00
+            id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          - companyId: companyId
+            data: data
+            lastUpdateMadeBy: lastUpdateMadeBy
+            name: name
+            lastPushDate: 2000-01-23T04:56:07.000+00:00
+            id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          companyType: companyType
+          created: 2000-01-23T04:56:07.000+00:00
+          dataConnection:
+            companyId: companyId
+            endpoint: https://openapi-generator.tech
+            name: sage
+            id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            status: status
+          platform: platform
+          SIF: SIF
+          companyId: companyId
+          bankId: bankId
+          businessLine: businessLine
+          name: name
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          region: region
+          email: email
+          status: status
+      properties:
+        authKey:
+          format: key
+          type: string
+        data:
+          $ref: '#/components/schemas/Z2O.Company.CompanyDisplay'
+      type: object
+    Z2O.Company.CompanyAdd:
+      properties:
+        companyId:
+          type: string
+        name:
+          type: string
+        email:
+          format: email
+          type: string
+        platform:
+          type: string
+        region:
+          type: string
+        companyType:
+          type: string
+        businessLine:
+          type: string
+        SIF:
+          type: string
+      required:
+      - SIF
+      - businessLine
+      - companyId
+      - companyType
+      - email
+      - name
+      - platform
+      - region
+      type: object
+    Z2O.Company.CompanyUpdate:
+      properties:
+        companyId:
+          type: string
+        name:
+          type: string
+        email:
+          format: email
+          type: string
+        platform:
+          type: string
+        region:
+          type: string
+        companyType:
+          type: string
+        businessLine:
+          type: string
+        SIF:
+          type: string
+      type: object
+    Z2O.Company.CompanyLogin:
+      properties:
+        companyId:
+          type: string
+        password:
+          format: password
+          type: string
+      type: object
+    Z2O.Company.CompanyList:
+      additionalProperties: false
+      example:
+        totalResults: 0
+        results:
+        - reports:
+          - companyId: companyId
+            data: data
+            lastUpdateMadeBy: lastUpdateMadeBy
+            name: name
+            lastPushDate: 2000-01-23T04:56:07.000+00:00
+            id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          - companyId: companyId
+            data: data
+            lastUpdateMadeBy: lastUpdateMadeBy
+            name: name
+            lastPushDate: 2000-01-23T04:56:07.000+00:00
+            id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          companyType: companyType
+          created: 2000-01-23T04:56:07.000+00:00
+          dataConnection:
+            companyId: companyId
+            endpoint: https://openapi-generator.tech
+            name: sage
+            id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            status: status
+          platform: platform
+          SIF: SIF
+          companyId: companyId
+          bankId: bankId
+          businessLine: businessLine
+          name: name
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          region: region
+          email: email
+          status: status
+        - reports:
+          - companyId: companyId
+            data: data
+            lastUpdateMadeBy: lastUpdateMadeBy
+            name: name
+            lastPushDate: 2000-01-23T04:56:07.000+00:00
+            id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          - companyId: companyId
+            data: data
+            lastUpdateMadeBy: lastUpdateMadeBy
+            name: name
+            lastPushDate: 2000-01-23T04:56:07.000+00:00
+            id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          companyType: companyType
+          created: 2000-01-23T04:56:07.000+00:00
+          dataConnection:
+            companyId: companyId
+            endpoint: https://openapi-generator.tech
+            name: sage
+            id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            status: status
+          platform: platform
+          SIF: SIF
+          companyId: companyId
+          bankId: bankId
+          businessLine: businessLine
+          name: name
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          region: region
+          email: email
+          status: status
+      properties:
+        results:
+          items:
+            $ref: '#/components/schemas/Z2O.Company.CompanyDisplay'
+          nullable: true
+          type: array
+        totalResults:
+          format: int32
+          type: integer
+      required:
+      - totalResults
+      type: object
+    Z2O.Company.Report:
+      example:
+        companyId: companyId
+        data: data
+        lastUpdateMadeBy: lastUpdateMadeBy
+        name: name
+        lastPushDate: 2000-01-23T04:56:07.000+00:00
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        id:
+          format: uuid
+          type: string
+        companyId:
+          type: string
+        name:
+          type: string
+        data:
+          type: string
+        lastPushDate:
+          format: date-time
+          type: string
+        lastUpdateMadeBy:
+          type: string
+      required:
+      - companyId
+      - id
+      - name
+      type: object
+    Z2O.Company.ReportAdd:
+      properties:
+        name:
+          type: string
+      type: object
+    Z2O.Company.ReportType:
+      example:
+        name: name
+        connectionType: connectionType
+      properties:
+        connectionType:
+          type: string
+        name:
+          type: string
+      required:
+      - connectionName
+      - name
+      type: object
+    Z2O.Company.ReportAnnotated:
+      properties:
+        report:
+          $ref: '#/components/schemas/Z2O.Company.Report'
+        annotations:
+          items:
+            $ref: '#/components/schemas/Z2O.Company.Annotations'
+          type: array
+      type: object
+    Z2O.Company.ReportList:
+      example:
+        reports:
+        - companyId: companyId
+          data: data
+          lastUpdateMadeBy: lastUpdateMadeBy
+          name: name
+          lastPushDate: 2000-01-23T04:56:07.000+00:00
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        - companyId: companyId
+          data: data
+          lastUpdateMadeBy: lastUpdateMadeBy
+          name: name
+          lastPushDate: 2000-01-23T04:56:07.000+00:00
+          id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        totalResults: 0
+      properties:
+        totalResults:
+          type: integer
+        reports:
+          items:
+            $ref: '#/components/schemas/Z2O.Company.Report'
+          type: array
+      required:
+      - totalResults
+      type: object
+    Z2O.Company.ReportNameList:
+      example:
+        reports:
+        - name: name
+          connectionType: connectionType
+        - name: name
+          connectionType: connectionType
+        totalResults: 0
+        connectionName: sage
+      properties:
+        totalResults:
+          type: integer
+        connectionName:
+          enum:
+          - sage
+          - tally
+          - zoho
+          type: string
+        reports:
+          items:
+            $ref: '#/components/schemas/Z2O.Company.ReportType'
+          type: array
+      required:
+      - totalResults
+      type: object
+    Z2O.Company.Annotations:
+      properties:
+        rowId:
+          format: uuid
+          type: string
+        adjustment:
+          type: number
+        comment:
+          type: string
+      type: object
+    Z2O.Company.DataConnection:
+      example:
+        companyId: companyId
+        endpoint: https://openapi-generator.tech
+        name: sage
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        status: status
+      properties:
+        id:
+          format: uuid
+          type: string
+        companyId:
+          type: string
+        name:
+          enum:
+          - sage
+          - tally
+          - zoho
+          type: string
+        endpoint:
+          format: uri
+          type: string
+        status:
+          type: string
+      type: object
+    Z2O.Company.DataConnectionAdd:
+      properties:
+        name:
+          enum:
+          - sage
+          - tally
+          - zoho
+          type: string
+        endpoint:
+          format: uri
+          type: string
+        accessKey:
+          format: key
+          type: string
+      type: object
+    Z2O.Company.SettingsDisplay:
+      example:
+        companyId: companyId
+        allowedToChangeConnection: true
+        updatePeriod: monthly
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        id:
+          format: uuid
+          type: string
+        companyId:
+          type: string
+        updatePeriod:
+          enum:
+          - monthly
+          - quarterly
+          - semi-anually
+          - anually
+          type: string
+        allowedToChangeConnection:
+          type: boolean
+      required:
+      - allowedToChangeConnection
+      - companyId
+      - id
+      - updatePeriod
+      type: object
+    Z2O.Company.SettingsUpdate:
+      properties:
+        companyId:
+          type: string
+        updatePeriod:
+          enum:
+          - monthly
+          - quarterly
+          - semi-anually
+          - anually
+          type: string
+        allowedToChangeConnection:
+          type: boolean
+      type: object
+    Z2O.Color.RGBColor:
+      example:
+        r: 0
+        b: 1
+        g: 6
+      properties:
+        r:
+          format: int32
+          type: integer
+        g:
+          format: int32
+          type: integer
+        b:
+          format: int32
+          type: integer
+      type: object
+    Z2O.Reports.Zoho.Contact:
+      properties:
+        contact_id:
+          type: integer
+        contact_name:
+          type: string
+        company_name:
+          type: string
+        contact_type:
+          type: string
+        status:
+          type: string
+        payment_terms:
+          type: number
+        payment_terms_label:
+          type: string
+        currency_id:
+          type: integer
+        currency_code:
+          type: string
+        outstanding_receivable_amount:
+          type: number
+        unused_credits_receivable_amount:
+          type: number
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          format: email
+          type: string
+        phone:
+          type: string
+        mobile:
+          type: string
+        created_time:
+          format: date-time
+          type: string
+        last_modified_time:
+          format: date-time
+          type: string
+      type: object
+    Z2O.Reports.Zoho.ContactsData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.Contact'
+      type: array
+    Z2O.Reports.Zoho.ContactPerson:
+      properties:
+        contact_person_id:
+          type: integer
+        salutation:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          format: email
+          type: string
+        phone:
+          type: string
+        mobile:
+          type: string
+        is_primary_contact:
+          type: boolean
+        skype:
+          type: string
+        designation:
+          type: string
+        department:
+          type: string
+        is_added_in_portal:
+          type: boolean
+      type: object
+    Z2O.Reports.Zoho.ContactPersonsList:
+      properties:
+        contact_id:
+          type: integer
+        contact_persons:
+          items:
+            $ref: '#/components/schemas/Z2O.Reports.Zoho.ContactPerson'
+          type: array
+      type: object
+    Z2O.Reports.Zoho.ContactPersonsData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.ContactPersonsList'
+      type: array
+    Z2O.Reports.Zoho.Estimate:
+      properties:
+        estimate_id:
+          type: integer
+        customer_name:
+          type: string
+        customer_id:
+          type: integer
+        status:
+          type: string
+        estimate_number:
+          type: string
+        reference_number:
+          type: string
+        date:
+          format: date
+          type: string
+        currency_id:
+          type: integer
+        currency_code:
+          type: string
+        total:
+          type: number
+        created_time:
+          format: date-time
+          type: string
+        last_modified_time:
+          format: date-time
+          type: string
+        accepted_date:
+          format: date
+          type: string
+        declined_date:
+          format: date
+          type: string
+        expiry_date:
+          format: date
+          type: string
+        has_attachment:
+          type: boolean
+        is_viewed_by_client:
+          type: boolean
+        client_viewed_time:
+          format: date-time
+          type: string
+      type: object
+    Z2O.Reports.Zoho.EstimatesData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.Estimate'
+      type: array
+    Z2O.Reports.Zoho.SalesOrder:
+      properties:
+        salesorder_id:
+          type: string
+        zcrm_potential_id:
+          type: string
+        customer_name:
+          type: string
+        customer_id:
+          type: string
+        status:
+          type: string
+        salesorder_number:
+          type: string
+        reference_number:
+          type: string
+        date:
+          format: date
+          type: string
+        shipment_days:
+          type: integer
+        currency_id:
+          type: string
+        currency_code:
+          type: string
+        total:
+          type: number
+        sub_total:
+          type: number
+        bcy_total:
+          type: number
+        created_time:
+          format: date-time
+          type: string
+        last_modified_time:
+          format: date-time
+          type: string
+        is_emailed:
+          type: boolean
+        has_attachment:
+          type: boolean
+      type: object
+    Z2O.Reports.Zoho.SalesOrdersData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.SalesOrder'
+      type: array
+    Z2O.Reports.Zoho.Invoice:
+      properties:
+        invoice_id:
+          type: integer
+        ach_payment_initiated:
+          type: boolean
+        customer_name:
+          type: string
+        customer_id:
+          type: integer
+        status:
+          type: string
+        invoice_number:
+          type: string
+        reference_number:
+          type: string
+        date:
+          format: date
+          type: string
+        due_date:
+          format: date
+          type: string
+        due_days:
+          type: string
+        currency_id:
+          type: integer
+        schedule_time:
+          type: string
+        currency_code:
+          type: string
+        is_viewed_by_client:
+          type: boolean
+        has_attachment:
+          type: boolean
+        client_viewed_time:
+          format: date-time
+          type: string
+        total:
+          type: number
+        balance:
+          type: number
+        created_time:
+          format: date-time
+          type: string
+        last_modified_time:
+          format: date-time
+          type: string
+        is_emailed:
+          type: boolean
+        reminders_sent:
+          type: integer
+        last_reminder_sent_date:
+          format: date
+          type: string
+        payment_expected_date:
+          format: date
+          type: string
+        last_payment_date:
+          format: date
+          type: string
+        documents:
+          type: string
+        salesperson_id:
+          type: string
+        salesperson_name:
+          type: string
+        shipping_charge:
+          type: number
+        adjustment:
+          type: number
+        write_off_amount:
+          type: number
+        exchange_rate:
+          type: number
+      type: object
+    Z2O.Reports.Zoho.InvoicesData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.Invoice'
+      type: array
+    Z2O.Reports.Zoho.InvoicePayment:
+      properties:
+        payment_id:
+          type: string
+        payment_number:
+          type: integer
+        invoice_id:
+          type: integer
+        invoice_payment_id:
+          type: integer
+        payment_mode:
+          type: string
+        description:
+          type: string
+        date:
+          format: date
+          type: string
+        reference_number:
+          type: integer
+        exchange_rate:
+          type: integer
+        amount:
+          type: number
+        tax_amount_withheld:
+          type: number
+        online_transaction_id:
+          type: string
+        is_single_invoice_payment:
+          type: boolean
+      type: object
+    Z2O.Reports.Zoho.InvoicePaymentsList:
+      properties:
+        invoice_id:
+          type: integer
+        invoice_payments:
+          items:
+            $ref: '#/components/schemas/Z2O.Reports.Zoho.InvoicePayment'
+          type: array
+      type: object
+    Z2O.Reports.Zoho.InvoicePaymentsData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.InvoicePaymentsList'
+      type: array
+    Z2O.Reports.Zoho.CreditsApplied:
+      properties:
+        creditnote_id:
+          type: integer
+        creditnotes_invoice_id:
+          type: string
+        creditnotes_number:
+          type: string
+        credited_date:
+          format: date
+          type: string
+        amount_applied:
+          type: number
+      type: object
+    Z2O.Reports.Zoho.CreditsAppliedList:
+      properties:
+        invoice_id:
+          type: integer
+        credits_applied:
+          items:
+            $ref: '#/components/schemas/Z2O.Reports.Zoho.CreditsApplied'
+          type: array
+      type: object
+    Z2O.Reports.Zoho.CreditsAppliedData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.CreditsAppliedList'
+      type: array
+    Z2O.Reports.Zoho.Address:
+      properties:
+        address:
+          type: string
+        street2:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        zip:
+          type: string
+        country:
+          type: string
+        fax:
+          type: string
+      type: object
+    Z2O.Reports.Zoho.RecurringInvoice:
+      properties:
+        recurring_invoice_id:
+          type: string
+        recurrence_name:
+          type: string
+        customer_name:
+          type: string
+        customer_id:
+          type: string
+        currency_id:
+          type: string
+        currency_code:
+          type: string
+        start_date:
+          format: date
+          type: string
+        end_date:
+          format: date
+          type: string
+        last_sent_date:
+          format: date
+          type: string
+        next_invoice_date:
+          format: date
+          type: string
+        billing_address:
+          $ref: '#/components/schemas/Z2O.Reports.Zoho.Address'
+        shipping_address:
+          $ref: '#/components/schemas/Z2O.Reports.Zoho.Address'
+      type: object
+    Z2O.Reports.Zoho.RecurringInvoicesData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.RecurringInvoice'
+      type: array
+    Z2O.Reports.Zoho.RecurringInvoiceComment:
+      properties:
+        comment_id:
+          type: string
+        recurring_invoice_id:
+          type: string
+        comment_description:
+          type: string
+        commented_by_id:
+          type: string
+        commented_by:
+          type: string
+        comment_type:
+          type: string
+        operation_type:
+          type: string
+        date:
+          format: date
+          type: string
+        date_description:
+          type: string
+        time:
+          format: time
+          type: string
+        transaction_id:
+          type: string
+        transaction_type:
+          type: string
+      type: object
+    Z2O.Reports.Zoho.RecurringInvoiceHistory:
+      properties:
+        recurring_invoice_id:
+          type: string
+        recurring_invoice_comments:
+          items:
+            $ref: '#/components/schemas/Z2O.Reports.Zoho.RecurringInvoiceHistory'
+          type: array
+      type: object
+    Z2O.Reports.Zoho.RecurringInvoiceHistoryData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.RecurringInvoiceHistory'
+      type: array
+    Z2O.Reports.Zoho.CreditNote:
+      properties:
+        creditnote_id:
+          type: string
+        creditnote_number:
+          type: string
+        status:
+          type: string
+        reference_number:
+          type: string
+        date:
+          format: date
+          type: string
+        total:
+          type: number
+        balance:
+          type: number
+        customer_id:
+          type: string
+        customer_name:
+          type: string
+        currency_id:
+          type: string
+        currency_code:
+          type: string
+        created_time:
+          format: date-time
+          type: string
+        last_modified_time:
+          format: date-time
+          type: string
+        is_emailed:
+          type: boolean
+      type: object
+    Z2O.Reports.Zoho.CreditNotesData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.CreditNote'
+      type: array
+    Z2O.Reports.Zoho.InvoiceCredited:
+      properties:
+        creditnote_id:
+          type: string
+        invoice_id:
+          type: string
+        creditnote_invoice_id:
+          type: string
+        date:
+          format: date
+          type: string
+        invoice_number:
+          type: string
+        creditnote_number:
+          type: string
+        credited_amount:
+          type: number
+      type: object
+    Z2O.Reports.Zoho.InvoicesCreditedList:
+      properties:
+        invoice_id:
+          type: string
+        invoices_credited:
+          items:
+            $ref: '#/components/schemas/Z2O.Reports.Zoho.InvoiceCredited'
+          type: array
+      type: object
+    Z2O.Reports.Zoho.InvoicesCreditedData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.InvoicesCreditedList'
+      type: array
+    Z2O.Reports.Zoho.CreditNoteRefund:
+      properties:
+        creditnote_refund_id:
+          type: string
+        creditnote_id:
+          type: string
+        date:
+          format: date
+          type: string
+        refund_mode:
+          type: string
+        reference_number:
+          type: string
+        creditnote_number:
+          type: string
+        customer_name:
+          type: string
+        description:
+          type: string
+        amount_bcy:
+          type: number
+        amount_fcy:
+          type: number
+      type: object
+    Z2O.Reports.Zoho.CreditNoteRefundsData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.CreditNoteRefund'
+      type: array
+    Z2O.Reports.Zoho.CustomerPayment:
+      properties:
+        payment_id:
+          type: string
+        payment_number:
+          type: string
+        invoice_number:
+          type: string
+        date:
+          format: date
+          type: string
+        payment_mode:
+          type: string
+        amount:
+          type: number
+        bcy_amount:
+          type: number
+      type: object
+    Z2O.Reports.Zoho.CustomerPaymentsData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.CustomerPayment'
+      type: array
+    Z2O.Reports.Zoho.Expense:
+      properties:
+        expense_id:
+          type: integer
+        date:
+          format: date
+          type: string
+        account_name:
+          type: string
+        description:
+          type: string
+        currency_id:
+          type: integer
+        currency_code:
+          type: string
+        bcy_total:
+          type: number
+        bcy_total_without_tax:
+          type: number
+        total:
+          type: number
+        total_without_tax:
+          type: number
+        is_billable:
+          type: boolean
+        reference_number:
+          type: boolean
+        customer_id:
+          type: integer
+        customer_name:
+          type: string
+        status:
+          type: string
+        created_time:
+          format: date-time
+          type: string
+        last_modified_time:
+          format: date-time
+          type: string
+        expense_receipt_name:
+          type: string
+        mileage_rate:
+          type: string
+        mileage_unit:
+          type: string
+        expense_type:
+          type: string
+        start_reading:
+          type: string
+        end_reading:
+          type: string
+      type: object
+    Z2O.Reports.Zoho.ExpensesData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.Expense'
+      type: array
+    Z2O.Reports.Zoho.Employee:
+      properties:
+        employee_id:
+          type: string
+        name:
+          type: string
+        email:
+          format: email
+          type: string
+      type: object
+    Z2O.Reports.Zoho.EmployeesData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.Employee'
+      type: array
+    Z2O.Reports.Zoho.RecurringExpense:
+      properties:
+        recurring_expense_id:
+          type: integer
+        recurrence_name:
+          type: string
+        recurrence_frequency:
+          type: string
+        repeat_every:
+          type: integer
+        last_created_date:
+          format: date-time
+          type: string
+        next_expense_date:
+          format: date-time
+          type: string
+        account_name:
+          type: string
+        description:
+          type: string
+        currency_id:
+          type: integer
+        currency_code:
+          type: string
+        total:
+          type: number
+        is_billable:
+          type: boolean
+        customer_name:
+          type: string
+        status:
+          type: string
+        created_time:
+          format: date-time
+          type: string
+        last_modified_time:
+          format: date-time
+          type: string
+      type: object
+    Z2O.Reports.Zoho.RecurringExpensesData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.RecurringExpense'
+      type: array
+    Z2O.Reports.Zoho.RetainerInvoice:
+      properties:
+        retainerinvoice_id:
+          type: integer
+        customer_name:
+          type: string
+        retainerinvoice_number:
+          type: string
+        customer_id:
+          type: integer
+        status:
+          type: string
+        reference_number:
+          type: string
+        project_or_estimate_name:
+          type: string
+        date:
+          format: date
+          type: string
+        currency_id:
+          type: integer
+        currency_code:
+          type: string
+        is_viewed_by_client:
+          type: boolean
+        client_viewed_time:
+          type: boolean
+        total:
+          type: number
+        balance:
+          type: number
+        created_time:
+          format: date-time
+          type: string
+        last_modified_time:
+          format: date-time
+          type: string
+        is_emailed:
+          type: boolean
+        last_payment_date:
+          format: date
+          type: string
+        has_attachment:
+          type: boolean
+      type: object
+    Z2O.Reports.Zoho.RetainerInvoicesData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.RetainerInvoice'
+      type: array
+    Z2O.Reports.Zoho.PurchaseOrder:
+      properties:
+        purchaseorder_id:
+          type: string
+        vendor_id:
+          type: string
+        status:
+          type: string
+        purchaseorder_number:
+          type: string
+        reference_number:
+          type: string
+        date:
+          format: date
+          type: string
+        delivery_date:
+          format: date
+          type: string
+        currency_id:
+          type: string
+        currency_code:
+          type: string
+        price_precision:
+          type: number
+        total:
+          type: number
+        has_attachment:
+          type: boolean
+        created_time:
+          format: date-time
+          type: string
+        last_modified_time:
+          format: date-time
+          type: string
+      type: object
+    Z2O.Reports.Zoho.PurchaseOrdersData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.PurchaseOrder'
+      type: array
+    Z2O.Reports.Zoho.Bill:
+      properties:
+        bill_id:
+          type: string
+        vendor_id:
+          type: string
+        status:
+          type: string
+        bill_number:
+          type: string
+        reference_number:
+          type: string
+        date:
+          format: date
+          type: string
+        due_date:
+          format: date
+          type: string
+        currency_id:
+          type: string
+        currency_code:
+          type: string
+        price_precision:
+          type: number
+        exchange_rate:
+          type: number
+        total:
+          type: number
+        balance:
+          type: number
+        created_time:
+          format: date-time
+          type: string
+        last_modified_time:
+          format: date-time
+          type: string
+        has_attachment:
+          type: boolean
+      type: object
+    Z2O.Reports.Zoho.BillsData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.Bill'
+      type: array
+    Z2O.Reports.Zoho.VendorCredit:
+      properties:
+        vendor_credit_id:
+          type: string
+        vendor_credit_number:
+          type: string
+        status:
+          type: string
+        date:
+          format: date
+          type: string
+        total:
+          type: number
+        balance:
+          type: number
+        vendor_id:
+          type: string
+        vendor_name:
+          type: string
+        currency_id:
+          type: string
+        currency_code:
+          type: string
+        created_time:
+          format: date-time
+          type: string
+        last_modified_time:
+          format: date-time
+          type: string
+        has_attachment:
+          type: boolean
+        exchange_rate:
+          type: number
+      type: object
+    Z2O.Reports.Zoho.VendorCreditsData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.VendorCredit'
+      type: array
+    Z2O.Reports.Zoho.VendorPayment:
+      properties:
+        payment_id:
+          type: string
+        vendor_id:
+          type: string
+        vendor_name:
+          type: string
+        payment_mode:
+          type: string
+        payment_number:
+          type: integer
+        date:
+          format: date
+          type: string
+        reference_number:
+          type: string
+        exchange_rate:
+          type: number
+        amount:
+          type: number
+        bcy_amount:
+          type: number
+        paid_through_account_id:
+          type: string
+        paid_through_account_name:
+          type: string
+        balance:
+          type: number
+        bcy_balance:
+          type: number
+        created_time:
+          format: date-time
+          type: string
+        is_paid_via_print_check:
+          type: boolean
+        has_attachment:
+          type: boolean
+        is_ach_payment:
+          type: boolean
+      type: object
+    Z2O.Reports.Zoho.VendorPaymentsData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.VendorPayment'
+      type: array
+    Z2O.Reports.Zoho.BankAccount:
+      properties:
+        account_id:
+          type: string
+        account_name:
+          type: string
+        currency_id:
+          type: string
+        currency_code:
+          type: string
+        account_type:
+          type: string
+        account_number:
+          type: string
+        uncategorized_transactions:
+          type: integer
+        total_unprinted_checks:
+          type: integer
+        is_active:
+          type: boolean
+        balance:
+          type: number
+        bank_balance:
+          type: number
+        bcy_balance:
+          type: number
+        bank_name:
+          type: string
+        routing_number:
+          type: string
+        is_primary_account:
+          type: boolean
+        is_paypal_account:
+          type: boolean
+      type: object
+    Z2O.Reports.Zoho.BankAccountsData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.BankAccount'
+      type: array
+    Z2O.Reports.Zoho.Transaction:
+      properties:
+        transaction_id:
+          type: string
+        debit_or_credit:
+          type: string
+        date:
+          format: date
+          type: string
+        customer_id:
+          type: string
+        payee:
+          type: string
+        reference_number:
+          type: string
+        transaction_type:
+          type: string
+        amount:
+          type: number
+        status:
+          type: string
+      type: object
+    Z2O.Reports.Zoho.LastImportedStatement:
+      properties:
+        statement_id:
+          type: string
+        from_date:
+          format: date
+          type: string
+        to_date:
+          format: date
+          type: string
+        source:
+          type: string
+        transactions:
+          items:
+            $ref: '#/components/schemas/Z2O.Reports.Zoho.Transaction'
+          type: array
+      type: object
+    Z2O.Reports.Zoho.LastImportedStatementsList:
+      properties:
+        account_id:
+          type: string
+        last_imported_statements:
+          items:
+            $ref: '#/components/schemas/Z2O.Reports.Zoho.LastImportedStatement'
+          type: array
+      type: object
+    Z2O.Reports.Zoho.LastImportedStatementsData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.LastImportedStatementsList'
+      type: array
+    Z2O.Reports.Zoho.BankTransaction:
+      properties:
+        transaction_id:
+          type: string
+        date:
+          format: date
+          type: string
+        amount:
+          type: number
+        transaction_type:
+          type: string
+        status:
+          type: string
+        source:
+          type: string
+        account_id:
+          type: string
+        account_name:
+          type: string
+        account_type:
+          type: string
+        price_precision:
+          type: number
+        customer_id:
+          type: string
+        payee:
+          type: string
+        is_paid_via_print_check:
+          type: boolean
+        currency_id:
+          type: string
+        currency_code:
+          type: string
+        currency_symbol:
+          type: string
+        debit_or_credit:
+          type: string
+        offset_account_name:
+          type: string
+        is_offsetaccount_matched:
+          type: boolean
+        reference_number:
+          type: string
+        imported_transaction_id:
+          type: string
+        is_rule_exist:
+          type: boolean
+      type: object
+    Z2O.Reports.Zoho.BankTransactionsData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.BankTransaction'
+      type: array
+    Z2O.Reports.Zoho.User:
+      properties:
+        user_id:
+          type: string
+        role_id:
+          type: string
+        name:
+          type: string
+        email:
+          format: email
+          type: string
+        user_role:
+          type: string
+        status:
+          type: string
+        is_current_user:
+          type: boolean
+        photo_url:
+          format: uri
+          type: string
+        is_customer_segmented:
+          type: boolean
+        is_vendor_segmented:
+          type: boolean
+        user_type:
+          type: string
+      type: object
+    Z2O.Reports.Zoho.UsersData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.User'
+      type: array
+    Z2O.Reports.Zoho.Item:
+      properties:
+        item_id:
+          type: integer
+        name:
+          type: string
+        status:
+          type: string
+        description:
+          type: string
+        rate:
+          type: number
+        unit:
+          type: string
+        tax_id:
+          type: integer
+        tax_name:
+          type: string
+        tax_percentage:
+          type: string
+        tax_type:
+          type: string
+        sku:
+          type: string
+        product_type:
+          type: string
+      type: object
+    Z2O.Reports.Zoho.ItemsData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.Item'
+      type: array
+    Z2O.Reports.Zoho.Tax:
+      properties:
+        tax_id:
+          type: string
+        tax_name:
+          type: string
+        tax_percentage:
+          type: number
+        tax_type:
+          type: string
+        tax_authority_id:
+          type: string
+        tax_authority_name:
+          type: string
+        is_value_added:
+          type: boolean
+        is_default_tax:
+          type: boolean
+        is_editable:
+          type: boolean
+      type: object
+    Z2O.Reports.Zoho.TaxesData:
+      items:
+        $ref: '#/components/schemas/Z2O.Reports.Zoho.Tax'
+      type: array
+    Z2O.Reports.Zoho.Account:
+      properties:
+        acount_split_id:
+          type: string
+        account_id:
+          type: string
+        account_name:
+          type: string
+        debit_or_credit:
+          type: string
+        exchange_rate:
+          type: number
+        currency_id:
+          type: string
+        currency_code:
+          type: string
+        bcy_amount:
+          type: number
+        amount:
+          type: number
+      type: object
+    Z2O.Reports.Zoho.OpeningBalanceData:
+      properties:
+        opening_balance_id:
+          type: string
+        date:
+          format: date
+          type: string
+        price_precision:
+          type: number
+        accounts:
+          items:
+            $ref: '#/components/schemas/Z2O.Reports.Zoho.Account'
+          type: array
+        total:
+          type: number
+      type: object
