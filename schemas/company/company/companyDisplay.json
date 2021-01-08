@@ -1,6 +1,5 @@
 {
   "required": [
-    "id",
     "companyId",
     "bankId",
     "name",
@@ -11,10 +10,6 @@
   ],
   "type": "object",
   "properties": {
-    "id": {
-      "type": "string",
-      "format": "uuid"
-    },
     "companyId": {
       "type": "string"
     },

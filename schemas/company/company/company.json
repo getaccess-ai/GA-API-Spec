@@ -1,6 +1,5 @@
 {
   "required": [
-    "id",
     "companyId",
     "bankId",
     "password",
@@ -12,11 +11,6 @@
   ],
   "type": "object",
   "properties": {
-    "id": {
-      "type": "string",
-      "format": "uuid",
-      "description": "The unique Id associated with the company in the backend."
-    },
     "companyId": {
       "type": "string",
       "example": "z2o444",

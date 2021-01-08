@@ -1,6 +1,6 @@
 {
-  "name":  "z2o-api",
-  "version": "v0.1",
+  "name": "z2o-api",
+  "version": "0.1.1",
   "description": "Z2O API to be used by Banks for integration.",
   "main": "index.js",
   "scripts": {
