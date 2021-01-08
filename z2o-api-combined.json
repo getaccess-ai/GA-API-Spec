@@ -553,10 +553,10 @@
         "example": "Hello World"
       },
       "Z2O.Bank.Bank": {
-        "required": ["userId", "password", "email", "name"],
+        "required": ["bankId", "password", "email", "name"],
         "type": "object",
         "properties": {
-          "userId": {
+          "bankId": {
             "type": "string"
           },
           "password": {
@@ -582,14 +582,10 @@
         }
       },
       "Z2O.Bank.BankDisplay": {
-        "required": ["id", "userId", "email", "name"],
+        "required": ["bankId", "email", "name"],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "userId": {
+          "bankId": {
             "type": "string"
           },
           "email": {
@@ -630,7 +626,7 @@
       "Z2O.Bank.BankLogin": {
         "type": "object",
         "properties": {
-          "userId": {
+          "bankId": {
             "type": "string"
           },
           "password": {
@@ -682,7 +678,6 @@
       },
       "Z2O.Company.Company": {
         "required": [
-          "id",
           "companyId",
           "bankId",
           "password",
@@ -694,10 +689,6 @@
         ],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
           "companyId": {
             "type": "string"
           },
@@ -755,7 +746,6 @@
       },
       "Z2O.Company.CompanyDisplay": {
         "required": [
-          "id",
           "companyId",
           "bankId",
           "name",
@@ -766,10 +756,6 @@
         ],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
           "companyId": {
             "type": "string"
           },
