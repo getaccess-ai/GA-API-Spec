@@ -1070,17 +1070,12 @@
       },
       "Z2O.Company.SettingsDisplay": {
         "required": [
-          "id",
           "companyId",
           "updatePeriod",
           "allowedToChangeConnection"
         ],
         "type": "object",
         "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
           "companyId": {
             "type": "string"
           },
@@ -1096,9 +1091,6 @@
       "Z2O.Company.SettingsUpdate": {
         "type": "object",
         "properties": {
-          "companyId": {
-            "type": "string"
-          },
           "updatePeriod": {
             "type": "string",
             "enum": ["monthly", "quarterly", "semi-anually", "anually"]
