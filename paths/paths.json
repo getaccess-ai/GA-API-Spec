@@ -33,7 +33,7 @@
     "$ref": "./company/reportsAll.json"
   },
   "/company/data/reports": {
-    "$ref": "./company/reportsAll.json"
+    "$ref": "./company/reports.json"
   },
   "/company/data/reports/{reportName}": {
     "$ref": "./company/report.json"
