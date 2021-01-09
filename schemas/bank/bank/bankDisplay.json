@@ -1,16 +1,11 @@
 {
-  "required": ["id", "userId", "email", "name"],
+  "required": ["bankId", "email", "name"],
   "type": "object",
   "properties": {
-    "id": {
-      "type": "string",
-      "format": "uuid",
-      "description": "The unique id associated with bank at the backend."
-    },
-    "userId": {
+    "bankId": {
       "type": "string",
       "example": "sbin0005999",
-      "description": "The userID the bank wishes to use while logging in."
+      "description": "The bankId the bank wishes to use while logging in."
     },
     "email": {
       "type": "string",

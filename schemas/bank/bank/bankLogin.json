@@ -1,10 +1,10 @@
 {
   "type": "object",
   "properties": {
-    "userId": {
+    "bankId": {
       "type": "string",
       "example": "sbin0005999",
-      "description": "The userID the bank created while registering."
+      "description": "The bankId the bank created while registering."
     },
     "password": {
       "type": "string",

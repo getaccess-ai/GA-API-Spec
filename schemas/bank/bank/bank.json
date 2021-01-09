@@ -1,11 +1,11 @@
 {
-  "required": ["userId", "password", "email", "name"],
+  "required": ["bankId", "password", "email", "name"],
   "type": "object",
   "properties": {
-    "userId": {
+    "bankId": {
       "type": "string",
       "example": "sbin0005999",
-      "description": "The userID the bank wishes to use while logging in."
+      "description": "The bankID the bank wishes to use while logging in."
     },
     "password": {
       "type": "string",

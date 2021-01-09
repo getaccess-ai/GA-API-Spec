@@ -1,12 +1,9 @@
 {
   "type": "object",
   "properties": {
-    "companyId": {
-      "type": "string"
-    },
     "updatePeriod": {
       "type": "string",
-      "enum": ["monthly", "quarterly", "semi-anually", "anually"]
+      "enum": ["monthly", "quarterly", "semi-annually", "annually"]
     },
     "allowedToChangeConnection": {
       "type": "boolean"
