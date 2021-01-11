@@ -42,7 +42,7 @@
       "content": {
         "application/json": {
           "schema": {
-            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.ReportAnnotated"
+            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.ReportAnnotatedSubmit"
           }
         }
       }

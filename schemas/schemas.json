@@ -53,6 +53,9 @@
   "Z2O.Company.ReportAnnotated": {
     "$ref": "./company/report/reportAnnotated.json"
   },
+  "Z2O.Company.ReportAnnotatedSubmit": {
+    "$ref": "./company/report/reportAnnotatedSubmit.json"
+  },
   "Z2O.Company.ReportList": {
     "$ref": "./company/report/reportList.json"
   },
