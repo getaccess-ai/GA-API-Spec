@@ -2,11 +2,6 @@
   "required": ["id", "companyId", "name"],
   "type": "object",
   "properties": {
-    "id": {
-      "type": "string",
-      "format": "uuid",
-      "description": "The unique id associated with a report at the backend."
-    },
     "companyId": {
       "type": "string",
       "example": "z2o444",
@@ -14,10 +9,10 @@
     },
     "name": {
       "type": "string",
-      "example": "Z2O",
+      "example": "Z2O.Reports.Zoho.ExpensesData",
       "description": "The name of the company, as used during registration."
     },
-    "data": {
+    "approvedData": {
       "type": "object",
       "enum": [
         {
