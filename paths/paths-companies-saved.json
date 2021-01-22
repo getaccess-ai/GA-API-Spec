@@ -1,0 +1,17 @@
+{
+  "/company/auth": {
+    "$ref": "./company/auth.json"
+  },
+  "/company/connection": {
+    "$ref": "./company/connection.json"
+  },
+  "/company/data/reports/all": {
+    "$ref": "./company/reportsAll.json"
+  },
+  "/company/data/reports": {
+    "$ref": "./company/reports.json"
+  },
+  "/company/data/reports/{reportName}": {
+    "$ref": "./company/report.json"
+  }
+}
