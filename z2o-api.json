@@ -5,8 +5,7 @@
     "description": "Implements a web application to connect company ERPs to Banks enabling them to track required accounts and transfer data for financial purposes. The api provides endpoints to utilise the functionalities of the product. The api service is exhaustive and provides a base for building of 3rd party web applications.",
     "version": "v0.1"
   },
-  "tags": [
-    {
+  "tags": [{
       "name": "Bank - Auth",
       "description": "Manages authentication for banks. Includes registration and login."
     },
@@ -25,5 +24,9 @@
     "reports": {
       "$ref": "./reports/zoho.json"
     }
-  }
+  },
+  "servers": [{
+    "url": "https://z2o.herokuapp.com",
+    "description": "Development Server"
+  }]
 }
