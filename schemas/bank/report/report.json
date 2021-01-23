@@ -9,7 +9,7 @@
     },
     "name": {
       "type": "string",
-      "example": "Z2O.Reports.Zoho.StockStatement",
+      "example": "GA.Reports.Zoho.StockStatement",
       "description": "The name of the report."
     },
     "approvedData": {

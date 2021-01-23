@@ -18,18 +18,6 @@
       "example": "State Bank of India",
       "description": "The name with which the bank should be represented in the product."
     },
-    "primaryColor": {
-      "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Color.RGBColor"
-    },
-    "secondaryColor": {
-      "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Color.RGBColor"
-    },
-    "coverImg": {
-      "type": "string",
-      "format": "byte",
-      "description": "The image associated with the bank. Can be used on frontends to provide customizability,",
-      "example": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
-    },
     "createdAt": {
       "type": "string",
       "format": "date-time",
