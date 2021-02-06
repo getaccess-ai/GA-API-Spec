@@ -2,34 +2,105 @@
   "required": ["id", "companyId", "name"],
   "type": "object",
   "properties": {
-    "id": {
-      "type": "string",
-      "format": "uuid",
-      "description": "The unique id associated with a report at the backend."
-    },
     "companyId": {
       "type": "string",
-      "example": "z2o444",
-      "description": "The companyId used while registering the customer."
+      "example": "z2o445",
+      "description": "The companyId used while registering the company."
     },
     "name": {
       "type": "string",
-      "example": "Z2O",
-      "description": "The name of the customer, as used during registration."
+      "example": "GA.Reports.Zoho.StockStatement",
+      "description": "The name of the report."
     },
-    "data": {
+    "approvedData": {
       "type": "object",
-      "enum": [
-        {
-          "hello": {
-            "type": "object",
-            "properties": {
-              "name": "string"
+      "example": {
+        "data": {
+          "Name": "",
+          "Email": "",
+          "Period": "",
+          "Date": "",
+          "Declaration": "",
+          "ESign": "",
+          "Statement of Inventory Position": [
+            {
+              "S.No.": 1,
+              "Particulars": "Inventory in Hand",
+              "No. of Units": [
+                {
+                  "1-90 Days": 0,
+                  "91-180 Days": 0,
+                  ">180 Days": 0,
+                  "Total": 0
+                }
+              ],
+              "Inventory Value (value in INR)": [
+                {
+                  "1-90 Days": 0,
+                  "91-180 Days": 0,
+                  ">180 Days": 0,
+                  "Total": 0
+                }
+              ]
             }
+          ],
+          "Statement of Creditors / Payables": [
+            {
+              "S.No.": 1,
+              "Particulars": "Bills Payables",
+              "Account Payables Aging (value in INR)": [
+                {
+                  "Current": 0,
+                  "1-90 Days": 0,
+                  "91-180 Days": 0,
+                  ">180 Days": 0,
+                  "Total": 0
+                }
+              ]
+            }
+          ],
+          "Statement of Debtors / Receivables": [
+            {
+              "S.No.": 1,
+              "Particulars": "Account Receivables",
+              "Account Receivables Aging (value in INR)": [
+                {
+                  "Current": 0,
+                  "1-90 Days": 0,
+                  "91-180 Days": 0,
+                  ">180 Days": 0,
+                  "Total": 0
+                }
+              ]
+            }
+          ],
+          "Sales and Purchases": [
+            {
+              "S.No.": 1,
+              "Particulars": "Sales",
+              "For Current Month": 0,
+              "Cumulative for Current FY": 0
+            },
+            {
+              "S.No.": 2,
+              "Particulars": "Purchases",
+              "For Current Month": 0,
+              "Cumulative for Current FY": 0
+            }
+          ]
+        },
+        "annotations": {
+          "Statement of Inventory Position||0||No. of Units||0||1-90 Days": {
+            "adjustment": -2,
+            "comment": "Rounding Up"
+          },
+          "Statement of Debtors / Receivables||0||Account Receivables Aging (value in INR)||0||>180 Days": {
+            "adjustment": 5,
+            "comment": "Actual Amount"
           }
         }
-      ],
-      "description": "The data last pushed by customer along with annotations."
+      },
+      "description": "The data last pushed by company along with annotations."
     },
     "lastPushDate": {
       "type": "string",

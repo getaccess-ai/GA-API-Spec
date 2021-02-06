@@ -23,7 +23,7 @@
     "businessLine": {
       "type": "string"
     },
-    "SIF": {
+    "CIF": {
       "type": "string"
     }
   }

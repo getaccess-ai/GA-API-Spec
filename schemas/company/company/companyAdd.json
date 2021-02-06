@@ -2,12 +2,7 @@
   "required": [
     "companyId",
     "name",
-    "email",
-    "platform",
-    "region",
-    "companyType",
-    "businessLine",
-    "SIF"
+    "email"
   ],
   "type": "object",
   "properties": {
@@ -21,9 +16,6 @@
       "type": "string",
       "format": "email"
     },
-    "platform": {
-      "type": "string"
-    },
     "region": {
       "type": "string"
     },
@@ -33,7 +25,7 @@
     "businessLine": {
       "type": "string"
     },
-    "SIF": {
+    "CIF": {
       "type": "string"
     }
   }

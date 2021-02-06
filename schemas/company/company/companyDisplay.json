@@ -4,9 +4,7 @@
     "bankId",
     "name",
     "email",
-    "status",
-    "region",
-    "companyType"
+    "status"
   ],
   "type": "object",
   "properties": {
@@ -40,7 +38,7 @@
       "type": "string",
       "nullable": true
     },
-    "SIF": {
+    "CIF": {
       "type": "string",
       "nullable": true
     },
