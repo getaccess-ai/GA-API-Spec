@@ -1,7 +1,7 @@
 {
   "post": {
-    "tags": ["Company - Connection"],
-    "summary": "Add a new ERP connection for the company",
+    "tags": ["Customer - Connection"],
+    "summary": "Add a new ERP connection for the customer",
     "requestBody": {
       "content": {
         "application/json": {

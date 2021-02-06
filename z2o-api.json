@@ -11,7 +11,7 @@
       "description": "Manages authentication for banks. Includes registration and login."
     },
     {
-      "name": "Bank - Companies",
+      "name": "Bank - Customers",
       "description": "These routes control the operations on companies associated with a bank."
     }
   ],

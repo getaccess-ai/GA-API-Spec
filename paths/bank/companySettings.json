@@ -1,7 +1,7 @@
 {
   "get": {
-    "tags": ["Bank - Companies"],
-    "summary": "Get the settings for a particular company",
+    "tags": ["Bank - Customers"],
+    "summary": "Get the settings for a particular customer",
     "parameters": [
       {
         "name": "companyId",
@@ -27,8 +27,8 @@
     }
   },
   "put": {
-    "tags": ["Bank - Companies"],
-    "summary": "Update settings for a particular company",
+    "tags": ["Bank - Customers"],
+    "summary": "Update settings for a particular customer",
     "parameters": [
       {
         "name": "companyId",

@@ -1,7 +1,7 @@
 {
   "get": {
-    "tags": ["Bank - Company Connection"],
-    "summary": "Get connection details for a particular company",
+    "tags": ["Bank - Customer Connection"],
+    "summary": "Get connection details for a particular customer",
     "parameters": [
       {
         "name": "companyId",

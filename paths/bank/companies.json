@@ -1,8 +1,8 @@
 {
   "get": {
-    "tags": ["Bank - Companies"],
-    "summary": "Get list of companies connected to bank",
-    "description": "This use case provides a Bank to view the Companies associated with it. A company is said to be associated with a bank when the bank is the one which adds the company. A bank is said to be associated with a company, if the company was added by the bank.",
+    "tags": ["Bank - Customers"],
+    "summary": "Get list of customers connected to bank",
+    "description": "This use case provides a Bank to view the Customers associated with it. A customer is said to be associated with a bank when the bank is the one which adds the customer. A bank is said to be associated with a customer, if the customer was added by the bank.",
     "responses": {
       "200": {
         "description": "Success",
@@ -17,9 +17,9 @@
     }
   },
   "post": {
-    "tags": ["Bank - Companies"],
-    "summary": "Add a new company",
-    "description": "After logging in, a bank can now ‘Add Company’ whose data it needs to monitor. This creates a Company with the given details. The id, password will be sent to the company through mail enabling the company to login into the product.",
+    "tags": ["Bank - Customers"],
+    "summary": "Add a new customer",
+    "description": "After logging in, a bank can now ‘Add customer’ whose data it needs to monitor. This creates a customer with the given details. The id, password will be sent to the customer through mail enabling the customer to login into the product.",
     "requestBody": {
       "content": {
         "application/json": {

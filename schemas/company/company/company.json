@@ -14,26 +14,26 @@
     "companyId": {
       "type": "string",
       "example": "z2o444",
-      "description": "The companyId used while registering the company."
+      "description": "The companyId used while registering the customer."
     },
     "bankId": {
       "type": "string",
       "example": "sbin0005999",
-      "description": "The id of the bank associated with the company."
+      "description": "The id of the bank associated with the customer."
     },
     "password": {
       "type": "string",
       "format": "password",
-      "description": "The password for the company login."
+      "description": "The password for the customer login."
     },
     "name": {
       "type": "string",
-      "description": "The name of the comapny"
+      "description": "The name of the customer"
     },
     "email": {
       "type": "string",
       "format": "email",
-      "description": "The email associate with the company."
+      "description": "The email associate with the customer."
     },
     "platform": {
       "type": "string",

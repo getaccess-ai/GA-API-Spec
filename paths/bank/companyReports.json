@@ -1,7 +1,7 @@
 {
   "get": {
     "tags": ["Bank - Data"],
-    "summary": "Get all the reports provided by a particular company",
+    "summary": "Get all the reports provided by a particular customer",
     "parameters": [
       {
         "name": "companyId",

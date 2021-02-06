@@ -1,6 +1,6 @@
 {
   "get": {
-    "tags": ["Company - Data"],
+    "tags": ["Customer - Data"],
     "summary": "Get latest data of a particular report that will be pushed",
     "parameters": [
       {
@@ -26,7 +26,7 @@
     }
   },
   "post": {
-    "tags": ["Company - Data"],
+    "tags": ["Customer - Data"],
     "summary": "Annotate the data of a particular report and then push it to bank",
     "parameters": [
       {
@@ -61,7 +61,7 @@
     }
   },
   "delete": {
-    "tags": ["Company - Data"],
+    "tags": ["Customer - Data"],
     "summary": "Stop providing a particular report",
     "parameters": [
       {

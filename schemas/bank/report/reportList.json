@@ -12,7 +12,7 @@
       "items": {
         "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Bank.Report"
       },
-      "description": "The list of reports provided by the company."
+      "description": "The list of reports provided by the customer."
     }
   }
 }

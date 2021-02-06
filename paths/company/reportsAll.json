@@ -1,7 +1,7 @@
 {
   "get": {
-    "tags": ["Company - Data"],
-    "summary": "Get list of all reports a company can provide for its ERP connection",
+    "tags": ["Customer - Data"],
+    "summary": "Get list of all reports a customer can provide for its ERP connection",
     "responses": {
       "200": {
         "description": "Success",

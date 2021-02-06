@@ -10,12 +10,12 @@
     "companyId": {
       "type": "string",
       "example": "z2o444",
-      "description": "The companyId used while registering the company."
+      "description": "The companyId used while registering the customer."
     },
     "name": {
       "type": "string",
       "example": "Z2O",
-      "description": "The name of the company, as used during registration."
+      "description": "The name of the customer, as used during registration."
     },
     "data": {
       "type": "object",
@@ -29,12 +29,12 @@
           }
         }
       ],
-      "description": "The data last pushed by company along with annotations."
+      "description": "The data last pushed by customer along with annotations."
     },
     "lastPushDate": {
       "type": "string",
       "format": "date-time",
-      "description": "The date when the report data was last pushed by the company."
+      "description": "The date when the report data was last pushed by the customer."
     },
     "lastUpdateMadeBy": {
       "type": "string",

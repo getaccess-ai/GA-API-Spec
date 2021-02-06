@@ -1,7 +1,7 @@
 {
   "put": {
-    "tags": ["Bank - Companies"],
-    "summary": "Update info of a particular company",
+    "tags": ["Bank - Customers"],
+    "summary": "Update info of a particular customer",
     "parameters": [
       {
         "name": "companyId",
@@ -36,8 +36,8 @@
     }
   },
   "delete": {
-    "tags": ["Bank - Companies"],
-    "summary": "Delete a particular company, this is not reversible",
+    "tags": ["Bank - Customers"],
+    "summary": "Delete a particular customer, this is not reversible",
     "parameters": [
       {
         "name": "companyId",
@@ -56,8 +56,8 @@
     }
   },
   "get": {
-    "tags": ["Bank - Companies"],
-    "summary": "Get info of a particular company",
+    "tags": ["Bank - Customers"],
+    "summary": "Get info of a particular customer",
     "parameters": [
       {
         "name": "companyId",

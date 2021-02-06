@@ -1,7 +1,7 @@
 {
   "get": {
     "tags": ["Bank - Data"],
-    "summary": "Get latest annotated data for a particular report provided by a particular company",
+    "summary": "Get latest annotated data for a particular report provided by a particular customer",
     "parameters": [
       {
         "name": "companyId",

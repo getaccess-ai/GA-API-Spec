@@ -1,7 +1,7 @@
 {
   "get": {
-    "tags": ["Company - Data"],
-    "summary": "Get list of reports company is providing",
+    "tags": ["Customer - Data"],
+    "summary": "Get list of reports customer is providing",
     "responses": {
       "200": {
         "description": "Success",
@@ -16,7 +16,7 @@
     }
   },
   "post": {
-    "tags": ["Company - Data"],
+    "tags": ["Customer - Data"],
     "summary": "Add a new report to provide",
     "requestBody": {
       "content": {
