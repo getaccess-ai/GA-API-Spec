@@ -11,9 +11,6 @@
       "type": "string",
       "format": "email"
     },
-    "platform": {
-      "type": "string"
-    },
     "region": {
       "type": "string"
     },

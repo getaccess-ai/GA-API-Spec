@@ -1,0 +1,38 @@
+{
+    "get": {
+      "tags": ["Bank - Data"],
+      "summary": "Get history of all data of a particular report provided by a particular customer",
+      "parameters": [
+        {
+          "name": "companyId",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        {
+          "name": "reportName",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Success",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../../z2o-api.json#/components/schemas/Z2O.Bank.ReportHistoryList"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

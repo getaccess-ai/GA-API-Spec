@@ -23,6 +23,12 @@
       "type": "string",
       "example": "State Bank of India",
       "description": "The name with which the bank should be represented in the product."
+    },
+    "logoUrl": {
+      "type": "string",
+      "format": "url",
+      "example": "https://example.com/example-logo.png",
+      "description": "The URL for your bank's logo."
     }
   }
 }

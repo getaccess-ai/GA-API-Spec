@@ -1,0 +1,6 @@
+{
+    "type": "array",
+    "items": {
+        "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Bank.Report"
+    }
+}

@@ -1,12 +1,18 @@
 {
-  "/bank/register": {
-    "$ref": "./bank/register.json"
-  },
   "/bank/auth": {
     "$ref": "./bank/auth.json"
   },
+  "/bank/reset-password/trigger": {
+    "$ref": "./bank/resetPasswordTrigger.json"
+  },
+  "/bank/reset-password": {
+    "$ref": "./bank/resetPassword.json"
+  },
   "/bank/companies": {
     "$ref": "./bank/companies.json"
+  },
+  "/bank/companies/mass": {
+    "$ref": "./bank/companiesMass.json"
   },
   "/bank/companies/{companyId}": {
     "$ref": "./bank/company.json"
@@ -22,5 +28,8 @@
   },
   "/bank/companies/{companyId}/data/reports/{reportName}": {
     "$ref": "./bank/companyReport.json"
+  },
+  "/bank/companies/{companyId}/data/reports/history/{reportName}": {
+    "$ref": "./bank/companyReportHistory.json"
   }
 }

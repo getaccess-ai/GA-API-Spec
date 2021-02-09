@@ -1,0 +1,29 @@
+{
+    "post": {
+      "tags": ["Bank - Customers"],
+      "summary": "Add multiple new customers at once",
+      "description": "A bank can add multiple customers at once whose data it needs to monitor. The id, password will be sent to the customers through email enabling the customers to login into the product.",
+      "requestBody": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.CompanyMassAdd"
+            }
+          }
+        }
+      },
+      "responses": {
+        "200": {
+          "description": "Success",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.CompanyMassDisplay"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

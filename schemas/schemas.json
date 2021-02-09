@@ -17,17 +17,26 @@
   "Z2O.Bank.ReportList": {
     "$ref": "./bank/report/reportList.json"
   },
+  "Z2O.Bank.ReportHistoryList": {
+    "$ref": "./bank/report/reportHistoryList.json"
+  },
   "Z2O.Company.Company": {
     "$ref": "./company/company/company.json"
   },
   "Z2O.Company.CompanyDisplay": {
     "$ref": "./company/company/companyDisplay.json"
   },
+  "Z2O.Company.CompanyMassDisplay": {
+    "$ref": "./company/company/companyMassDisplay.json"
+  },
   "Z2O.Company.CompanyAuth": {
     "$ref": "./company/company/companyAuth.json"
   },
   "Z2O.Company.CompanyAdd": {
     "$ref": "./company/company/companyAdd.json"
+  },
+  "Z2O.Company.CompanyMassAdd": {
+    "$ref": "./company/company/companyMassAdd.json"
   },
   "Z2O.Company.CompanyUpdate": {
     "$ref": "./company/company/companyUpdate.json"
@@ -76,5 +85,11 @@
   },
   "Z2O.Color.RGBColor": {
     "$ref": "./color/rgbColor.json"
+  },
+  "Z2O.ResetPasswordTrigger": {
+    "$ref": "./resetPasswordTrigger.json"
+  },
+  "Z2O.ResetPassword": {
+    "$ref": "./resetPassword.json"
   }
 }
