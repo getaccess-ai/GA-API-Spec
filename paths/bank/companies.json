@@ -13,8 +13,17 @@
             }
           }
         }
+      },
+      "403": {
+        "description": "Forbidden Request"
+      },
+      "500": {
+        "description": "Internal Server Error"
       }
-    }
+    },
+    "security": [{
+      "Bank API Key": []
+    }]
   },
   "post": {
     "tags": ["Bank - Customers"],
@@ -30,7 +39,7 @@
       }
     },
     "responses": {
-      "200": {
+      "201": {
         "description": "Success",
         "content": {
           "application/json": {
@@ -39,7 +48,19 @@
             }
           }
         }
+      },
+      "400": {
+        "description": "Required Fields are Missing or are in Wrong Format"
+      },
+      "403": {
+        "description": "Forbidden Request"
+      },
+      "409": {
+        "description": "CompanyId or Email already exists"
       }
-    }
+    },
+    "security": [{
+      "Bank API Key": []
+    }]
   }
 }

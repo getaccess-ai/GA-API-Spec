@@ -23,8 +23,20 @@
             }
           }
         }
+      },
+      "403": {
+        "description": "Forbidden Request"
+      },
+      "404": {
+        "description": "Company doesn't exist"
+      },
+      "500": {
+        "description": "Internal Server Error"
       }
-    }
+    },
+    "security": [{
+      "Bank API Key": []
+    }]
   },
   "put": {
     "tags": ["Bank - Customers"],
@@ -59,7 +71,22 @@
             }
           }
         }
+      },
+      "400": {
+        "description": "Required Fields are Missing or Didn't Validate"
+      },
+      "403": {
+        "description": "Forbidden Request"
+      },
+      "404": {
+        "description": "Company doesn't exist"
+      },
+      "500": {
+        "description": "Internal Server Error"
       }
-    }
+    },
+    "security": [{
+      "Bank API Key": []
+    }]
   }
 }

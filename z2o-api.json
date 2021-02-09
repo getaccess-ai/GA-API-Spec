@@ -23,6 +23,13 @@
     },
     "reports": {
       "$ref": "./reports/zoho.json"
+    },
+    "securitySchemes": {
+      "Bank API Key": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization"
+      }
     }
   },
   "servers": [{

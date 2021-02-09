@@ -32,8 +32,23 @@
             }
           }
         }
+      },
+      "400": {
+        "description": "Required Fields are Missing or are in Wrong Format"
+      },
+      "403": {
+        "description": "Forbidden Request"
+      },
+      "404": {
+        "description": "Company doesn't exist"
+      },
+      "500": {
+        "description": "Internal Server Error"
       }
-    }
+    },
+    "security": [{
+      "Bank API Key": []
+    }]
   },
   "delete": {
     "tags": ["Bank - Customers"],
@@ -52,8 +67,20 @@
     "responses": {
       "200": {
         "description": "Success"
+      },
+      "403": {
+        "description": "Forbidden Request"
+      },
+      "404": {
+        "description": "Company doesn't exist"
+      },
+      "500": {
+        "description": "Internal Server Error"
       }
-    }
+    },
+    "security": [{
+      "Bank API Key": []
+    }]
   },
   "get": {
     "tags": ["Bank - Customers"],
@@ -79,7 +106,19 @@
             }
           }
         }
+      },
+      "403": {
+        "description": "Forbidden Request"
+      },
+      "404": {
+        "description": "Company doesn't exist"
+      },
+      "500": {
+        "description": "Internal Server Error"
       }
-    }
+    },
+    "security": [{
+      "Bank API Key": []
+    }]
   }
 }

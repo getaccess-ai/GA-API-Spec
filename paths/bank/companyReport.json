@@ -31,7 +31,19 @@
             }
           }
         }
+      },
+      "403": {
+        "description": "Forbidden Request"
+      },
+      "404": {
+        "description": "Company doesn't exist or Report doesn't exist"
+      },
+      "500": {
+        "description": "Internal Server Error"
       }
-    }
+    },
+    "security": [{
+      "Bank API Key": []
+    }]
   }
 }
