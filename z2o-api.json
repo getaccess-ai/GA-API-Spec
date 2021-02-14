@@ -33,7 +33,7 @@
     }
   },
   "servers": [{
-    "url": "https://z2o.herokuapp.com",
+    "url": "https://api-getaccess.herokuapp.com",
     "description": "Development Server"
   }]
 }
