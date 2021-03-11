@@ -1,0 +1,146 @@
+{
+  "GA.Reports.StockStatement": {
+    "type": "object",
+    "example": {
+      "Name": "",
+      "Email": "",
+      "Period": "",
+      "Date": "",
+      "Declaration": "",
+      "ESign": "",
+      "Statement of Inventory Position": [
+        {
+          "S.No.": 1,
+          "Particulars": "Inventory in Hand",
+          "No. of Units": [
+            {
+              "1-90 Days": 0,
+              "91-180 Days": 0,
+              ">180 Days": 0,
+              "Total": 0
+            }
+          ],
+          "Inventory Value (value in INR)": [
+            {
+              "1-90 Days": 0,
+              "91-180 Days": 0,
+              ">180 Days": 0,
+              "Total": 0
+            }
+          ]
+        }
+      ],
+      "Statement of Creditors / Payables": [
+        {
+          "S.No.": 1,
+          "Particulars": "Bills Payables",
+          "Account Payables Aging (value in INR)": [
+            {
+              "Current": 0,
+              "1-90 Days": 0,
+              "91-180 Days": 0,
+              ">180 Days": 0,
+              "Total": 0
+            }
+          ]
+        }
+      ],
+      "Statement of Debtors / Receivables": [
+        {
+          "S.No.": 1,
+          "Particulars": "Account Receivables",
+          "Account Receivables Aging (value in INR)": [
+            {
+              "Current": 0,
+              "1-90 Days": 0,
+              "91-180 Days": 0,
+              ">180 Days": 0,
+              "Total": 0
+            }
+          ]
+        }
+      ],
+      "Sales and Purchases": [
+        {
+          "S.No.": 1,
+          "Particulars": "Sales",
+          "For Current Month": 0,
+          "Cumulative for Current FY": 0
+        },
+        {
+          "S.No.": 2,
+          "Particulars": "Purchases",
+          "For Current Month": 0,
+          "Cumulative for Current FY": 0
+        }
+      ]
+    }
+  },
+  "GA.Reports.CAM": {
+    "type": "object",
+    "example": {
+      "General Information": {
+        "Name of the Organization": "ACME Industries",
+        "GST No": "18AABCU9603R1ZM",
+        "Total Number of Employees": 12,
+        "Website": "www.acmeind.com"
+      },
+      "Address and Contact Details": {
+        "Address": "Plot 42/A, Lookup Park, Nagpur",
+        "Pin Code": "440121",
+        "Phone No": "0712 12345",
+        "Mobile No": "12345679890",
+        "Email Id": "acme@acmeind.com"
+      },
+      "Loans": {
+        "Secured": [
+          {
+            "Financer": "SBI",
+            "Current Amount": "12,32,600.87"
+          }
+        ],
+        "Unsecured": [
+          {
+            "Financer": "Director",
+            "Current Amount": "12,32,600.87"
+          }
+        ]
+      },
+      "Details of Assets Owned by the Organisation": {
+        "Fixed Assets Owned": [
+          {
+            "Name": "Building",
+            "Value": "14,15,300.00"
+          }
+        ]
+      },
+      "Highlights of Financials": {
+        "Year wise Income and Profit": [
+          {
+            "Financial Year": "2020-2021",
+            "Income/Sales(Main Activities)": "9,70,95,949.06",
+            "PAT": "-1,38,92,270.5"
+          },
+          {
+            "Financial Year": "2019-2020",
+            "Income/Sales(Main Activities)": "15,63,23,452.65",
+            "PAT": "-77,16,604.53"
+          },
+          {
+            "Financial Year": "2018-2019",
+            "Income/Sales(Main Activities)": "0",
+            "PAT": "0"
+          },
+          {
+            "Financial Year": "2017-2018",
+            "Income/Sales(Main Activities)": "0",
+            "PAT": "1,36,69,301.01"
+          }
+        ],
+        "Sundry Debtors": "4,41,34,915.43",
+        "Sundry Creditors": "5,41,38,126.67",
+        "Inventory as on date": "1,78,11,689.55"
+      }
+    }
+  }
+}

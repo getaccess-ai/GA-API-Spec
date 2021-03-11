@@ -3,15 +3,39 @@
   "info": {
     "title": "GetAccess API",
     "description": "Implements a web application to connect company ERPs to Banks enabling them to track required accounts and transfer data for financial purposes. The api provides endpoints to utilise the functionalities of the product. The api service is exhaustive and provides a base for building of 3rd party web applications.",
-    "version": "v0.1"
+    "version": "v0.1",
+    "x-logo": {
+      "url": "logo.png"
+    }
   },
-  "tags": [{
+  "tags": [
+    {
       "name": "Bank - Auth",
       "description": "Manages authentication for banks. Includes registration and login."
     },
     {
       "name": "Bank - Customers",
       "description": "These routes control the operations on companies associated with a bank."
+    },
+    {
+      "name": "stock_statement",
+      "x-displayName": "Stock Statement",
+      "description": "<SchemaDefinition schemaRef=\"#/components/reports/GA.Reports.StockStatement\" />\n"
+    },
+    {
+      "name": "cam",
+      "x-displayName": "CAM",
+      "description": "<SchemaDefinition schemaRef=\"#/components/reports/GA.Reports.CAM\" />\n"
+    }
+  ],
+  "x-tagGroups": [
+    {
+      "name": "API Routes",
+      "tags": ["Bank - Auth", "Bank - Customers"]
+    },
+    {
+      "name": "Reports",
+      "tags": ["stock_statement", "cam"]
     }
   ],
   "paths": {
@@ -22,7 +46,7 @@
       "$ref": "./schemas/schemas.json"
     },
     "reports": {
-      "$ref": "./reports/zoho.json"
+      "$ref": "./reports/reports.json"
     },
     "securitySchemes": {
       "Bank API Key": {
@@ -32,8 +56,10 @@
       }
     }
   },
-  "servers": [{
-    "url": "https://api-getaccess.herokuapp.com",
-    "description": "Development Server"
-  }]
+  "servers": [
+    {
+      "url": "https://api-getaccess.herokuapp.com",
+      "description": "Development Server"
+    }
+  ]
 }
