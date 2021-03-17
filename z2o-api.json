@@ -15,7 +15,11 @@
     },
     {
       "name": "Bank - Customers",
-      "description": "These routes control the operations on companies associated with a bank."
+      "description": "These routes control the operations on customers associated with a bank."
+    },
+    {
+      "name": "Bank - Data",
+      "description": "These routes are utilized to fetch data such as reports from customers"
     },
     {
       "name": "stock_statement",
@@ -31,7 +35,7 @@
   "x-tagGroups": [
     {
       "name": "API Routes",
-      "tags": ["Bank - Auth", "Bank - Customers"]
+      "tags": ["Bank - Auth", "Bank - Customers", "Bank - Data"]
     },
     {
       "name": "Reports",
