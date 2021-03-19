@@ -12,7 +12,7 @@
     "reports": {
       "type": "array",
       "items": {
-        "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.ReportType"
+        "$ref": "../../../GA-api.json#/components/schemas/GA.Company.ReportType"
       }
     }
   }

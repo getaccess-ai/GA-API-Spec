@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "title": "Z2O API",
-    "description": "Z2O API to be used by Banks for integration.",
+    "title": "GA API",
+    "description": "GA API to be used by Banks for integration.",
     "version": "v0.1"
   },
   "paths": {
@@ -14,7 +14,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Z2O.Bank.Bank"
+                "$ref": "#/components/schemas/GA.Bank.Bank"
               }
             }
           }
@@ -25,7 +25,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Bank.BankDisplay"
+                  "$ref": "#/components/schemas/GA.Bank.BankDisplay"
                 }
               }
             }
@@ -41,7 +41,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Z2O.Bank.BankLogin"
+                "$ref": "#/components/schemas/GA.Bank.BankLogin"
               }
             }
           }
@@ -52,7 +52,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Bank.BankAuth"
+                  "$ref": "#/components/schemas/GA.Bank.BankAuth"
                 }
               }
             }
@@ -70,7 +70,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Company.CompanyList"
+                  "$ref": "#/components/schemas/GA.Company.CompanyList"
                 }
               }
             }
@@ -84,7 +84,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Z2O.Company.CompanyAdd"
+                "$ref": "#/components/schemas/GA.Company.CompanyAdd"
               }
             }
           }
@@ -95,7 +95,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Company.CompanyDisplay"
+                  "$ref": "#/components/schemas/GA.Company.CompanyDisplay"
                 }
               }
             }
@@ -122,7 +122,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Z2O.Company.CompanyUpdate"
+                "$ref": "#/components/schemas/GA.Company.CompanyUpdate"
               }
             }
           }
@@ -133,7 +133,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Company.CompanyDisplay"
+                  "$ref": "#/components/schemas/GA.Company.CompanyDisplay"
                 }
               }
             }
@@ -180,7 +180,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Company.CompanyDisplay"
+                  "$ref": "#/components/schemas/GA.Company.CompanyDisplay"
                 }
               }
             }
@@ -209,7 +209,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Company.SettingsDisplay"
+                  "$ref": "#/components/schemas/GA.Company.SettingsDisplay"
                 }
               }
             }
@@ -234,7 +234,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Z2O.Company.SettingsUpdate"
+                "$ref": "#/components/schemas/GA.Company.SettingsUpdate"
               }
             }
           }
@@ -245,7 +245,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Company.SettingsDisplay"
+                  "$ref": "#/components/schemas/GA.Company.SettingsDisplay"
                 }
               }
             }
@@ -274,7 +274,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Company.DataConnection"
+                  "$ref": "#/components/schemas/GA.Company.DataConnection"
                 }
               }
             }
@@ -303,7 +303,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Bank.ReportList"
+                  "$ref": "#/components/schemas/GA.Bank.ReportList"
                 }
               }
             }
@@ -340,7 +340,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Bank.Report"
+                  "$ref": "#/components/schemas/GA.Bank.Report"
                 }
               }
             }
@@ -356,7 +356,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Z2O.Company.CompanyLogin"
+                "$ref": "#/components/schemas/GA.Company.CompanyLogin"
               }
             }
           }
@@ -367,7 +367,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Company.CompanyAuth"
+                  "$ref": "#/components/schemas/GA.Company.CompanyAuth"
                 }
               }
             }
@@ -383,7 +383,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Z2O.Company.DataConnectionAdd"
+                "$ref": "#/components/schemas/GA.Company.DataConnectionAdd"
               }
             }
           }
@@ -394,7 +394,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Company.DataConnection"
+                  "$ref": "#/components/schemas/GA.Company.DataConnection"
                 }
               }
             }
@@ -412,7 +412,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Company.ReportNameList"
+                  "$ref": "#/components/schemas/GA.Company.ReportNameList"
                 }
               }
             }
@@ -430,7 +430,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Company.ReportList"
+                  "$ref": "#/components/schemas/GA.Company.ReportList"
                 }
               }
             }
@@ -444,7 +444,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Z2O.Company.ReportAdd"
+                "$ref": "#/components/schemas/GA.Company.ReportAdd"
               }
             }
           }
@@ -455,7 +455,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Company.Report"
+                  "$ref": "#/components/schemas/GA.Company.Report"
                 }
               }
             }
@@ -483,7 +483,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Company.Report"
+                  "$ref": "#/components/schemas/GA.Company.Report"
                 }
               }
             }
@@ -507,7 +507,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Z2O.Company.ReportAnnotated"
+                "$ref": "#/components/schemas/GA.Company.ReportAnnotated"
               }
             }
           }
@@ -518,7 +518,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Z2O.Bank.Report"
+                  "$ref": "#/components/schemas/GA.Bank.Report"
                 }
               }
             }
@@ -548,11 +548,11 @@
   },
   "components": {
     "schemas": {
-      "Z2O.HelloWorld": {
+      "GA.HelloWorld": {
         "type": "string",
         "example": "Hello World"
       },
-      "Z2O.Bank.Bank": {
+      "GA.Bank.Bank": {
         "required": ["bankId", "password", "email", "name"],
         "type": "object",
         "properties": {
@@ -570,10 +570,10 @@
             "type": "string"
           },
           "primaryColor": {
-            "$ref": "#/components/schemas/Z2O.Color.RGBColor"
+            "$ref": "#/components/schemas/GA.Color.RGBColor"
           },
           "secondaryColor": {
-            "$ref": "#/components/schemas/Z2O.Color.RGBColor"
+            "$ref": "#/components/schemas/GA.Color.RGBColor"
           },
           "coverImg": {
             "type": "string",
@@ -581,7 +581,7 @@
           }
         }
       },
-      "Z2O.Bank.BankDisplay": {
+      "GA.Bank.BankDisplay": {
         "required": ["bankId", "email", "name"],
         "type": "object",
         "properties": {
@@ -596,10 +596,10 @@
             "type": "string"
           },
           "primaryColor": {
-            "$ref": "#/components/schemas/Z2O.Color.RGBColor"
+            "$ref": "#/components/schemas/GA.Color.RGBColor"
           },
           "secondaryColor": {
-            "$ref": "#/components/schemas/Z2O.Color.RGBColor"
+            "$ref": "#/components/schemas/GA.Color.RGBColor"
           },
           "coverImg": {
             "type": "string",
@@ -611,7 +611,7 @@
           }
         }
       },
-      "Z2O.Bank.BankAuth": {
+      "GA.Bank.BankAuth": {
         "type": "object",
         "properties": {
           "authKey": {
@@ -619,11 +619,11 @@
             "format": "key"
           },
           "data": {
-            "$ref": "#/components/schemas/Z2O.Bank.BankDisplay"
+            "$ref": "#/components/schemas/GA.Bank.BankDisplay"
           }
         }
       },
-      "Z2O.Bank.BankLogin": {
+      "GA.Bank.BankLogin": {
         "type": "object",
         "properties": {
           "bankId": {
@@ -635,7 +635,7 @@
           }
         }
       },
-      "Z2O.Bank.Report": {
+      "GA.Bank.Report": {
         "required": ["id", "companyId", "name"],
         "type": "object",
         "properties": {
@@ -661,7 +661,7 @@
           }
         }
       },
-      "Z2O.Bank.ReportList": {
+      "GA.Bank.ReportList": {
         "required": ["totalResults"],
         "type": "object",
         "properties": {
@@ -671,12 +671,12 @@
           "reports": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Bank.Report"
+              "$ref": "#/components/schemas/GA.Bank.Report"
             }
           }
         }
       },
-      "Z2O.Company.Company": {
+      "GA.Company.Company": {
         "required": [
           "companyId",
           "bankId",
@@ -729,12 +729,12 @@
           "reports": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Company.Report"
+              "$ref": "#/components/schemas/GA.Company.Report"
             },
             "nullable": true
           },
           "dataConnection": {
-            "$ref": "#/components/schemas/Z2O.Company.DataConnection",
+            "$ref": "#/components/schemas/GA.Company.DataConnection",
             "nullable": true
           },
           "created": {
@@ -744,7 +744,7 @@
           }
         }
       },
-      "Z2O.Company.CompanyDisplay": {
+      "GA.Company.CompanyDisplay": {
         "required": [
           "companyId",
           "bankId",
@@ -793,12 +793,12 @@
           "reports": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Company.Report"
+              "$ref": "#/components/schemas/GA.Company.Report"
             },
             "nullable": true
           },
           "dataConnection": {
-            "$ref": "#/components/schemas/Z2O.Company.DataConnection"
+            "$ref": "#/components/schemas/GA.Company.DataConnection"
           },
           "created": {
             "type": "string",
@@ -807,7 +807,7 @@
           }
         }
       },
-      "Z2O.Company.CompanyAuth": {
+      "GA.Company.CompanyAuth": {
         "type": "object",
         "properties": {
           "authKey": {
@@ -815,11 +815,11 @@
             "format": "key"
           },
           "data": {
-            "$ref": "#/components/schemas/Z2O.Company.CompanyDisplay"
+            "$ref": "#/components/schemas/GA.Company.CompanyDisplay"
           }
         }
       },
-      "Z2O.Company.CompanyAdd": {
+      "GA.Company.CompanyAdd": {
         "required": [
           "companyId",
           "name",
@@ -859,7 +859,7 @@
           }
         }
       },
-      "Z2O.Company.CompanyUpdate": {
+      "GA.Company.CompanyUpdate": {
         "type": "object",
         "properties": {
           "companyId": {
@@ -889,7 +889,7 @@
           }
         }
       },
-      "Z2O.Company.CompanyLogin": {
+      "GA.Company.CompanyLogin": {
         "type": "object",
         "properties": {
           "companyId": {
@@ -901,14 +901,14 @@
           }
         }
       },
-      "Z2O.Company.CompanyList": {
+      "GA.Company.CompanyList": {
         "required": ["totalResults"],
         "type": "object",
         "properties": {
           "results": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Company.CompanyDisplay"
+              "$ref": "#/components/schemas/GA.Company.CompanyDisplay"
             },
             "nullable": true
           },
@@ -919,7 +919,7 @@
         },
         "additionalProperties": false
       },
-      "Z2O.Company.Report": {
+      "GA.Company.Report": {
         "required": ["id", "companyId", "name"],
         "type": "object",
         "properties": {
@@ -945,7 +945,7 @@
           }
         }
       },
-      "Z2O.Company.ReportAdd": {
+      "GA.Company.ReportAdd": {
         "type": "object",
         "properties": {
           "name": {
@@ -953,7 +953,7 @@
           }
         }
       },
-      "Z2O.Company.ReportType": {
+      "GA.Company.ReportType": {
         "required": ["name", "connectionName"],
         "type": "object",
         "properties": {
@@ -965,21 +965,21 @@
           }
         }
       },
-      "Z2O.Company.ReportAnnotated": {
+      "GA.Company.ReportAnnotated": {
         "type": "object",
         "properties": {
           "report": {
-            "$ref": "#/components/schemas/Z2O.Company.Report"
+            "$ref": "#/components/schemas/GA.Company.Report"
           },
           "annotations": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Company.Annotations"
+              "$ref": "#/components/schemas/GA.Company.Annotations"
             }
           }
         }
       },
-      "Z2O.Company.ReportList": {
+      "GA.Company.ReportList": {
         "required": ["totalResults"],
         "type": "object",
         "properties": {
@@ -989,12 +989,12 @@
           "reports": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Company.Report"
+              "$ref": "#/components/schemas/GA.Company.Report"
             }
           }
         }
       },
-      "Z2O.Company.ReportNameList": {
+      "GA.Company.ReportNameList": {
         "required": ["totalResults"],
         "type": "object",
         "properties": {
@@ -1008,12 +1008,12 @@
           "reports": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Company.ReportType"
+              "$ref": "#/components/schemas/GA.Company.ReportType"
             }
           }
         }
       },
-      "Z2O.Company.Annotations": {
+      "GA.Company.Annotations": {
         "type": "object",
         "properties": {
           "rowId": {
@@ -1028,7 +1028,7 @@
           }
         }
       },
-      "Z2O.Company.DataConnection": {
+      "GA.Company.DataConnection": {
         "type": "object",
         "properties": {
           "id": {
@@ -1051,7 +1051,7 @@
           }
         }
       },
-      "Z2O.Company.DataConnectionAdd": {
+      "GA.Company.DataConnectionAdd": {
         "type": "object",
         "properties": {
           "name": {
@@ -1068,12 +1068,8 @@
           }
         }
       },
-      "Z2O.Company.SettingsDisplay": {
-        "required": [
-          "companyId",
-          "updatePeriod",
-          "allowedToChangeConnection"
-        ],
+      "GA.Company.SettingsDisplay": {
+        "required": ["companyId", "updatePeriod", "allowedToChangeConnection"],
         "type": "object",
         "properties": {
           "companyId": {
@@ -1088,7 +1084,7 @@
           }
         }
       },
-      "Z2O.Company.SettingsUpdate": {
+      "GA.Company.SettingsUpdate": {
         "type": "object",
         "properties": {
           "updatePeriod": {
@@ -1100,7 +1096,7 @@
           }
         }
       },
-      "Z2O.Color.RGBColor": {
+      "GA.Color.RGBColor": {
         "type": "object",
         "properties": {
           "r": {
@@ -1117,7 +1113,7 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.Contact": {
+      "GA.Reports.Zoho.Contact": {
         "type": "object",
         "properties": {
           "contact_id": {
@@ -1179,13 +1175,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.ContactsData": {
+      "GA.Reports.Zoho.ContactsData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.Contact"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.Contact"
         }
       },
-      "Z2O.Reports.Zoho.ContactPerson": {
+      "GA.Reports.Zoho.ContactPerson": {
         "type": "object",
         "properties": {
           "contact_person_id": {
@@ -1227,7 +1223,7 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.ContactPersonsList": {
+      "GA.Reports.Zoho.ContactPersonsList": {
         "type": "object",
         "properties": {
           "contact_id": {
@@ -1236,18 +1232,18 @@
           "contact_persons": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Reports.Zoho.ContactPerson"
+              "$ref": "#/components/schemas/GA.Reports.Zoho.ContactPerson"
             }
           }
         }
       },
-      "Z2O.Reports.Zoho.ContactPersonsData": {
+      "GA.Reports.Zoho.ContactPersonsData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.ContactPersonsList"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.ContactPersonsList"
         }
       },
-      "Z2O.Reports.Zoho.Estimate": {
+      "GA.Reports.Zoho.Estimate": {
         "type": "object",
         "properties": {
           "estimate_id": {
@@ -1313,13 +1309,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.EstimatesData": {
+      "GA.Reports.Zoho.EstimatesData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.Estimate"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.Estimate"
         }
       },
-      "Z2O.Reports.Zoho.SalesOrder": {
+      "GA.Reports.Zoho.SalesOrder": {
         "type": "object",
         "properties": {
           "salesorder_id": {
@@ -1381,13 +1377,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.SalesOrdersData": {
+      "GA.Reports.Zoho.SalesOrdersData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.SalesOrder"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.SalesOrder"
         }
       },
-      "Z2O.Reports.Zoho.Invoice": {
+      "GA.Reports.Zoho.Invoice": {
         "type": "object",
         "properties": {
           "invoice_id": {
@@ -1496,13 +1492,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.InvoicesData": {
+      "GA.Reports.Zoho.InvoicesData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.Invoice"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.Invoice"
         }
       },
-      "Z2O.Reports.Zoho.InvoicePayment": {
+      "GA.Reports.Zoho.InvoicePayment": {
         "type": "object",
         "properties": {
           "payment_id": {
@@ -1547,7 +1543,7 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.InvoicePaymentsList": {
+      "GA.Reports.Zoho.InvoicePaymentsList": {
         "type": "object",
         "properties": {
           "invoice_id": {
@@ -1556,18 +1552,18 @@
           "invoice_payments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Reports.Zoho.InvoicePayment"
+              "$ref": "#/components/schemas/GA.Reports.Zoho.InvoicePayment"
             }
           }
         }
       },
-      "Z2O.Reports.Zoho.InvoicePaymentsData": {
+      "GA.Reports.Zoho.InvoicePaymentsData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.InvoicePaymentsList"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.InvoicePaymentsList"
         }
       },
-      "Z2O.Reports.Zoho.CreditsApplied": {
+      "GA.Reports.Zoho.CreditsApplied": {
         "type": "object",
         "properties": {
           "creditnote_id": {
@@ -1588,7 +1584,7 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.CreditsAppliedList": {
+      "GA.Reports.Zoho.CreditsAppliedList": {
         "type": "object",
         "properties": {
           "invoice_id": {
@@ -1597,18 +1593,18 @@
           "credits_applied": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Reports.Zoho.CreditsApplied"
+              "$ref": "#/components/schemas/GA.Reports.Zoho.CreditsApplied"
             }
           }
         }
       },
-      "Z2O.Reports.Zoho.CreditsAppliedData": {
+      "GA.Reports.Zoho.CreditsAppliedData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.CreditsAppliedList"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.CreditsAppliedList"
         }
       },
-      "Z2O.Reports.Zoho.Address": {
+      "GA.Reports.Zoho.Address": {
         "type": "object",
         "properties": {
           "address": {
@@ -1634,7 +1630,7 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.RecurringInvoice": {
+      "GA.Reports.Zoho.RecurringInvoice": {
         "type": "object",
         "properties": {
           "recurring_invoice_id": {
@@ -1672,20 +1668,20 @@
             "format": "date"
           },
           "billing_address": {
-            "$ref": "#/components/schemas/Z2O.Reports.Zoho.Address"
+            "$ref": "#/components/schemas/GA.Reports.Zoho.Address"
           },
           "shipping_address": {
-            "$ref": "#/components/schemas/Z2O.Reports.Zoho.Address"
+            "$ref": "#/components/schemas/GA.Reports.Zoho.Address"
           }
         }
       },
-      "Z2O.Reports.Zoho.RecurringInvoicesData": {
+      "GA.Reports.Zoho.RecurringInvoicesData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.RecurringInvoice"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.RecurringInvoice"
         }
       },
-      "Z2O.Reports.Zoho.RecurringInvoiceComment": {
+      "GA.Reports.Zoho.RecurringInvoiceComment": {
         "type": "object",
         "properties": {
           "comment_id": {
@@ -1728,7 +1724,7 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.RecurringInvoiceHistory": {
+      "GA.Reports.Zoho.RecurringInvoiceHistory": {
         "type": "object",
         "properties": {
           "recurring_invoice_id": {
@@ -1737,18 +1733,18 @@
           "recurring_invoice_comments": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Reports.Zoho.RecurringInvoiceHistory"
+              "$ref": "#/components/schemas/GA.Reports.Zoho.RecurringInvoiceHistory"
             }
           }
         }
       },
-      "Z2O.Reports.Zoho.RecurringInvoiceHistoryData": {
+      "GA.Reports.Zoho.RecurringInvoiceHistoryData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.RecurringInvoiceHistory"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.RecurringInvoiceHistory"
         }
       },
-      "Z2O.Reports.Zoho.CreditNote": {
+      "GA.Reports.Zoho.CreditNote": {
         "type": "object",
         "properties": {
           "creditnote_id": {
@@ -1798,13 +1794,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.CreditNotesData": {
+      "GA.Reports.Zoho.CreditNotesData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.CreditNote"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.CreditNote"
         }
       },
-      "Z2O.Reports.Zoho.InvoiceCredited": {
+      "GA.Reports.Zoho.InvoiceCredited": {
         "type": "object",
         "properties": {
           "creditnote_id": {
@@ -1831,7 +1827,7 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.InvoicesCreditedList": {
+      "GA.Reports.Zoho.InvoicesCreditedList": {
         "type": "object",
         "properties": {
           "invoice_id": {
@@ -1840,18 +1836,18 @@
           "invoices_credited": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Reports.Zoho.InvoiceCredited"
+              "$ref": "#/components/schemas/GA.Reports.Zoho.InvoiceCredited"
             }
           }
         }
       },
-      "Z2O.Reports.Zoho.InvoicesCreditedData": {
+      "GA.Reports.Zoho.InvoicesCreditedData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.InvoicesCreditedList"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.InvoicesCreditedList"
         }
       },
-      "Z2O.Reports.Zoho.CreditNoteRefund": {
+      "GA.Reports.Zoho.CreditNoteRefund": {
         "type": "object",
         "properties": {
           "creditnote_refund_id": {
@@ -1887,13 +1883,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.CreditNoteRefundsData": {
+      "GA.Reports.Zoho.CreditNoteRefundsData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.CreditNoteRefund"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.CreditNoteRefund"
         }
       },
-      "Z2O.Reports.Zoho.CustomerPayment": {
+      "GA.Reports.Zoho.CustomerPayment": {
         "type": "object",
         "properties": {
           "payment_id": {
@@ -1920,13 +1916,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.CustomerPaymentsData": {
+      "GA.Reports.Zoho.CustomerPaymentsData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.CustomerPayment"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.CustomerPayment"
         }
       },
-      "Z2O.Reports.Zoho.Expense": {
+      "GA.Reports.Zoho.Expense": {
         "type": "object",
         "properties": {
           "expense_id": {
@@ -2003,13 +1999,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.ExpensesData": {
+      "GA.Reports.Zoho.ExpensesData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.Expense"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.Expense"
         }
       },
-      "Z2O.Reports.Zoho.Employee": {
+      "GA.Reports.Zoho.Employee": {
         "type": "object",
         "properties": {
           "employee_id": {
@@ -2024,13 +2020,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.EmployeesData": {
+      "GA.Reports.Zoho.EmployeesData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.Employee"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.Employee"
         }
       },
-      "Z2O.Reports.Zoho.RecurringExpense": {
+      "GA.Reports.Zoho.RecurringExpense": {
         "type": "object",
         "properties": {
           "recurring_expense_id": {
@@ -2087,13 +2083,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.RecurringExpensesData": {
+      "GA.Reports.Zoho.RecurringExpensesData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.RecurringExpense"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.RecurringExpense"
         }
       },
-      "Z2O.Reports.Zoho.RetainerInvoice": {
+      "GA.Reports.Zoho.RetainerInvoice": {
         "type": "object",
         "properties": {
           "retainerinvoice_id": {
@@ -2159,13 +2155,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.RetainerInvoicesData": {
+      "GA.Reports.Zoho.RetainerInvoicesData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.RetainerInvoice"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.RetainerInvoice"
         }
       },
-      "Z2O.Reports.Zoho.PurchaseOrder": {
+      "GA.Reports.Zoho.PurchaseOrder": {
         "type": "object",
         "properties": {
           "purchaseorder_id": {
@@ -2216,13 +2212,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.PurchaseOrdersData": {
+      "GA.Reports.Zoho.PurchaseOrdersData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.PurchaseOrder"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.PurchaseOrder"
         }
       },
-      "Z2O.Reports.Zoho.Bill": {
+      "GA.Reports.Zoho.Bill": {
         "type": "object",
         "properties": {
           "bill_id": {
@@ -2279,13 +2275,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.BillsData": {
+      "GA.Reports.Zoho.BillsData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.Bill"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.Bill"
         }
       },
-      "Z2O.Reports.Zoho.VendorCredit": {
+      "GA.Reports.Zoho.VendorCredit": {
         "type": "object",
         "properties": {
           "vendor_credit_id": {
@@ -2335,13 +2331,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.VendorCreditsData": {
+      "GA.Reports.Zoho.VendorCreditsData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.VendorCredit"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.VendorCredit"
         }
       },
-      "Z2O.Reports.Zoho.VendorPayment": {
+      "GA.Reports.Zoho.VendorPayment": {
         "type": "object",
         "properties": {
           "payment_id": {
@@ -2402,13 +2398,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.VendorPaymentsData": {
+      "GA.Reports.Zoho.VendorPaymentsData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.VendorPayment"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.VendorPayment"
         }
       },
-      "Z2O.Reports.Zoho.BankAccount": {
+      "GA.Reports.Zoho.BankAccount": {
         "type": "object",
         "properties": {
           "account_id": {
@@ -2461,13 +2457,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.BankAccountsData": {
+      "GA.Reports.Zoho.BankAccountsData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.BankAccount"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.BankAccount"
         }
       },
-      "Z2O.Reports.Zoho.Transaction": {
+      "GA.Reports.Zoho.Transaction": {
         "type": "object",
         "properties": {
           "transaction_id": {
@@ -2500,7 +2496,7 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.LastImportedStatement": {
+      "GA.Reports.Zoho.LastImportedStatement": {
         "type": "object",
         "properties": {
           "statement_id": {
@@ -2520,12 +2516,12 @@
           "transactions": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Reports.Zoho.Transaction"
+              "$ref": "#/components/schemas/GA.Reports.Zoho.Transaction"
             }
           }
         }
       },
-      "Z2O.Reports.Zoho.LastImportedStatementsList": {
+      "GA.Reports.Zoho.LastImportedStatementsList": {
         "type": "object",
         "properties": {
           "account_id": {
@@ -2534,18 +2530,18 @@
           "last_imported_statements": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Reports.Zoho.LastImportedStatement"
+              "$ref": "#/components/schemas/GA.Reports.Zoho.LastImportedStatement"
             }
           }
         }
       },
-      "Z2O.Reports.Zoho.LastImportedStatementsData": {
+      "GA.Reports.Zoho.LastImportedStatementsData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.LastImportedStatementsList"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.LastImportedStatementsList"
         }
       },
-      "Z2O.Reports.Zoho.BankTransaction": {
+      "GA.Reports.Zoho.BankTransaction": {
         "type": "object",
         "properties": {
           "transaction_id": {
@@ -2617,13 +2613,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.BankTransactionsData": {
+      "GA.Reports.Zoho.BankTransactionsData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.BankTransaction"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.BankTransaction"
         }
       },
-      "Z2O.Reports.Zoho.User": {
+      "GA.Reports.Zoho.User": {
         "type": "object",
         "properties": {
           "user_id": {
@@ -2663,13 +2659,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.UsersData": {
+      "GA.Reports.Zoho.UsersData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.User"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.User"
         }
       },
-      "Z2O.Reports.Zoho.Item": {
+      "GA.Reports.Zoho.Item": {
         "type": "object",
         "properties": {
           "item_id": {
@@ -2710,13 +2706,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.ItemsData": {
+      "GA.Reports.Zoho.ItemsData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.Item"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.Item"
         }
       },
-      "Z2O.Reports.Zoho.Tax": {
+      "GA.Reports.Zoho.Tax": {
         "type": "object",
         "properties": {
           "tax_id": {
@@ -2748,13 +2744,13 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.TaxesData": {
+      "GA.Reports.Zoho.TaxesData": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/Z2O.Reports.Zoho.Tax"
+          "$ref": "#/components/schemas/GA.Reports.Zoho.Tax"
         }
       },
-      "Z2O.Reports.Zoho.Account": {
+      "GA.Reports.Zoho.Account": {
         "type": "object",
         "properties": {
           "acount_split_id": {
@@ -2786,7 +2782,7 @@
           }
         }
       },
-      "Z2O.Reports.Zoho.OpeningBalanceData": {
+      "GA.Reports.Zoho.OpeningBalanceData": {
         "type": "object",
         "properties": {
           "opening_balance_id": {
@@ -2802,7 +2798,7 @@
           "accounts": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Z2O.Reports.Zoho.Account"
+              "$ref": "#/components/schemas/GA.Reports.Zoho.Account"
             }
           },
           "total": {

@@ -1,16 +1,10 @@
 {
-  "required": [
-    "companyId",
-    "bankId",
-    "password",
-    "name",
-    "email"
-  ],
+  "required": ["companyId", "bankId", "password", "name", "email"],
   "type": "object",
   "properties": {
     "companyId": {
       "type": "string",
-      "example": "z2o444",
+      "example": "GA444",
       "description": "The companyId used while registering the customer."
     },
     "bankId": {
@@ -56,12 +50,12 @@
     "reports": {
       "type": "array",
       "items": {
-        "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.Report"
+        "$ref": "../../../GA-api.json#/components/schemas/GA.Company.Report"
       },
       "nullable": true
     },
     "dataConnection": {
-      "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.DataConnection",
+      "$ref": "../../../GA-api.json#/components/schemas/GA.Company.DataConnection",
       "nullable": true
     },
     "createdAt": {

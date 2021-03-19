@@ -8,7 +8,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.ReportNameList"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Company.ReportNameList"
             }
           }
         }

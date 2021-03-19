@@ -2,14 +2,14 @@
   "type": "object",
   "properties": {
     "report": {
-      "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.Report"
+      "$ref": "../../../GA-api.json#/components/schemas/GA.Company.Report"
     },
     "annotations": {
       "type": "object",
       "properties": {
         "row.column.key": {
-          "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.Annotations"
-        } 
+          "$ref": "../../../GA-api.json#/components/schemas/GA.Company.Annotations"
+        }
       },
       "description": "Each annotation will have a key in format type 'index.key.index.key.key' where index/key are the indexes/keys of nested arrays/objects of the json data."
     }

@@ -7,7 +7,7 @@
       "content": {
         "application/json": {
           "schema": {
-            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Bank.Bank"
+            "$ref": "../../GA-api.json#/components/schemas/GA.Bank.Bank"
           }
         }
       }
@@ -18,7 +18,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Bank.BankDisplay"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Bank.BankDisplay"
             }
           }
         }

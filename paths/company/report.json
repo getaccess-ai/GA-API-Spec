@@ -18,7 +18,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.Report"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Company.Report"
             }
           }
         }
@@ -42,7 +42,7 @@
       "content": {
         "application/json": {
           "schema": {
-            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.ReportAnnotatedSubmit"
+            "$ref": "../../GA-api.json#/components/schemas/GA.Company.ReportAnnotatedSubmit"
           }
         }
       }
@@ -53,7 +53,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Bank.Report"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Bank.Report"
             }
           }
         }

@@ -2,6 +2,7 @@
   "put": {
     "tags": ["Bank - Customers"],
     "summary": "Update info of a particular customer",
+    "description": "Let's you update schema information of a particular company.",
     "parameters": [
       {
         "name": "companyId",
@@ -17,7 +18,7 @@
       "content": {
         "application/json": {
           "schema": {
-            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.CompanyUpdate"
+            "$ref": "../../GA-api.json#/components/schemas/GA.Company.CompanyUpdate"
           }
         }
       }
@@ -28,7 +29,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.CompanyDisplay"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Company.CompanyDisplay"
             }
           }
         }
@@ -46,13 +47,16 @@
         "description": "Internal Server Error"
       }
     },
-    "security": [{
-      "Bank API Key": []
-    }]
+    "security": [
+      {
+        "Bank API Key": []
+      }
+    ]
   },
   "delete": {
     "tags": ["Bank - Customers"],
     "summary": "Delete a particular customer, this is not reversible",
+    "description": "Deletes a particular customer under the bank. Please handle this request with carew as this action is irreversible.",
     "parameters": [
       {
         "name": "companyId",
@@ -78,13 +82,16 @@
         "description": "Internal Server Error"
       }
     },
-    "security": [{
-      "Bank API Key": []
-    }]
+    "security": [
+      {
+        "Bank API Key": []
+      }
+    ]
   },
   "get": {
     "tags": ["Bank - Customers"],
     "summary": "Get info of a particular customer",
+    "description": "Get information regarding a particular customer.",
     "parameters": [
       {
         "name": "companyId",
@@ -102,7 +109,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.CompanyDisplay"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Company.CompanyDisplay"
             }
           }
         }
@@ -117,8 +124,10 @@
         "description": "Internal Server Error"
       }
     },
-    "security": [{
-      "Bank API Key": []
-    }]
+    "security": [
+      {
+        "Bank API Key": []
+      }
+    ]
   }
 }

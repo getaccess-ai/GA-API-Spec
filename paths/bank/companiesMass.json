@@ -1,41 +1,42 @@
 {
-    "post": {
-      "tags": ["Bank - Customers"],
-      "summary": "Add multiple new customers at once",
-      "description": "A bank can add multiple customers at once whose data it needs to monitor. The id, password will be sent to the customers through email enabling the customers to login into the product.",
-      "requestBody": {
+  "post": {
+    "tags": ["Bank - Customers"],
+    "summary": "Add multiple new customers at once",
+    "description": "A bank can add multiple customers at once whose data it needs to monitor. The set password link will be sent to the customers through email enabling the customers to login into the product.",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "../../GA-api.json#/components/schemas/GA.Company.CompanyMassAdd"
+          }
+        }
+      }
+    },
+    "responses": {
+      "201": {
+        "description": "Success",
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.CompanyMassAdd"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Company.CompanyMassDisplay"
             }
           }
         }
       },
-      "responses": {
-        "201": {
-          "description": "Success",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.CompanyMassDisplay"
-              }
-            }
-          }
-        },
-        "400": {
-          "description": "Required Fields are Missing or are in Wrong Format"
-        },
-        "403": {
-          "description": "Forbidden Request"
-        },
-        "409": {
-          "description": "CompanyId or Email already exists or Duplicate Details mentioned"
-        }
+      "400": {
+        "description": "Required Fields are Missing or are in Wrong Format"
       },
-      "security": [{
+      "403": {
+        "description": "Forbidden Request"
+      },
+      "409": {
+        "description": "CompanyId or Email already exists or Duplicate Details mentioned"
+      }
+    },
+    "security": [
+      {
         "Bank API Key": []
-      }]
-    }
+      }
+    ]
   }
-  
+}

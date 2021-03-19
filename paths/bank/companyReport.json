@@ -27,7 +27,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Bank.Report"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Bank.Report"
             }
           }
         }
@@ -42,8 +42,10 @@
         "description": "Internal Server Error"
       }
     },
-    "security": [{
-      "Bank API Key": []
-    }]
+    "security": [
+      {
+        "Bank API Key": []
+      }
+    ]
   }
 }

@@ -9,7 +9,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.CompanyList"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Company.CompanyList"
             }
           }
         }
@@ -21,19 +21,21 @@
         "description": "Internal Server Error"
       }
     },
-    "security": [{
-      "Bank API Key": []
-    }]
+    "security": [
+      {
+        "Bank API Key": []
+      }
+    ]
   },
   "post": {
     "tags": ["Bank - Customers"],
     "summary": "Add a new customer",
-    "description": "After logging in, a bank can now ‘Add customer’ whose data it needs to monitor. This creates a customer with the given details. The id, password will be sent to the customer through mail enabling the customer to login into the product.",
+    "description": "After logging in, a bank can now ‘Add customer’ whose data it needs to monitor. This creates a customer with the given details. The reset password link will be sent to the customer through mail enabling the customer to login into the product after initial reset.",
     "requestBody": {
       "content": {
         "application/json": {
           "schema": {
-            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.CompanyAdd"
+            "$ref": "../../GA-api.json#/components/schemas/GA.Company.CompanyAdd"
           }
         }
       }
@@ -44,7 +46,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.CompanyDisplay"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Company.CompanyDisplay"
             }
           }
         }
@@ -59,8 +61,10 @@
         "description": "CompanyId or Email already exists"
       }
     },
-    "security": [{
-      "Bank API Key": []
-    }]
+    "security": [
+      {
+        "Bank API Key": []
+      }
+    ]
   }
 }

@@ -1,95 +1,95 @@
 {
-  "Z2O.Bank.Bank": {
+  "GA.Bank.Bank": {
     "$ref": "./bank/bank/bank.json"
   },
-  "Z2O.Bank.BankDisplay": {
+  "GA.Bank.BankDisplay": {
     "$ref": "./bank/bank/bankDisplay.json"
   },
-  "Z2O.Bank.BankAuth": {
+  "GA.Bank.BankAuth": {
     "$ref": "./bank/bank/bankAuth.json"
   },
-  "Z2O.Bank.BankLogin": {
+  "GA.Bank.BankLogin": {
     "$ref": "./bank/bank/bankLogin.json"
   },
-  "Z2O.Bank.Report": {
+  "GA.Bank.Report": {
     "$ref": "./bank/report/report.json"
   },
-  "Z2O.Bank.ReportList": {
+  "GA.Bank.ReportList": {
     "$ref": "./bank/report/reportList.json"
   },
-  "Z2O.Bank.ReportHistoryList": {
+  "GA.Bank.ReportHistoryList": {
     "$ref": "./bank/report/reportHistoryList.json"
   },
-  "Z2O.Company.Company": {
+  "GA.Company.Company": {
     "$ref": "./company/company/company.json"
   },
-  "Z2O.Company.CompanyDisplay": {
+  "GA.Company.CompanyDisplay": {
     "$ref": "./company/company/companyDisplay.json"
   },
-  "Z2O.Company.CompanyMassDisplay": {
+  "GA.Company.CompanyMassDisplay": {
     "$ref": "./company/company/companyMassDisplay.json"
   },
-  "Z2O.Company.CompanyAuth": {
+  "GA.Company.CompanyAuth": {
     "$ref": "./company/company/companyAuth.json"
   },
-  "Z2O.Company.CompanyAdd": {
+  "GA.Company.CompanyAdd": {
     "$ref": "./company/company/companyAdd.json"
   },
-  "Z2O.Company.CompanyMassAdd": {
+  "GA.Company.CompanyMassAdd": {
     "$ref": "./company/company/companyMassAdd.json"
   },
-  "Z2O.Company.CompanyUpdate": {
+  "GA.Company.CompanyUpdate": {
     "$ref": "./company/company/companyUpdate.json"
   },
-  "Z2O.Company.CompanyLogin": {
+  "GA.Company.CompanyLogin": {
     "$ref": "./company/company/companyLogin.json"
   },
-  "Z2O.Company.CompanyList": {
+  "GA.Company.CompanyList": {
     "$ref": "./company/company/companyList.json"
   },
-  "Z2O.Company.Annotations": {
+  "GA.Company.Annotations": {
     "$ref": "./company/company/annotations.json"
   },
-  "Z2O.Company.Report": {
+  "GA.Company.Report": {
     "$ref": "./company/report/report.json"
   },
-  "Z2O.Company.ReportAdd": {
+  "GA.Company.ReportAdd": {
     "$ref": "./company/report/reportAdd.json"
   },
-  "Z2O.Company.ReportType": {
+  "GA.Company.ReportType": {
     "$ref": "./company/report/reportType.json"
   },
-  "Z2O.Company.ReportAnnotated": {
+  "GA.Company.ReportAnnotated": {
     "$ref": "./company/report/reportAnnotated.json"
   },
-  "Z2O.Company.ReportAnnotatedSubmit": {
+  "GA.Company.ReportAnnotatedSubmit": {
     "$ref": "./company/report/reportAnnotatedSubmit.json"
   },
-  "Z2O.Company.ReportList": {
+  "GA.Company.ReportList": {
     "$ref": "./company/report/reportList.json"
   },
-  "Z2O.Company.ReportNameList": {
+  "GA.Company.ReportNameList": {
     "$ref": "./company/report/reportNameList.json"
   },
-  "Z2O.Company.DataConnection": {
+  "GA.Company.DataConnection": {
     "$ref": "./company/dataConnection/dataConnection.json"
   },
-  "Z2O.Company.DataConnectionAdd": {
+  "GA.Company.DataConnectionAdd": {
     "$ref": "./company/dataConnection/dataConnectionAdd.json"
   },
-  "Z2O.Company.SettingsDisplay": {
+  "GA.Company.SettingsDisplay": {
     "$ref": "./company/settings/settingsDisplay.json"
   },
-  "Z2O.Company.SettingsUpdate": {
+  "GA.Company.SettingsUpdate": {
     "$ref": "./company/settings/settingsUpdate.json"
   },
-  "Z2O.Color.RGBColor": {
+  "GA.Color.RGBColor": {
     "$ref": "./color/rgbColor.json"
   },
-  "Z2O.ResetPasswordTrigger": {
+  "GA.ResetPasswordTrigger": {
     "$ref": "./resetPasswordTrigger.json"
   },
-  "Z2O.ResetPassword": {
+  "GA.ResetPassword": {
     "$ref": "./resetPassword.json"
   }
 }

@@ -19,7 +19,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.SettingsDisplay"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Company.SettingsDisplay"
             }
           }
         }
@@ -34,9 +34,11 @@
         "description": "Internal Server Error"
       }
     },
-    "security": [{
-      "Bank API Key": []
-    }]
+    "security": [
+      {
+        "Bank API Key": []
+      }
+    ]
   },
   "put": {
     "tags": ["Bank - Customers"],
@@ -56,7 +58,7 @@
       "content": {
         "application/json": {
           "schema": {
-            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.SettingsUpdate"
+            "$ref": "../../GA-api.json#/components/schemas/GA.Company.SettingsUpdate"
           }
         }
       }
@@ -67,7 +69,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.SettingsDisplay"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Company.SettingsDisplay"
             }
           }
         }
@@ -85,8 +87,10 @@
         "description": "Internal Server Error"
       }
     },
-    "security": [{
-      "Bank API Key": []
-    }]
+    "security": [
+      {
+        "Bank API Key": []
+      }
+    ]
   }
 }

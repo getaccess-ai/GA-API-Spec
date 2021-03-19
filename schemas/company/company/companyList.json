@@ -5,7 +5,7 @@
     "results": {
       "type": "array",
       "items": {
-        "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.CompanyDisplay"
+        "$ref": "../../../GA-api.json#/components/schemas/GA.Company.CompanyDisplay"
       },
       "nullable": true
     },

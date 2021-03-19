@@ -7,7 +7,7 @@
       "description": "This will be used in subsequent requests to authenticate and authorize them."
     },
     "data": {
-      "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Bank.BankDisplay"
+      "$ref": "../../../GA-api.json#/components/schemas/GA.Bank.BankDisplay"
     }
   }
 }

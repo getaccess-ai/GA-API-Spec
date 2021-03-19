@@ -6,7 +6,7 @@
       "content": {
         "application/json": {
           "schema": {
-            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.DataConnectionAdd"
+            "$ref": "../../GA-api.json#/components/schemas/GA.Company.DataConnectionAdd"
           }
         }
       }
@@ -17,7 +17,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.DataConnection"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Company.DataConnection"
             }
           }
         }

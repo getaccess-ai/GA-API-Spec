@@ -1,14 +1,12 @@
 {
-    "required": [
-      "companies"
-    ],
-    "type": "object",
-    "properties": {
-      "companies": {
-        "type": "array",
-        "items": {
-            "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.CompanyAdd"
-        }
-    }
+  "required": ["companies"],
+  "type": "object",
+  "properties": {
+    "companies": {
+      "type": "array",
+      "items": {
+        "$ref": "../../../GA-api.json#/components/schemas/GA.Company.CompanyAdd"
+      }
     }
   }
+}

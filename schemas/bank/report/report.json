@@ -4,7 +4,7 @@
   "properties": {
     "companyId": {
       "type": "string",
-      "example": "z2o445",
+      "example": "GA445",
       "description": "The companyId used while registering the company."
     },
     "name": {

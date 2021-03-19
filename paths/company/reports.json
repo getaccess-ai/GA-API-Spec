@@ -8,7 +8,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.ReportList"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Company.ReportList"
             }
           }
         }
@@ -22,7 +22,7 @@
       "content": {
         "application/json": {
           "schema": {
-            "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.ReportAdd"
+            "$ref": "../../GA-api.json#/components/schemas/GA.Company.ReportAdd"
           }
         }
       }
@@ -33,7 +33,7 @@
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../z2o-api.json#/components/schemas/Z2O.Company.Report"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Company.Report"
             }
           }
         }

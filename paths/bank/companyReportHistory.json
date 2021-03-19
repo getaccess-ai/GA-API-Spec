@@ -1,50 +1,51 @@
 {
-    "get": {
-      "tags": ["Bank - Data"],
-      "summary": "Get history of all data of a particular report provided by a particular customer",
-      "parameters": [
-        {
-          "name": "companyId",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string",
-            "format": "uuid"
-          }
-        },
-        {
-          "name": "reportName",
-          "in": "path",
-          "required": true,
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
-      "responses": {
-        "200": {
-          "description": "Success",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "../../z2o-api.json#/components/schemas/Z2O.Bank.ReportHistoryList"
-              }
-            }
-          }
-        },
-        "403": {
-          "description": "Forbidden Request"
-        },
-        "404": {
-          "description": "Company doesn't exist or Report doesn't exist"
-        },
-        "500": {
-          "description": "Internal Server Error"
+  "get": {
+    "tags": ["Bank - Data"],
+    "summary": "Get history of all data of a particular report provided by a particular customer",
+    "parameters": [
+      {
+        "name": "companyId",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid"
         }
       },
-      "security": [{
+      {
+        "name": "reportName",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../../GA-api.json#/components/schemas/GA.Bank.ReportHistoryList"
+            }
+          }
+        }
+      },
+      "403": {
+        "description": "Forbidden Request"
+      },
+      "404": {
+        "description": "Company doesn't exist or Report doesn't exist"
+      },
+      "500": {
+        "description": "Internal Server Error"
+      }
+    },
+    "security": [
+      {
         "Bank API Key": []
-      }]
-    }
+      }
+    ]
   }
-  
+}

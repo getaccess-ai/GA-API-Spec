@@ -1,6 +1,212 @@
 {
   "GA.Reports.StockStatement": {
     "type": "object",
+    "properties": {
+      "Name": {
+        "type": "string",
+        "description": "The name of the cusrtomer issuing the statement"
+      },
+      "Email": {
+        "type": "email",
+        "description": "The registered email address of the customer"
+      },
+      "Period": {
+        "type": "string",
+        "description": "The period for which the statement is issued"
+      },
+      "Date": {
+        "type": "date",
+        "description": "The date of issue"
+      },
+      "Declaration": {
+        "type": "string",
+        "description": "The official declaration by the customer stating the integrity of content of the statement"
+      },
+      "ESign": {
+        "type": "string",
+        "description": "The e-signature of the customer verifying the statement"
+      },
+      "Statement of Inventory Position": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "S.No.": {
+              "type": "string",
+              "description": "The order number of the row"
+            },
+            "Particulars": {
+              "type": "string",
+              "description": "Inventory in Hand"
+            },
+            "No. of Units": {
+              "type": "array",
+              "description": "The ageing analysis of the inventory items",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "1-90 Days": {
+                    "type": "string",
+                    "description": "The amount of inventory in the first 90 days"
+                  },
+                  "91-180 Days": {
+                    "type": "string",
+                    "description": "The amount of inventory in the 91-180 days period"
+                  },
+                  ">180 Days": {
+                    "type": "string",
+                    "description": "The amount of inventory after 180 days"
+                  },
+                  "Total": {
+                    "type": "string",
+                    "description": "The total inventory"
+                  }
+                }
+              }
+            },
+            "Inventory Value (value in INR)": {
+              "type": "array",
+              "description": "The ageing analysis of the value of Inventory",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "1-90 Days": {
+                    "type": "string",
+                    "description": "The value of inventory in the first 90 days"
+                  },
+                  "91-180 Days": {
+                    "type": "string",
+                    "description": "The value of inventory in the 91-180 days period"
+                  },
+                  ">180 Days": {
+                    "type": "string",
+                    "description": "The value of inventory after 180 days"
+                  },
+                  "Total": {
+                    "type": "string",
+                    "description": "The total inventory value"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Statement of Creditors / Payables": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "S.No.": {
+              "type": "string",
+              "description": "The order number of the row"
+            },
+            "Particulars": {
+              "type": "string",
+              "description": "Bills Payables"
+            },
+            "Account Payables Aging (value in INR)": {
+              "type": "array",
+              "description": "Ageing analysis of AP",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "Current": {
+                    "type": "number",
+                    "description": "The current payables"
+                  },
+                  "1-90 Days": {
+                    "type": "string",
+                    "description": "The value of Payables in the first 90 days"
+                  },
+                  "91-180 Days": {
+                    "type": "string",
+                    "description": "The value of Payables in the 91-180 days period"
+                  },
+                  ">180 Days": {
+                    "type": "string",
+                    "description": "The value of Payables after 180 days"
+                  },
+                  "Total": {
+                    "type": "string",
+                    "description": "The total payables value"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Statement of Debtors / Receivables": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "S.No.": {
+              "type": "string",
+              "description": "The order number of the row"
+            },
+            "Particulars": {
+              "type": "string",
+              "description": "Account Receivables"
+            },
+            "Account Payables Aging (value in INR)": {
+              "type": "array",
+              "description": "Ageing analysis of AR",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "Current": {
+                    "type": "number",
+                    "description": "The current receivables"
+                  },
+                  "1-90 Days": {
+                    "type": "number",
+                    "description": "The value of receivables in the first 90 days"
+                  },
+                  "91-180 Days": {
+                    "type": "number",
+                    "description": "The value of receivables in the 91-180 days period"
+                  },
+                  ">180 Days": {
+                    "type": "number",
+                    "description": "The value of receivables after 180 days"
+                  },
+                  "Total": {
+                    "type": "string",
+                    "description": "The total receivables value"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Sales and Purchases": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "S.No": {
+              "type": "number",
+              "description": "The order number of the row"
+            },
+            "Particulars": {
+              "type": "string",
+              "description": "Sales or Purchases"
+            },
+            "For Current Month": {
+              "type": "number",
+              "description": "The sales/purchases for current month"
+            },
+            "Cummulative for Current FY": {
+              "type": "number",
+              "description": "The sales/purchases for the current year"
+            }
+          }
+        }
+      }
+    },
     "example": {
       "Name": "",
       "Email": "",
@@ -78,6 +284,153 @@
   },
   "GA.Reports.CAM": {
     "type": "object",
+    "properties": {
+      "General Information": {
+        "type": "object",
+        "properties": {
+          "Name of the Organization": {
+            "type": "string",
+            "description": "The name of the cusrtomer issuing the statement"
+          },
+          "GST No": {
+            "type": "string",
+            "description": "The GST number of customer"
+          },
+          "Total Number of Employees": {
+            "type": "number",
+            "description": "The number of employees employed within the organization"
+          },
+          "Website": {
+            "type": "string",
+            "description": "URL to the website of the customer"
+          }
+        }
+      },
+      "Address and Contact Details": {
+        "type": "object",
+        "properties": {
+          "Address": {
+            "type": "string",
+            "description": "The registered address of the customer"
+          },
+          "Pin Code": {
+            "type": "string",
+            "description": "The pin code associated with the above address"
+          },
+          "Phone No": {
+            "type": "string",
+            "description": "The contact phone number of the customer"
+          },
+          "Mobile No": {
+            "type": "string",
+            "description": "The contact mobile number of the customer"
+          },
+          "Email Id": {
+            "type": "string",
+            "description": "The email associated with the customer"
+          }
+        }
+      },
+      "Loans": {
+        "type": "object",
+        "description": "The particulars about loans taken by the customer",
+        "properties": {
+          "Secured": {
+            "type": "array",
+            "description": "The secured loans taken by the customer",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Financer": {
+                  "type": "string",
+                  "description": "The lender of the loan"
+                },
+                "Current Amount": {
+                  "type": "number",
+                  "description": "The amount remaining to pay currently"
+                }
+              }
+            },
+            "Unsecured": {
+              "type": "array",
+              "description": "The unsecured loans taken by the customer",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "Financer": {
+                    "type": "string",
+                    "description": "The lender of the loan"
+                  },
+                  "Current Amount": {
+                    "type": "number",
+                    "description": "The amount remaining to pay currently"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Details of Assets Owned by the Organisation": {
+        "type": "object",
+        "properties": {
+          "Fixed Assets Owned": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Name": {
+                  "type": "string",
+                  "description": "The name of the assets owned"
+                },
+                "Purchase Value": {
+                  "type": "string",
+                  "desctiption": "The value of the asset at the time of purchase"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Highlights of the Financials": {
+        "type": "object",
+        "properties": {
+          "Year wise Income and Profit": {
+            "type": "array",
+            "description": "Income/Sales and PAT for the current year and the last three years",
+            "items": {
+              "type": "object",
+              "properties": {
+                "Financial Year": {
+                  "type": "string",
+                  "description": "The FY for whom the data in the row is assocuiated with"
+                },
+                "Income/Sales(Main Activities)": {
+                  "type": "number",
+                  "descripton": "The amount of income/sales in given FY"
+                },
+                "PAT": {
+                  "type": "number",
+                  "description": "The amount of PAT in the given FY"
+                }
+              }
+            }
+          },
+          "Sundry Debtors": {
+            "type": "number",
+            "description": "The debtors as on the date of statement"
+          },
+          "Sundry Creditors": {
+            "type": "number",
+            "description": "The creditors as on the date of statement"
+          },
+          "Inventory as on date": {
+            "type": "number",
+            "description": "The inventory as on the date of statement"
+          }
+        }
+      }
+    },
     "example": {
       "General Information": {
         "Name of the Organization": "ACME Industries",

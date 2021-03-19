@@ -1,11 +1,5 @@
 {
-  "required": [
-    "companyId",
-    "bankId",
-    "name",
-    "email",
-    "status"
-  ],
+  "required": ["companyId", "bankId", "name", "email", "status"],
   "type": "object",
   "properties": {
     "companyId": {
@@ -45,12 +39,12 @@
     "reports": {
       "type": "array",
       "items": {
-        "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.Report"
+        "$ref": "../../../GA-api.json#/components/schemas/GA.Company.Report"
       },
       "nullable": true
     },
     "dataConnection": {
-      "$ref": "../../../z2o-api.json#/components/schemas/Z2O.Company.DataConnection"
+      "$ref": "../../../GA-api.json#/components/schemas/GA.Company.DataConnection"
     },
     "createdAt": {
       "type": "string",
