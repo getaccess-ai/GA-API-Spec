@@ -35,6 +35,16 @@
       "name": "bal_sheet",
       "x-displayName": "Balance Sheet",
       "description": "<SchemaDefinition schemaRef=\"#/components/reports/GA.Reports.BalanceSheet\" />\n"
+    },
+    {
+      "name": "pnl",
+      "x-displayName": "Profit and Loss",
+      "description": "<SchemaDefinition schemaRef=\"#/components/reports/GA.Reports.ProfitAndLoss\" />\n"
+    },
+    {
+      "name": "cashflow",
+      "x-displayName": "Cash Flow",
+      "description": "<SchemaDefinition schemaRef=\"#/components/reports/GA.Reports.CashFlow\" />\n"
     }
   ],
   "x-tagGroups": [
@@ -44,7 +54,7 @@
     },
     {
       "name": "Reports",
-      "tags": ["stock_statement", "cam", "bal_sheet"]
+      "tags": ["stock_statement", "cam", "bal_sheet", "pnl", "cashflow"]
     }
   ],
   "paths": {

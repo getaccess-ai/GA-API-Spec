@@ -540,5 +540,55 @@
         }
       }
     }
+  },
+  "GA.Reports.ProfitAndLoss": {
+    "type": "object",
+    "properties": {
+      "Sales Account": {
+        "type": "number"
+      },
+      "Direct Incomes": {
+        "type": "number"
+      },
+      "Opening Stock": {
+        "type": "number"
+      },
+      "Purchase Accounts": {
+        "type": "number"
+      },
+      "Closing Stock": {
+        "type": "number"
+      },
+      "Direct Expenses": {
+        "type": "number"
+      },
+      "Indirect Incomes": {
+        "type": "number"
+      },
+      "Indirect Expenses": {
+        "type": "number"
+      }
+    }
+  },
+  "GA.Reports.CashFlow": {
+    "type": "object",
+    "description": "Specifies the sources and value of cash inflows and outflows for a customer in a given period.",
+    "properties": {
+      "Loans (Liability)": {
+        "type": "number"
+      },
+      "Current Liabilities": {
+        "type": "number"
+      },
+      "Indirect Incomes": {
+        "type": "number"
+      },
+      "Indirect Expenses": {
+        "type": "number"
+      },
+      "Current Assets": {
+        "type": "number"
+      }
+    }
   }
 }
