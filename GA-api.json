@@ -49,8 +49,12 @@
   ],
   "x-tagGroups": [
     {
-      "name": "API Routes",
+      "name": "Bank API Routes",
       "tags": ["Bank - Auth", "Bank - Customers", "Bank - Data"]
+    },
+    {
+      "name": "Customer API Routes",
+      "tags": ["Customer - Auth", "Customer - Connection", "Customer - Data"]
     },
     {
       "name": "Reports",
