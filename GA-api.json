@@ -30,6 +30,11 @@
       "name": "cam",
       "x-displayName": "CAM",
       "description": "<SchemaDefinition schemaRef=\"#/components/reports/GA.Reports.CAM\" />\n"
+    },
+    {
+      "name": "bal_sheet",
+      "x-displayName": "Balance Sheet",
+      "description": "<SchemaDefinition schemaRef=\"#/components/reports/GA.Reports.BalanceSheet\" />\n"
     }
   ],
   "x-tagGroups": [
@@ -39,7 +44,7 @@
     },
     {
       "name": "Reports",
-      "tags": ["stock_statement", "cam"]
+      "tags": ["stock_statement", "cam", "bal_sheet"]
     }
   ],
   "paths": {

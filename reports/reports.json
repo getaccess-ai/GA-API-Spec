@@ -495,5 +495,50 @@
         "Inventory as on date": "1,78,11,689.55"
       }
     }
+  },
+  "GA.Reports.BalanceSheet": {
+    "type": "object",
+    "properties": {
+      "Assets": {
+        "type": "object",
+        "description": "Details of the assets a customer owns",
+        "properties": {
+          "Profit & Loss A/c": {
+            "type": "number",
+            "description": "The total Profit or Loss made as on the given date"
+          },
+          "Fixed Assets": {
+            "type": "number",
+            "description": "The total value of Fixed assets owned by the customer as on the given date"
+          },
+          "Investments": {
+            "type": "number",
+            "description": "The total investments made by the customer as on the given date"
+          },
+          "Current Assets": {
+            "type": "number",
+            "description": "The current assets owned by the cusotmer"
+          }
+        }
+      },
+      "Liabilities": {
+        "type": "object",
+        "description": "The details of the liabilities on the customer as on a given date",
+        "properties": {
+          "Capital Account": {
+            "type": "number",
+            "description": "The capital account value of the cutomer as on the given date"
+          },
+          "Loans(Liability)": {
+            "type": "number",
+            "description": "The loans(liabilities) on the customer as on the given date"
+          },
+          "Current Liabilities": {
+            "type": "number",
+            "description": "The current liabilities on the customer"
+          }
+        }
+      }
+    }
   }
 }
