@@ -2,7 +2,8 @@
   "openapi": "3.0.2",
   "info": {
     "title": "GetAccess API",
-    "description": "Implements a web application to connect company ERPs to Banks enabling them to track required accounts and transfer data for financial purposes. The api provides endpoints to utilise the functionalities of the product. The api service is exhaustive and provides a base for building of 3rd party web applications.",
+    "description": "GetAccess is a provider of a universal API for small business financial software, used by service providers to build integrations with the software packages their small business customers use. This documentation should serve as a guide to help you through the process of building those integrations. If you have any questions at any time, please get in touch with us at contact@getaccess.ai. \n\n# Modes\nThe API is available in two modes that can be accessed using different uris. Below are the descriptions for the same on\n<table class=\"security-details\"><tbody><tr><th> Modes </th><th> Host </th><th> Description </th></tr><tr><td> Sandox </td><td> <a href=\"redirect.html\">https://sandbox-api.getaccess.ai</a> </td><td> Use Sandbox mode to build and test your integration. In this mode, you must use test credentials to authenticate with api platforms. All API endpoints will return mock data and no actual updates are made to any account. </td></tr><tr><td> Production </td><td> <a href=\"redirect.html\">https://api.getaccess.ai</a> </td><td> Use Production mode to go live with your integration. Your end-users will use their login credentials to authenticate with their customer accounts. API endpoints return real data and updates are made to customer accounts. Note that in this mode, all API calls are billable. </td></tr></tbody></table>",
+    "domo": "tr",
     "version": "v0.1",
     "x-logo": {
       "url": "logo.png"
@@ -57,7 +58,7 @@
       "tags": ["Customer - Auth", "Customer - Connection", "Customer - Data"]
     },
     {
-      "name": "Reports",
+      "name": "Report Schemas",
       "tags": ["stock_statement", "cam", "bal_sheet", "pnl", "cashflow"]
     }
   ],
@@ -75,7 +76,14 @@
       "Bank API Key": {
         "type": "apiKey",
         "in": "header",
-        "name": "Authorization"
+        "name": "Authorization",
+        "description": "Handles Authentication for Banks"
+      },
+      "Customer API Key": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Authorization",
+        "description": "Handles Authentication for Customers"
       }
     }
   },

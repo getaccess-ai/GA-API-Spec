@@ -2,7 +2,7 @@
   "get": {
     "tags": ["Bank - Customers"],
     "summary": "Get list of customers connected to bank",
-    "description": "This use case provides a Bank to view the Customers associated with it. A customer is said to be associated with a bank when the bank is the one which adds the customer. A bank is said to be associated with a customer, if the customer was added by the bank.",
+    "description": "This api route provides a Bank to view the Customers added by it. ",
     "responses": {
       "200": {
         "description": "Success",
