@@ -36,13 +36,6 @@
       "type": "string",
       "nullable": true
     },
-    "reports": {
-      "type": "array",
-      "items": {
-        "$ref": "../../../GA-api.json#/components/schemas/GA.Company.Report"
-      },
-      "nullable": true
-    },
     "dataConnection": {
       "$ref": "../../../GA-api.json#/components/schemas/GA.Company.DataConnection"
     },
