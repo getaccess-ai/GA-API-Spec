@@ -1,6 +1,11 @@
 {
   "post": {
     "tags": ["Customer - Connection"],
+    "security": [
+      {
+        "Customer API Key": []
+      }
+    ],
     "summary": "Add a new ERP connection for the customer",
     "requestBody": {
       "content": {

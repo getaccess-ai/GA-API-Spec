@@ -499,6 +499,30 @@
   "GA.Reports.BalanceSheet": {
     "type": "object",
     "properties": {
+      "Name": {
+        "type": "string",
+        "description": "The name of the cusrtomer issuing the statement"
+      },
+      "Email": {
+        "type": "email",
+        "description": "The registered email address of the customer"
+      },
+      "Period": {
+        "type": "string",
+        "description": "The period for which the statement is issued"
+      },
+      "Date": {
+        "type": "date",
+        "description": "The date of issue"
+      },
+      "Declaration": {
+        "type": "string",
+        "description": "The official declaration by the customer stating the integrity of content of the statement"
+      },
+      "ESign": {
+        "type": "string",
+        "description": "The e-signature of the customer verifying the statement"
+      },
       "Assets": {
         "type": "object",
         "description": "Details of the assets a customer owns",
@@ -544,29 +568,58 @@
   "GA.Reports.ProfitAndLoss": {
     "type": "object",
     "properties": {
-      "Sales Account": {
-        "type": "number"
+      "Name": {
+        "type": "string",
+        "description": "The name of the cusrtomer issuing the statement"
       },
-      "Direct Incomes": {
-        "type": "number"
+      "Email": {
+        "type": "email",
+        "description": "The registered email address of the customer"
       },
-      "Opening Stock": {
-        "type": "number"
+      "Period": {
+        "type": "string",
+        "description": "The period for which the statement is issued"
       },
-      "Purchase Accounts": {
-        "type": "number"
+      "Date": {
+        "type": "date",
+        "description": "The date of issue"
       },
-      "Closing Stock": {
-        "type": "number"
+      "Declaration": {
+        "type": "string",
+        "description": "The official declaration by the customer stating the integrity of content of the statement"
       },
-      "Direct Expenses": {
-        "type": "number"
+      "ESign": {
+        "type": "string",
+        "description": "The e-signature of the customer verifying the statement"
       },
-      "Indirect Incomes": {
-        "type": "number"
-      },
-      "Indirect Expenses": {
-        "type": "number"
+      "Accounts": {
+        "type": "object",
+        "properties": {
+          "Sales Account": {
+            "type": "number"
+          },
+          "Direct Incomes": {
+            "type": "number"
+          },
+          "Opening Stock": {
+            "type": "number"
+          },
+          "Purchase Accounts": {
+            "type": "number"
+          },
+          "Closing Stock": {
+            "type": "number"
+          },
+          "Direct Expenses": {
+            "type": "number"
+          },
+          "Indirect Incomes": {
+            "type": "number"
+          },
+          "Indirect Expenses": {
+            "type": "number"
+          }
+        }
       }
     }
   },
@@ -574,20 +627,57 @@
     "type": "object",
     "description": "Specifies the sources and value of cash inflows and outflows for a customer in a given period.",
     "properties": {
-      "Loans (Liability)": {
-        "type": "number"
+      "Name": {
+        "type": "string",
+        "description": "The name of the cusrtomer issuing the statement"
       },
-      "Current Liabilities": {
-        "type": "number"
+      "Email": {
+        "type": "email",
+        "description": "The registered email address of the customer"
       },
-      "Indirect Incomes": {
-        "type": "number"
+      "Period": {
+        "type": "string",
+        "description": "The period for which the statement is issued"
       },
-      "Indirect Expenses": {
-        "type": "number"
+      "Date": {
+        "type": "date",
+        "description": "The date of issue"
       },
-      "Current Assets": {
-        "type": "number"
+      "Declaration": {
+        "type": "string",
+        "description": "The official declaration by the customer stating the integrity of content of the statement"
+      },
+      "ESign": {
+        "type": "string",
+        "description": "The e-signature of the customer verifying the statement"
+      },
+      "Inflow": {
+        "type": "object",
+        "properties": {
+          "Current Assets": {
+            "type": "number"
+          },
+          "Indirect Incomes": {
+            "type": "number"
+          }
+        }
+      },
+      "Outflow": {
+        "type": "object",
+        "properties": {
+          "Loans (Liability)": {
+            "type": "number"
+          },
+          "Current Liabilities": {
+            "type": "number"
+          },
+          "Indirect Expenses": {
+            "type": "number"
+          },
+          "Current Assets": {
+            "type": "number"
+          }
+        }
       }
     }
   }

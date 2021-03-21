@@ -12,6 +12,15 @@
             }
           }
         }
+      },
+      "401": {
+        "description": "API key missing"
+      },
+      "403": {
+        "description": "Invalid API key"
+      },
+      "500": {
+        "description": "Internal Server Error"
       }
     }
   }

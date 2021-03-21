@@ -12,12 +12,22 @@
             }
           }
         }
+      },
+      "401": {
+        "description": "API key missing"
+      },
+      "403": {
+        "description": "Invalid API key"
+      },
+      "500": {
+        "description": "Internal Server Error"
       }
     }
   },
   "post": {
     "tags": ["Customer - Data"],
     "summary": "Add a new report to provide",
+    "description": "Here the customer can provide add a report which it wishes to share with the bank. Note that until a report is shared the bank has no authority to view it.",
     "requestBody": {
       "content": {
         "application/json": {
@@ -28,15 +38,27 @@
       }
     },
     "responses": {
-      "200": {
+      "201": {
         "description": "Success",
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "../../GA-api.json#/components/schemas/GA.Company.Report"
+              "$ref": "../../GA-api.json#/components/schemas/GA.Bank.Report"
             }
           }
         }
+      },
+      "400": {
+        "description": "Missing parameters"
+      },
+      "401": {
+        "description": "API key missing"
+      },
+      "403": {
+        "description": "Invalid API key"
+      },
+      "500": {
+        "description": "Internal Server Error"
       }
     }
   }
