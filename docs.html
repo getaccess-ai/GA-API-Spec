@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GetAccess API Docs</title>
+    <!-- needed for adaptive design -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!--
+    ReDoc doesn't change outer page styles
+    -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <redoc></redoc>
+    <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"></script>
+    <script>
+      Redoc.init(
+        "GA-api.json",
+        {
+          theme: {
+            typography: {
+              fontFamily: "Gilroy, sans-serif",
+              headings: {
+                fontFamily: "Gilroy, sans-serif",
+              },
+            },
+            sidebar: {
+              backgroundColor: "#F5EEFF",
+            },
+            rightPanel: {
+              backgroundColor: "#4f314f",
+            },
+            logo: {
+              gutter: "28px",
+            },
+          },
+        },
+        document.querySelector("redoc")
+      );
+    </script>
+  </body>
+</html>

@@ -1,56 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>GetAccess API Docs</title>
-    <!-- needed for adaptive design -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700"
-      rel="stylesheet"
-    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css"
     />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <!--
-    ReDoc doesn't change outer page styles
-    -->
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>GetAccess</title>
   </head>
   <body>
-    <redoc></redoc>
-    <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"></script>
-    <script>
-      Redoc.init(
-        "GA-api.json",
-        {
-          theme: {
-            typography: {
-              fontFamily: "Gilroy, sans-serif",
-              headings: {
-                fontFamily: "Gilroy, sans-serif",
-              },
-            },
-            sidebar: {
-              backgroundColor: "#F5EEFF",
-            },
-            rightPanel: {
-              backgroundColor: "#4f314f",
-            },
-            logo: {
-              gutter: "28px",
-            },
-          },
-        },
-        document.querySelector("redoc")
-      );
-    </script>
+    <div class="page-grid">
+      <div class="grid-element sidebar">
+          <img src="logo.png" alt="" style="padding: 10%;padding-bottom: 20%;">
+          <ul>
+              <a href="index.html"><li><i class="fa fa-home fa-lg" style="margin-right: 8px;" aria-hidden="true"></i> Home</li></a>
+              <a href="docs.html"><li><i class="fa fa-book fa-lg" style="margin-right: 8px;" aria-hidden="true"></i>API Docs</li></a>
+          </ul>
+      </div>
+      <div class="grid-element navbar">
+        <!-- <div class="container">
+            <h2 style="color:#160d7a; padding: 10px;">GA API Documentation</h2>
+        </div> -->
+      </div>
+      <div class="grid-element content">
+        <div class="container" style="padding: 5%;">
+          <h1>Welcome</h1>
+          <hr style="width: 80%" />
+          <h3>Welcome to Phyllo developer documentation!</h3>
+          <p>
+            Phyllo enables a harmonized exchange of data between your end-users,
+            workforce platforms, pay stubs along with your business - while
+            keeping your customer’s data privacy at the core. <br> <br> Find comprehensive
+            guides and documentation so that you can get started with Phyllo as
+            quickly as possible. <br><br> Some interesting problems which can be solved
+            via Phyllo 
+            <ul>
+                <li>
+                    Instant Income and Employment Verification by allowing
+            customers to link their workforce platform via Phyllo
+                </li>
+                <li>Improve your
+                    risk appetite by accessing multiple data points of the customer</li>
+                    <li>
+                        Fraud prevention in insurance claims
+                    </li>
+                    <li>
+                        Providing financial products to
+            creator and gig economy worker at fair rates.
+                    </li>
+                    <li>
+                        Earlier it was not
+            possible due to a lack of data
+                    </li>
+                    <li>
+                        Tax planning and filing for 1099
+            income
+                    </li>
+                    <li>
+                        Do instant KYC through Phyllo
+                    </li>
+            </ul>
+               To access our API please send a
+            mail to contact@getphyllo.com. <br><br> Let's build with Phyllo Docs.
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
