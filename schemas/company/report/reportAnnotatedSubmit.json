@@ -7,11 +7,11 @@
     "annotations": {
       "type": "object",
       "properties": {
-        "row.column.key": {
+        "row||column||key": {
           "$ref": "../../../GA-api.json#/components/schemas/GA.Company.Annotations"
         }
       },
-      "description": "Each annotation will have a key in format type 'index.key.index.key.key' where index/key are the indexes/keys of nested arrays/objects of the json data."
+      "description": "Each annotation will have a key in format type 'index||key||index||key||key' where index/key are the indexes/keys of nested arrays/objects of the json data."
     }
   }
 }

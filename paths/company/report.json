@@ -2,6 +2,7 @@
   "get": {
     "tags": ["Customer - Data"],
     "summary": "Get latest data of a particular report that will be pushed",
+    "description": "This fetches the latest data of the report provided in the parameters. If the report is continuos, i.e., no period is specified, the latest version of the report will be fetched, otherwise the data corresponding to the period will be fetched. This will only display the report to the customer and the data will not be fetched until the customer approves it with annotations.",
     "parameters": [
       {
         "name": "reportName",
@@ -43,6 +44,7 @@
   "post": {
     "tags": ["Customer - Data"],
     "summary": "Annotate the data of a particular report and then push it to bank",
+    "description": "Using this route the latest data fetched, in the previous route, corresponding to a report, can be submitted to the bank. The data submitted to bank will be exactly the same as the data fetched from the erp in the get report route, to prevent manipulation. But the implementor may enable the option of annotations to allow for some comments or corrections on the fetched report.",
     "parameters": [
       {
         "name": "reportName",

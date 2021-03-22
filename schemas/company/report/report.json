@@ -13,17 +13,8 @@
       "type": "string"
     },
     "data": {
-      "type": "object",
-      "enum": [
-        {
-          "hello": {
-            "type": "object",
-            "properties": {
-              "name": "string"
-            }
-          }
-        }
-      ]
+      "type": "string",
+      "example": "This part depends on the type of report fetched."
     },
     "lastPushDate": {
       "type": "string",

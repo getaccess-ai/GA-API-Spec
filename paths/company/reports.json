@@ -2,6 +2,7 @@
   "get": {
     "tags": ["Customer - Data"],
     "summary": "Get list of reports customer is providing",
+    "description": "These are the reports which are added by customer to be shared with the bank.",
     "responses": {
       "200": {
         "description": "Success",
@@ -27,7 +28,7 @@
   "post": {
     "tags": ["Customer - Data"],
     "summary": "Add a new report to provide",
-    "description": "Here the customer can provide add a report which it wishes to share with the bank. Note that until a report is shared the bank has no authority to view it.",
+    "description": "Here the customer can add a report which it wishes to share with the bank. Note that until a report is shared, the bank has no authority to view it.",
     "requestBody": {
       "content": {
         "application/json": {

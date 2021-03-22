@@ -2,6 +2,7 @@
   "get": {
     "tags": ["Customer - Data"],
     "summary": "Get list of all reports a customer can provide for its ERP connection",
+    "description": "This gives the list of all reports supported by getAccess under an ERP. ",
     "responses": {
       "200": {
         "description": "Success",
