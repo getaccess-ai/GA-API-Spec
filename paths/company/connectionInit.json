@@ -1,0 +1,40 @@
+{
+  "get": {
+    "tags": ["Customer - Connection"],
+    "security": [
+      {
+        "Customer API Key": []
+      }
+    ],
+    "parameters": [
+      {
+        "name": "erp",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "enum": ["zoho", "quickbooks", "xero"]
+        }
+      }
+    ],
+    "summary": "Perform connection Intitiation for a specific ERP",
+    "description": "As detailed in the Connection section, this route serves for the purpose of connection initiation in the whole connection workflow. This will return the <code>redirect_url</code> to which the customer needs to be sent for completing the auth. This is not for khatabook.",
+    "responses": {
+      "200": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "redirect_url": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

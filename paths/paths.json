@@ -35,6 +35,12 @@
   "/company/auth": {
     "$ref": "./company/auth.json"
   },
+  "/company/connection/{erp}": {
+    "$ref": "./company/connectionInit.json"
+  },
+  "/company/connection/khata": {
+    "$ref": "./company/connectionKhata.json"
+  },
   "/company/connection": {
     "$ref": "./company/connection.json"
   },

@@ -1,0 +1,90 @@
+{
+  "get": {
+    "tags": ["Customer - Connection"],
+    "summary": "Request OTP on the provided phone number for Khatabook auth",
+    "description": "The phone number must be provide as a query parameter named <code>phone</code> in the request. An OTP will be sent to the phone, which should be relayed back by the POST request mentioned in the next section to complete authentication.",
+    "parameters": [
+      {
+        "name": "phone",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "description": "The phone number of the customer"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../../GA-api.json#/components/schemas/GA.Company.DataConnection"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Missing parameters"
+      },
+      "401": {
+        "description": "API key missing || Unauthorized connection access(for khatabook)"
+      },
+      "403": {
+        "description": "Invalid API key"
+      },
+      "500": {
+        "description": "Internal Server Error"
+      }
+    }
+  },
+  "post": {
+    "tags": ["Customer - Connection"],
+    "summary": "Authenticate Khatabook customer",
+    "description": "After requesting otp, the otp needs to be posted to the server using this route to complete authentication",
+    "requestBody": {
+      "content": {
+        "application/json": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "phone": {
+                "type": "string",
+                "description": "The phone number of the customer"
+              },
+              "otp": {
+                "type": "string",
+                "description": "The sent otp"
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "201": {
+        "description": "Success",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "../../GA-api.json#/components/schemas/GA.Company.DataConnection"
+            }
+          }
+        }
+      },
+      "400": {
+        "description": "Missing parameters"
+      },
+      "401": {
+        "description": "API key missing"
+      },
+      "403": {
+        "description": "Invalid API key || Invalid OTP"
+      },
+      "500": {
+        "description": "Internal Server Error"
+      }
+    }
+  }
+}

@@ -1,12 +1,13 @@
 {
-  "post": {
+  "put": {
     "tags": ["Customer - Connection"],
     "security": [
       {
         "Customer API Key": []
       }
     ],
-    "summary": "Add a new ERP connection for the customer",
+    "summary": "Update connection for the ERP by adding company details",
+    "description": "As mentioned in the Connection section previously, this route serves the purpose of finishing the connection workflow by taking input the reference of the company selected by the customer.",
     "requestBody": {
       "content": {
         "application/json": {

@@ -1,17 +1,10 @@
 {
   "type": "object",
   "properties": {
-    "name": {
+    "companyReference": {
       "type": "string",
-      "enum": ["sage", "tally", "zoho"]
-    },
-    "endpoint": {
-      "type": "string",
-      "format": "uri"
-    },
-    "accessKey": {
-      "type": "string",
-      "format": "key"
+      "example": "AjsoJAPj89pkjdmk67",
+      "description": "Required for the connection step in the connection workflow. Not required for quickbooks, <code>organization_id</code> for zoho, <code>tenantId</code> for xero and <code>book_id</code> for khata."
     }
   }
 }
